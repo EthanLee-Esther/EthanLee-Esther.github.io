@@ -8,8 +8,14 @@
     <link href="/2025/06/17/me/"/>
     <url>/2025/06/17/me/</url>
     
-    <content type="html"><![CDATA[<h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>我是一个初学者</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>我是一个初学者</p><h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="一节"><a href="#一节" class="headerlink" title="一节"></a>一节</h2><h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="二节"><a href="#二节" class="headerlink" title="二节"></a>二节</h2><h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1>]]></content>
     
+    
+    <categories>
+      
+      <category>测试</category>
+      
+    </categories>
     
     
     <tags>
