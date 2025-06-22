@@ -1,0 +1,46 @@
+
+/* 打字机效果渐变 -bynote.cn*/
+
+#subtitle {
+    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 10s ease infinite;
+    -moz-animation: Gradient 10s ease infinite;
+    animation: Gradient 10s ease infinite;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#subtitle:before {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+/* 滚动条bynote.cn */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e58a8a;
+    background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-moz-selection {
+    color: #fff;
+    background-color: #e58a8a;
+}
