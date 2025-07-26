@@ -1,7 +1,7 @@
 
 /* 打字机效果渐变 -bynote.cn*/
 
-#subtitle {
+/* #subtitle {
     background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     -webkit-animation: Gradient 10s ease infinite;
@@ -20,7 +20,7 @@
 
 #subtitle:before {
     background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 
 /* 滚动条bynote.cn */
