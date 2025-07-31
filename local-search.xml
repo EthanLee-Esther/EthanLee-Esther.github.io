@@ -29,6 +29,60 @@
   
   
   <entry>
+    <title>GitHub自建图床</title>
+    <link href="/2023/09/15/GitHub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
+    <url>/2023/09/15/GitHub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    
+    <content type="html"><![CDATA[<h2 id="一、什么是图床"><a href="#一、什么是图床" class="headerlink" title="一、什么是图床"></a>一、什么是图床</h2><p>图床按照字面意思就是存储图片的床，用户可以将图片上传至图床，然后获得一个链接，这个链接可以在 Markdown 文档中使用，从而显示出我们存储的图片，使用 GitHub 作为图床多用于个人博客或者小型项目使用，完全免费，如果需要存储大量图片，推荐阿里云和腾讯云等大厂的云存储服务。</p><blockquote><p>注意：GitHub 作为图床使用是能被别人搜索到的，就是公开的。</p></blockquote><h2 id="二、使用-GitHub-作为图床的前提条件"><a href="#二、使用-GitHub-作为图床的前提条件" class="headerlink" title="二、使用 GitHub 作为图床的前提条件"></a>二、使用 GitHub 作为图床的前提条件</h2><ol><li>首先当然需要能正常访问 GitHub 官网啦，如果不能访问请施点魔法（国内访问各个地区不一样，有时候正常，有时候撞墙）；如果能正常访问就应该有一个 GitHub 账号；</li><li>再就是为方便我们上传图片的工具 PicGo ，PicGo 依赖 Node.js，安装 PicGo 之前先装好 Node.js。</li></ol><h2 id="三、创建"><a href="#三、创建" class="headerlink" title="三、创建"></a>三、创建</h2><h3 id="3-1-创建-GitHub-仓库"><a href="#3-1-创建-GitHub-仓库" class="headerlink" title="3.1 创建 GitHub 仓库"></a>3.1 创建 GitHub 仓库</h3><ol><li>首先登录你的 GitHub 账号</li><li>点击右上角的 「+」号，选择 「new repository」 ，创建一个仓库</li><li>取个名字（如 <code>my-images</code>），选择「public」类型，然后点击 「Create repository」，这样就创建好一个仓库啦</li></ol><h3 id="3-2-安装-PicGo"><a href="#3-2-安装-PicGo" class="headerlink" title="3.2 安装 PicGo"></a>3.2 安装 PicGo</h3><p>下载直接安装就行：[下载链接][ <a href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85</a> ]</p><h3 id="3-3-配置-PicGo"><a href="#3-3-配置-PicGo" class="headerlink" title="3.3 配置 PicGo"></a>3.3 配置 PicGo</h3><ol><li><p>在 PicGo 界面中，点击左侧的「Settings」。</p></li><li><p>在「Upload Settings」中，选择「GitHub」作为上传方式。</p></li><li><p>填写相关信息：</p><ul><li><p><strong>Repository</strong>: <code>你的GitHub用户名/你的仓库名</code>（例如 <code>yourusername/my-images</code>）</p></li><li><p><strong>Token</strong>: 生成一个 GitHub 访问令牌（token），以便 PicGo 可以访问你的仓库。</p><ul><li>访问 GitHub 账户设置，选择「Developer settings」-&gt;「Personal access tokens」-&gt;「Tokens (classic)」，然后点击「Generate new token」。</li><li>根据需要勾选「repo」权限，并点击「Generate token」。</li><li>复制生成的 token，并在 PicGo 中粘贴。</li></ul></li><li><p><strong>jsDelivr</strong>：在 PicGo 中设置自定义域名配置</p><blockquote><p><a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://cdn.jsdelivr.net/gh/用户名/仓库名</a></p></blockquote></li></ul></li></ol><p>如图所示：</p><center>PicGo配置</center><p><img src="https://cdn.jsdelivr.net/gh/EthanLee-Esther/my-img/Pasted%20image%2020250731010615.png" title="PicGo配置"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术分享</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>图床</tag>
+      
+      <tag>GitHub</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>免费图片托管解决方案：Telegraph-Image</title>
+    <link href="/2023/09/12/%E5%85%8D%E8%B4%B9%E5%9B%BE%E7%89%87%E6%89%98%E7%AE%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9ATelegraph-Image/"/>
+    <url>/2023/09/12/%E5%85%8D%E8%B4%B9%E5%9B%BE%E7%89%87%E6%89%98%E7%AE%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9ATelegraph-Image/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>技术分享</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>图床</tag>
+      
+      <tag>Cloudflare</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>小小英雄</title>
     <link href="/2019/03/21/%E5%B0%8F%E5%B0%8F%E8%8B%B1%E9%9B%84/"/>
     <url>/2019/03/21/%E5%B0%8F%E5%B0%8F%E8%8B%B1%E9%9B%84/</url>
