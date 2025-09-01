@@ -56,6 +56,33 @@
   
   
   <entry>
+    <title>使用 Cloudflare 加速 GitHub Pages 部署的个人博客</title>
+    <link href="/2024/06/13/%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%8A%A0%E9%80%9F%20GitHub%20Pages%20%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2024/06/13/%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%8A%A0%E9%80%9F%20GitHub%20Pages%20%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<p>GitHub Pages 是目前很多开发者和博主选择的免费托管静态网站的服务，结合 Cloudflare 的加速和保护服务，可以显著提升博客的访问速度、安全性和稳定性。下面，我们将一步步教你如何将 GitHub Pages 和 Cloudflare 结合起来，让你的博客飞速运行。</p><h2 id="一、为什么要用-Cloudflare-加速-GitHub-Pages？"><a href="#一、为什么要用-Cloudflare-加速-GitHub-Pages？" class="headerlink" title="一、为什么要用 Cloudflare 加速 GitHub Pages？"></a><strong>一、为什么要用 Cloudflare 加速 GitHub Pages？</strong></h2><p>使用 GitHub Pages 部署静态博客后，虽然免费且可靠，但它可能会面临以下问题：</p><ol><li><strong>加载速度较慢</strong>：GitHub Pages 本身的 CDN 并不总是覆盖全球，尤其是对国内用户，访问速度可能较慢。</li><li><strong>安全性不足</strong>：GitHub Pages 默认提供 HTTPS，但没有额外的防护手段，比如 DDoS 保护或 WAF（Web 应用防火墙）。</li><li><strong>缺乏优化</strong>：GitHub Pages 不支持图片压缩、缓存优化等功能。</li></ol><p>通过使用 Cloudflare，可以实现以下增强：</p><ul><li><strong>全球加速</strong>：Cloudflare 提供 200+ 个边缘服务器节点覆盖全球，显著提升博客的加载速度。</li><li><strong>流量保护</strong>：增强 HTTPS 安全性，并提供防 DDoS、防火墙等安全功能。</li><li><strong>缓存优化</strong>：通过 Cloudflare 的强大缓存机制，加速静态文件（如 HTML、CSS、JS）的加载。</li><li><strong>免费服务</strong>：Cloudflare 免费计划已经足够满足个人博客的加速需求。</li></ul><h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a><strong>二、准备工作</strong></h2><p>在开始操作之前，需要确保以下事项：</p><ol><li><strong>一个在 GitHub Pages 上运行的个人博客</strong>：<ul><li>你的博客已经部署在 GitHub Pages 上，并可以通过 <code>https://yourusername.github.io</code> 或绑定的自定义域名访问。</li></ul></li><li><strong>自定义域名</strong>：<ul><li>你需要购买一个域名（如通过阿里云、腾讯云或其他域名服务商），并将其绑定到你的 GitHub Pages 博客。</li><li>如果没有域名，可以先去购买，域名备案根据区域要求来确定是否需要。</li></ul></li><li><strong>一个 Cloudflare 账号</strong>：<ul><li>前往 <a href="https://www.cloudflare.com/">Cloudflare 官网</a> 注册一个帐户。</li></ul></li></ol><hr><h2 id="三、开始配置-Cloudflare-加速"><a href="#三、开始配置-Cloudflare-加速" class="headerlink" title="三、开始配置 Cloudflare 加速"></a><strong>三、开始配置 Cloudflare 加速</strong></h2><h3 id="1-将自定义域名添加到-Cloudflare"><a href="#1-将自定义域名添加到-Cloudflare" class="headerlink" title="1. 将自定义域名添加到 Cloudflare"></a><strong>1. 将自定义域名添加到 Cloudflare</strong></h3><ol><li>登录到 <a href="https://www.cloudflare.com/">Cloudflare</a> 的控制台。</li><li>点击右上角的 <strong>Add a Site</strong>（添加站点）。</li><li>输入你的域名（如 <code>example.com</code>），点击开始设置。<strong>注意不要带 <code>www</code> 或者 <code>https</code></strong>，比如我的就直接填写 <code>yixin.xz.cn</code></li><li>选择 <strong>Free Plan</strong>（免费计划），然后点击 “Continue”（继续）。</li></ol><h3 id="2-配置-DNS-解析"><a href="#2-配置-DNS-解析" class="headerlink" title="2. 配置 DNS 解析"></a><strong>2. 配置 DNS 解析</strong></h3><p>Cloudflare 会自动扫描你的域名的现有 DNS 记录。按照以下步骤配置：</p><ol><li><p>确保你的域名在 GitHub Pages 的解析记录正确：</p><ul><li>如果你的域名是裸域（如 <code>example.com</code>），需要添加一条 A 记录，指向 GitHub Pages 的 IP 地址：<br> <img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMKaLXLXJ-A2MpfvpKapX11Z6bdmbkAAufJMRvYf7FV2vOV4dmRco4BAAMCAAN5AAM2BA.png"></li></ul></li><li><p>按照上述方式再添加以下三条记录，类型和名称和上述相同，IPv 4 地址分别为：</p></li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">185.199.109.153  <br>185.199.110.153  <br>185.199.111.153<br></code></pre></td></tr></table></figure><ol start="3"><li>完成之后应该能看到列表中有以下四条这样的记录，除了 <code>名称</code> 是自己的域名外其他应该都和图中相同</li></ol><p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMLaLXL4KBOHM0SF1Nx6IVth-QW3QEAAunJMRvYf7FVvfmrMfcqhOABAAMCAAN3AAM2BA.png"></p><p>上述添加的4条 ip 地址均是 GitHub Pages 的 IP 地址，具体可查看【 <a href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site</a> 】</p><ol start="4"><li><p>点击继续后，cloudflare 会要求将我们 DNS 服务器修改为以下图中所示的的服务器，可以先截个图或者存文档里：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMMaLXL-OPC78H8UeBVXdMh5F3fQlYAAurJMRvYf7FVotxrFUOOL70BAAMCAAN3AAM2BA.png"></p></li><li><p>进入腾讯云控制台，修改的 DNS 服务器为上图中 cloudflare 提供的 DNS 服务器</p></li></ol><h3 id="3-设置-Github-page"><a href="#3-设置-Github-page" class="headerlink" title="3. 设置 Github page"></a>3. 设置 Github page</h3><ol><li>进入 github. Io 对应的仓库，进入 <code>Settings</code></li><li>进入左栏中的 <code>pages</code>，在 <code>Custom domain</code> 中输入自己的域名，点击 <code>save</code>，如果成功会显示下图：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMNaLXMEZcNQBFBT_uehbbkC98FedIAAuvJMRvYf7FVMQQx3gSJrD0BAAMCAAN5AAM2BA.png"></li><li>这样就可以通过域名来访问自己的博客了，还可以在上图中勾选 <code>Enforcrs HTTPS</code>，这样网站仅会通过https提供服务。</li></ol><h2 id="四、一些问题"><a href="#四、一些问题" class="headerlink" title="四、一些问题"></a>四、一些问题</h2><p>如果如下图显示 dns 配置不正确，推测可能是使用了 cloudflare 后，GitHub 验证 DNS 时返回的是 cdn 服务器的 ip 地址，而不是在 cloudflare 上开始配置的4个 GitHub page 的 ip 地址，可以在线 dig 一下自己的域名验证一下。不过只要网站能通过域名正常访问就没什么问题。<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMOaLXML7lbAduHu45XC2787jzQt6gAAuzJMRvYf7FVJki7bTjILFABAAMCAAN3AAM2BA.png"></p><p>重新更新博客之后不能访问 404，加速时在 Github 项目根目录中创建了一个 <code>CANME</code> 的 txt 文件，在里面写上自己的域名，不要有任何的空格和其他换行，部署的时候加上这个文件就行。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术分享</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>GitHub</tag>
+      
+      <tag>个人博客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>GitHub自建图床</title>
     <link href="/2023/09/15/GitHub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
     <url>/2023/09/15/GitHub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>

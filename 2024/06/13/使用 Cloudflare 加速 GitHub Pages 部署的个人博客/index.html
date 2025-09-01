@@ -19,25 +19,29 @@
   <meta name="author" content="Ethan Lee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="将GitHub作为图床，不限空间，使用jsDelivr进行加速访问，PicGo作为上传工具，方便又快捷。">
+    <meta name="description" content="使用 Cloudflare 加速 GitHub Pages 部署的个人博客，让你的博客飞速运行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub自建图床">
-<meta property="og:url" content="http://example.com/2023/09/15/GitHub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A/index.html">
+<meta property="og:title" content="使用 Cloudflare 加速 GitHub Pages 部署的个人博客">
+<meta property="og:url" content="http://example.com/2024/06/13/%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%8A%A0%E9%80%9F%20GitHub%20Pages%20%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="Ethan">
-<meta property="og:description" content="将GitHub作为图床，不限空间，使用jsDelivr进行加速访问，PicGo作为上传工具，方便又快捷。">
+<meta property="og:description" content="使用 Cloudflare 加速 GitHub Pages 部署的个人博客，让你的博客飞速运行">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLee-Esther/my-img/Pasted%20image%2020250731010615.png">
-<meta property="article:published_time" content="2023-09-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-31T02:13:34.066Z">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMKaLXLXJ-A2MpfvpKapX11Z6bdmbkAAufJMRvYf7FV2vOV4dmRco4BAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMLaLXL4KBOHM0SF1Nx6IVth-QW3QEAAunJMRvYf7FVvfmrMfcqhOABAAMCAAN3AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMMaLXL-OPC78H8UeBVXdMh5F3fQlYAAurJMRvYf7FVotxrFUOOL70BAAMCAAN3AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMNaLXMEZcNQBFBT_uehbbkC98FedIAAuvJMRvYf7FVMQQx3gSJrD0BAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMOaLXML7lbAduHu45XC2787jzQt6gAAuzJMRvYf7FVJki7bTjILFABAAMCAAN3AAM2BA.png">
+<meta property="article:published_time" content="2024-06-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-01T16:39:34.475Z">
 <meta property="article:author" content="Ethan Lee">
-<meta property="article:tag" content="图床">
 <meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="个人博客">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/EthanLee-Esther/my-img/Pasted%20image%2020250731010615.png">
+<meta name="twitter:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMKaLXLXJ-A2MpfvpKapX11Z6bdmbkAAufJMRvYf7FV2vOV4dmRco4BAAMCAAN5AAM2BA.png">
   
   
   
-  <title>GitHub自建图床 - Ethan</title>
+  <title>使用 Cloudflare 加速 GitHub Pages 部署的个人博客 - Ethan</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="GitHub自建图床"></span>
+            <span id="subtitle" data-typed-text="使用 Cloudflare 加速 GitHub Pages 部署的个人博客"></span>
           
         </div>
 
@@ -229,8 +233,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-15 00:00" pubdate>
-          2023年9月15日 凌晨
+        <time datetime="2024-06-13 00:00" pubdate>
+          2024年6月13日 凌晨
         </time>
       </span>
     
@@ -241,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          491 字
+          1.1k 字
         
       </span>
     
@@ -252,7 +256,7 @@
         
         
         
-          5 分钟
+          9 分钟
         
       </span>
     
@@ -289,53 +293,78 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">GitHub自建图床</h1>
+            <h1 id="seo-header">使用 Cloudflare 加速 GitHub Pages 部署的个人博客</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="一、什么是图床"><a href="#一、什么是图床" class="headerlink" title="一、什么是图床"></a>一、什么是图床</h2><p>图床按照字面意思就是存储图片的床，用户可以将图片上传至图床，然后获得一个链接，这个链接可以在 Markdown 文档中使用，从而显示出我们存储的图片，使用 GitHub 作为图床多用于个人博客或者小型项目使用，完全免费，如果需要存储大量图片，推荐阿里云和腾讯云等大厂的云存储服务。</p>
-<blockquote>
-<p>注意：GitHub 作为图床使用是能被别人搜索到的，就是公开的。</p>
-</blockquote>
-<h2 id="二、使用-GitHub-作为图床的前提条件"><a href="#二、使用-GitHub-作为图床的前提条件" class="headerlink" title="二、使用 GitHub 作为图床的前提条件"></a>二、使用 GitHub 作为图床的前提条件</h2><ol>
-<li>首先当然需要能正常访问 GitHub 官网啦，如果不能访问请施点魔法（国内访问各个地区不一样，有时候正常，有时候撞墙）；如果能正常访问就应该有一个 GitHub 账号；</li>
-<li>再就是为方便我们上传图片的工具 PicGo ，PicGo 依赖 Node.js，安装 PicGo 之前先装好 Node.js。</li>
+                <p>GitHub Pages 是目前很多开发者和博主选择的免费托管静态网站的服务，结合 Cloudflare 的加速和保护服务，可以显著提升博客的访问速度、安全性和稳定性。下面，我们将一步步教你如何将 GitHub Pages 和 Cloudflare 结合起来，让你的博客飞速运行。</p>
+<h2 id="一、为什么要用-Cloudflare-加速-GitHub-Pages？"><a href="#一、为什么要用-Cloudflare-加速-GitHub-Pages？" class="headerlink" title="一、为什么要用 Cloudflare 加速 GitHub Pages？"></a><strong>一、为什么要用 Cloudflare 加速 GitHub Pages？</strong></h2><p>使用 GitHub Pages 部署静态博客后，虽然免费且可靠，但它可能会面临以下问题：</p>
+<ol>
+<li><strong>加载速度较慢</strong>：GitHub Pages 本身的 CDN 并不总是覆盖全球，尤其是对国内用户，访问速度可能较慢。</li>
+<li><strong>安全性不足</strong>：GitHub Pages 默认提供 HTTPS，但没有额外的防护手段，比如 DDoS 保护或 WAF（Web 应用防火墙）。</li>
+<li><strong>缺乏优化</strong>：GitHub Pages 不支持图片压缩、缓存优化等功能。</li>
 </ol>
-<h2 id="三、创建"><a href="#三、创建" class="headerlink" title="三、创建"></a>三、创建</h2><h3 id="3-1-创建-GitHub-仓库"><a href="#3-1-创建-GitHub-仓库" class="headerlink" title="3.1 创建 GitHub 仓库"></a>3.1 创建 GitHub 仓库</h3><ol>
-<li>首先登录你的 GitHub 账号</li>
-<li>点击右上角的 「+」号，选择 「new repository」 ，创建一个仓库</li>
-<li>取个名字（如 <code>my-images</code>），选择「public」类型，然后点击 「Create repository」，这样就创建好一个仓库啦</li>
-</ol>
-<h3 id="3-2-安装-PicGo"><a href="#3-2-安装-PicGo" class="headerlink" title="3.2 安装 PicGo"></a>3.2 安装 PicGo</h3><p>下载直接安装就行：[下载链接][ <a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85</a> ]</p>
-<h3 id="3-3-配置-PicGo"><a href="#3-3-配置-PicGo" class="headerlink" title="3.3 配置 PicGo"></a>3.3 配置 PicGo</h3><ol>
-<li><p>在 PicGo 界面中，点击左侧的「Settings」。</p>
-</li>
-<li><p>在「Upload Settings」中，选择「GitHub」作为上传方式。</p>
-</li>
-<li><p>填写相关信息：</p>
+<p>通过使用 Cloudflare，可以实现以下增强：</p>
 <ul>
-<li><p><strong>Repository</strong>: <code>你的GitHub用户名/你的仓库名</code>（例如 <code>yourusername/my-images</code>）</p>
-</li>
-<li><p><strong>Token</strong>: 生成一个 GitHub 访问令牌（token），以便 PicGo 可以访问你的仓库。</p>
-<ul>
-<li>访问 GitHub 账户设置，选择「Developer settings」-&gt;「Personal access tokens」-&gt;「Tokens (classic)」，然后点击「Generate new token」。</li>
-<li>根据需要勾选「repo」权限，并点击「Generate token」。</li>
-<li>复制生成的 token，并在 PicGo 中粘贴。</li>
+<li><strong>全球加速</strong>：Cloudflare 提供 200+ 个边缘服务器节点覆盖全球，显著提升博客的加载速度。</li>
+<li><strong>流量保护</strong>：增强 HTTPS 安全性，并提供防 DDoS、防火墙等安全功能。</li>
+<li><strong>缓存优化</strong>：通过 Cloudflare 的强大缓存机制，加速静态文件（如 HTML、CSS、JS）的加载。</li>
+<li><strong>免费服务</strong>：Cloudflare 免费计划已经足够满足个人博客的加速需求。</li>
+</ul>
+<h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a><strong>二、准备工作</strong></h2><p>在开始操作之前，需要确保以下事项：</p>
+<ol>
+<li><strong>一个在 GitHub Pages 上运行的个人博客</strong>：<ul>
+<li>你的博客已经部署在 GitHub Pages 上，并可以通过 <code>https://yourusername.github.io</code> 或绑定的自定义域名访问。</li>
 </ul>
 </li>
-<li><p><strong>jsDelivr</strong>：在 PicGo 中设置自定义域名配置</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://cdn.jsdelivr.net/gh/用户名/仓库名</a></p>
-</blockquote>
+<li><strong>自定义域名</strong>：<ul>
+<li>你需要购买一个域名（如通过阿里云、腾讯云或其他域名服务商），并将其绑定到你的 GitHub Pages 博客。</li>
+<li>如果没有域名，可以先去购买，域名备案根据区域要求来确定是否需要。</li>
+</ul>
 </li>
+<li><strong>一个 Cloudflare 账号</strong>：<ul>
+<li>前往 <a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare 官网</a> 注册一个帐户。</li>
 </ul>
 </li>
 </ol>
-<p>如图所示：</p>
-<center>PicGo配置</center>
+<hr>
+<h2 id="三、开始配置-Cloudflare-加速"><a href="#三、开始配置-Cloudflare-加速" class="headerlink" title="三、开始配置 Cloudflare 加速"></a><strong>三、开始配置 Cloudflare 加速</strong></h2><h3 id="1-将自定义域名添加到-Cloudflare"><a href="#1-将自定义域名添加到-Cloudflare" class="headerlink" title="1. 将自定义域名添加到 Cloudflare"></a><strong>1. 将自定义域名添加到 Cloudflare</strong></h3><ol>
+<li>登录到 <a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare</a> 的控制台。</li>
+<li>点击右上角的 <strong>Add a Site</strong>（添加站点）。</li>
+<li>输入你的域名（如 <code>example.com</code>），点击开始设置。<strong>注意不要带 <code>www</code> 或者 <code>https</code></strong>，比如我的就直接填写 <code>yixin.xz.cn</code></li>
+<li>选择 <strong>Free Plan</strong>（免费计划），然后点击 “Continue”（继续）。</li>
+</ol>
+<h3 id="2-配置-DNS-解析"><a href="#2-配置-DNS-解析" class="headerlink" title="2. 配置 DNS 解析"></a><strong>2. 配置 DNS 解析</strong></h3><p>Cloudflare 会自动扫描你的域名的现有 DNS 记录。按照以下步骤配置：</p>
+<ol>
+<li><p>确保你的域名在 GitHub Pages 的解析记录正确：</p>
+<ul>
+<li>如果你的域名是裸域（如 <code>example.com</code>），需要添加一条 A 记录，指向 GitHub Pages 的 IP 地址：<br> <img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMKaLXLXJ-A2MpfvpKapX11Z6bdmbkAAufJMRvYf7FV2vOV4dmRco4BAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></li>
+</ul>
+</li>
+<li><p>按照上述方式再添加以下三条记录，类型和名称和上述相同，IPv 4 地址分别为：</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">185.199.109.153  <br>185.199.110.153  <br>185.199.111.153<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.jsdelivr.net/gh/EthanLee-Esther/my-img/Pasted%20image%2020250731010615.png" srcset="/img/loading.gif" lazyload title="PicGo配置"></p>
+<ol start="3">
+<li>完成之后应该能看到列表中有以下四条这样的记录，除了 <code>名称</code> 是自己的域名外其他应该都和图中相同</li>
+</ol>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMLaLXL4KBOHM0SF1Nx6IVth-QW3QEAAunJMRvYf7FVvfmrMfcqhOABAAMCAAN3AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
+<p>上述添加的4条 ip 地址均是 GitHub Pages 的 IP 地址，具体可查看【 <a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site</a> 】</p>
+<ol start="4">
+<li><p>点击继续后，cloudflare 会要求将我们 DNS 服务器修改为以下图中所示的的服务器，可以先截个图或者存文档里：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMMaLXL-OPC78H8UeBVXdMh5F3fQlYAAurJMRvYf7FVotxrFUOOL70BAAMCAAN3AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>进入腾讯云控制台，修改的 DNS 服务器为上图中 cloudflare 提供的 DNS 服务器</p>
+</li>
+</ol>
+<h3 id="3-设置-Github-page"><a href="#3-设置-Github-page" class="headerlink" title="3. 设置 Github page"></a>3. 设置 Github page</h3><ol>
+<li>进入 github. Io 对应的仓库，进入 <code>Settings</code></li>
+<li>进入左栏中的 <code>pages</code>，在 <code>Custom domain</code> 中输入自己的域名，点击 <code>save</code>，如果成功会显示下图：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMNaLXMEZcNQBFBT_uehbbkC98FedIAAuvJMRvYf7FVMQQx3gSJrD0BAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></li>
+<li>这样就可以通过域名来访问自己的博客了，还可以在上图中勾选 <code>Enforcrs HTTPS</code>，这样网站仅会通过https提供服务。</li>
+</ol>
+<h2 id="四、一些问题"><a href="#四、一些问题" class="headerlink" title="四、一些问题"></a>四、一些问题</h2><p>如果如下图显示 dns 配置不正确，推测可能是使用了 cloudflare 后，GitHub 验证 DNS 时返回的是 cdn 服务器的 ip 地址，而不是在 cloudflare 上开始配置的4个 GitHub page 的 ip 地址，可以在线 dig 一下自己的域名验证一下。不过只要网站能通过域名正常访问就没什么问题。<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMOaLXML7lbAduHu45XC2787jzQt6gAAuzJMRvYf7FVJki7bTjILFABAAMCAAN3AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
+<p>重新更新博客之后不能访问 404，加速时在 Github 项目根目录中创建了一个 <code>CANME</code> 的 txt 文件，在里面写上自己的域名，不要有任何的空格和其他换行，部署的时候加上这个文件就行。</p>
 
                 
               </div>
@@ -369,9 +398,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%9B%BE%E5%BA%8A/" class="print-no-link">#图床</a>
-      
         <a href="/tags/GitHub/" class="print-no-link">#GitHub</a>
+      
+        <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="print-no-link">#个人博客</a>
       
     </div>
   
@@ -383,8 +412,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>GitHub自建图床</div>
-      <div>http://example.com/2023/09/15/GitHub自建图床/</div>
+      <div>使用 Cloudflare 加速 GitHub Pages 部署的个人博客</div>
+      <div>http://example.com/2024/06/13/使用 Cloudflare 加速 GitHub Pages 部署的个人博客/</div>
     </div>
     <div class="license-meta">
       
@@ -396,7 +425,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月15日</div>
+          <div>2024年6月13日</div>
         </div>
       
       
@@ -428,9 +457,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/13/%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%8A%A0%E9%80%9F%20GitHub%20Pages%20%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="使用 Cloudflare 加速 GitHub Pages 部署的个人博客">
+                      <a href="/2025/06/27/%E6%9F%B3%E5%AE%97%E5%85%83%E7%94%9F%E5%B9%B3/" title="看完「刘柳」的故事才理解《江雪》的孤寂">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用 Cloudflare 加速 GitHub Pages 部署的个人博客</span>
+                        <span class="hidden-mobile">看完「刘柳」的故事才理解《江雪》的孤寂</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -438,8 +467,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/12/%E5%85%8D%E8%B4%B9%E5%9B%BE%E7%89%87%E6%89%98%E7%AE%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9ATelegraph-Image/" title="免费图片托管解决方案：Telegraph-Image">
-                        <span class="hidden-mobile">免费图片托管解决方案：Telegraph-Image</span>
+                      <a href="/2023/09/15/GitHub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A/" title="GitHub自建图床">
+                        <span class="hidden-mobile">GitHub自建图床</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
