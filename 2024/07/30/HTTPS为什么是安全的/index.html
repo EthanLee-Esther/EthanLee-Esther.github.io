@@ -19,29 +19,32 @@
   <meta name="author" content="Ethan Lee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="使用 Cloudflare 加速 GitHub Pages 部署的个人博客，让你的博客飞速运行">
+    <meta name="description" content="今天来谈谈HTTPS为什么是安全的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Cloudflare 加速 GitHub Pages 部署的个人博客">
-<meta property="og:url" content="http://example.com/2024/06/13/%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%8A%A0%E9%80%9F%20GitHub%20Pages%20%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="HTTPS为什么是安全的">
+<meta property="og:url" content="http://example.com/2024/07/30/HTTPS%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%89%E5%85%A8%E7%9A%84/index.html">
 <meta property="og:site_name" content="Ethan">
-<meta property="og:description" content="使用 Cloudflare 加速 GitHub Pages 部署的个人博客，让你的博客飞速运行">
+<meta property="og:description" content="今天来谈谈HTTPS为什么是安全的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMKaLXLXJ-A2MpfvpKapX11Z6bdmbkAAufJMRvYf7FV2vOV4dmRco4BAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMLaLXL4KBOHM0SF1Nx6IVth-QW3QEAAunJMRvYf7FVvfmrMfcqhOABAAMCAAN3AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMMaLXL-OPC78H8UeBVXdMh5F3fQlYAAurJMRvYf7FVotxrFUOOL70BAAMCAAN3AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMNaLXMEZcNQBFBT_uehbbkC98FedIAAuvJMRvYf7FVMQQx3gSJrD0BAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMOaLXML7lbAduHu45XC2787jzQt6gAAuzJMRvYf7FVJki7bTjILFABAAMCAAN3AAM2BA.png">
-<meta property="article:published_time" content="2024-06-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-01T16:53:15.562Z">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMPaLcMq3QmHejrxXzACZzsSCn_wacAAk7KMRvYf7lVFNilpeGTDWIBAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMQaLcNET53fce1XOwOYwa-GGfOSGsAAk_KMRvYf7lVdys45QXkRU4BAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMRaLcNN0dhrf8cFBuMxdpvIcMp6nYAAlDKMRvYf7lV1ViIG0bleWgBAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMSaLcNSoYmY_7a29esbSuJiWHgfx8AAlHKMRvYf7lVuwABng_MAAEjxwEAAwIAA3kAAzYE.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMTaLcNYz-U5ao0c-XqLtonXyqqqBsAAlLKMRvYf7lVWrA7K8yH0OsBAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMUaLcNc22OYLUdPSC50nd9509O-nIAAlPKMRvYf7lVTR8iv4508LsBAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMVaLcNimtvuDuWZVNXeXFw_SvJBz0AAlTKMRvYf7lV9y5-UVwojAcBAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMWaLcNoVIZvTd5_l6_zA-8i8aMGmAAAlXKMRvYf7lVg24MJKEvkNUBAAMCAAN5AAM2BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMXaLcNudLv3xqhXsDCILcukHCfi9kAAlbKMRvYf7lVTWPjEn1YrDkBAAMCAAN5AAM2BA.png">
+<meta property="article:published_time" content="2024-07-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-02T15:31:21.201Z">
 <meta property="article:author" content="Ethan Lee">
-<meta property="article:tag" content="GitHub">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMKaLXLXJ-A2MpfvpKapX11Z6bdmbkAAufJMRvYf7FV2vOV4dmRco4BAAMCAAN5AAM2BA.png">
+<meta name="twitter:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMPaLcMq3QmHejrxXzACZzsSCn_wacAAk7KMRvYf7lVFNilpeGTDWIBAAMCAAN5AAM2BA.png">
   
   
   
-  <title>使用 Cloudflare 加速 GitHub Pages 部署的个人博客 - Ethan</title>
+  <title>HTTPS为什么是安全的 - Ethan</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +225,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用 Cloudflare 加速 GitHub Pages 部署的个人博客"></span>
+            <span id="subtitle" data-typed-text="HTTPS为什么是安全的"></span>
           
         </div>
 
@@ -233,8 +236,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-13 00:00" pubdate>
-          2024年6月13日 凌晨
+        <time datetime="2024-07-30 00:00" pubdate>
+          2024年7月30日 凌晨
         </time>
       </span>
     
@@ -245,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.8k 字
         
       </span>
     
@@ -256,7 +259,7 @@
         
         
         
-          9 分钟
+          15 分钟
         
       </span>
     
@@ -293,78 +296,63 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">使用 Cloudflare 加速 GitHub Pages 部署的个人博客</h1>
+            <h1 id="seo-header">HTTPS为什么是安全的</h1>
             
             
               <div class="markdown-body">
                 
-                <p>GitHub Pages 是目前很多开发者和博主选择的免费托管静态网站的服务，结合 Cloudflare 的加速和保护服务，可以显著提升博客的访问速度、安全性和稳定性。下面，我们将一步步教你如何将 GitHub Pages 和 Cloudflare 结合起来，让你的博客飞速运行。</p>
-<h2 id="一、为什么要用-Cloudflare-加速-GitHub-Pages？"><a href="#一、为什么要用-Cloudflare-加速-GitHub-Pages？" class="headerlink" title="一、为什么要用 Cloudflare 加速 GitHub Pages？"></a><strong>一、为什么要用 Cloudflare 加速 GitHub Pages？</strong></h2><p>使用 GitHub Pages 部署静态博客后，虽然免费且可靠，但它可能会面临以下问题：</p>
-<ol>
-<li><strong>加载速度较慢</strong>：GitHub Pages 本身的 CDN 并不总是覆盖全球，尤其是对国内用户，访问速度可能较慢。</li>
-<li><strong>安全性不足</strong>：GitHub Pages 默认提供 HTTPS，但没有额外的防护手段，比如 DDoS 保护或 WAF（Web 应用防火墙）。</li>
-<li><strong>缺乏优化</strong>：GitHub Pages 不支持图片压缩、缓存优化等功能。</li>
-</ol>
-<p>通过使用 Cloudflare，可以实现以下增强：</p>
+                <h2 id="1-HTTP-协议"><a href="#1-HTTP-协议" class="headerlink" title="1. HTTP 协议"></a>1. HTTP 协议</h2><p>在谈论 HTTPS 协议之前，先来回顾一下 HTTP 协议的概念。</p>
+<h3 id="1-1-HTTP-协议介绍"><a href="#1-1-HTTP-协议介绍" class="headerlink" title="1.1 HTTP 协议介绍"></a>1.1 HTTP 协议介绍</h3><p>HTTP 协议是一种基于文本的传输协议，它位于 OSI 网络模型中的应用层。</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMPaLcMq3QmHejrxXzACZzsSCn_wacAAk7KMRvYf7lVFNilpeGTDWIBAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
+<p>HTTP 协议是通过客户端和服务器的请求应答来进行通讯，目前协议由之前的 RFC 2616 拆分成立六个单独的协议说明（RFC 7230、RFC 7231、RFC 7232、RFC 7233、RFC 7234、RFC 7235），通讯报文如下：</p>
 <ul>
-<li><strong>全球加速</strong>：Cloudflare 提供 200+ 个边缘服务器节点覆盖全球，显著提升博客的加载速度。</li>
-<li><strong>流量保护</strong>：增强 HTTPS 安全性，并提供防 DDoS、防火墙等安全功能。</li>
-<li><strong>缓存优化</strong>：通过 Cloudflare 的强大缓存机制，加速静态文件（如 HTML、CSS、JS）的加载。</li>
-<li><strong>免费服务</strong>：Cloudflare 免费计划已经足够满足个人博客的加速需求。</li>
+<li>请求</li>
 </ul>
-<h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a><strong>二、准备工作</strong></h2><p>在开始操作之前，需要确保以下事项：</p>
-<ol>
-<li><strong>一个在 GitHub Pages 上运行的个人博客</strong>：<ul>
-<li>你的博客已经部署在 GitHub Pages 上，并可以通过 <code>https://yourusername.github.io</code> 或绑定的自定义域名访问。</li>
-</ul>
-</li>
-<li><strong>自定义域名</strong>：<ul>
-<li>你需要购买一个域名（如通过阿里云、腾讯云或其他域名服务商），并将其绑定到你的 GitHub Pages 博客。</li>
-<li>如果没有域名，可以先去购买，域名备案根据区域要求来确定是否需要。</li>
-</ul>
-</li>
-<li><strong>一个 Cloudflare 账号</strong>：<ul>
-<li>前往 <a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare 官网</a> 注册一个帐户。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="三、开始配置-Cloudflare-加速"><a href="#三、开始配置-Cloudflare-加速" class="headerlink" title="三、开始配置 Cloudflare 加速"></a><strong>三、开始配置 Cloudflare 加速</strong></h2><h3 id="1-将自定义域名添加到-Cloudflare"><a href="#1-将自定义域名添加到-Cloudflare" class="headerlink" title="1. 将自定义域名添加到 Cloudflare"></a><strong>1. 将自定义域名添加到 Cloudflare</strong></h3><ol>
-<li>登录到 <a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare</a> 的控制台。</li>
-<li>点击右上角的 <strong>Add a Site</strong>（添加站点）。</li>
-<li>输入你的域名（如 <code>example.com</code>），点击开始设置。<strong>注意不要带 <code>www</code> 或者 <code>https</code></strong>，比如我的就直接填写 <code>yixin.xz.cn</code></li>
-<li>选择 <strong>Free Plan</strong>（免费计划），然后点击 “Continue”（继续）。</li>
-</ol>
-<h3 id="2-配置-DNS-解析"><a href="#2-配置-DNS-解析" class="headerlink" title="2. 配置 DNS 解析"></a><strong>2. 配置 DNS 解析</strong></h3><p>Cloudflare 会自动扫描你的域名的现有 DNS 记录。按照以下步骤配置：</p>
-<ol>
-<li><p>确保你的域名在 GitHub Pages 的解析记录正确：</p>
-<ul>
-<li>如果你的域名是裸域（如 <code>example.com</code>），需要添加一条 A 记录，指向 GitHub Pages 的 IP 地址：<br> <img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMKaLXLXJ-A2MpfvpKapX11Z6bdmbkAAufJMRvYf7FV2vOV4dmRco4BAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></li>
-</ul>
-</li>
-<li><p>按照上述方式再添加以下三条记录，类型和名称和上述相同，IPv 4 地址分别为：</p>
-</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">185.199.109.153  <br>185.199.110.153  <br>185.199.111.153<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">POST http://www.baidu.com HTTP/1.1  <br>Host: www.baidu.com  <br>Connection: keep-alive  <br>Content-Length: 7  <br>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36  <br>  <br>wd=HTTP<br></code></pre></td></tr></table></figure>
 
-<ol start="3">
-<li>完成之后应该能看到列表中有以下四条这样的记录，除了 <code>名称</code> 是自己的域名外其他应该都和图中相同</li>
-</ol>
-<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMLaLXL4KBOHM0SF1Nx6IVth-QW3QEAAunJMRvYf7FVvfmrMfcqhOABAAMCAAN3AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
-<p>上述添加的4条 ip 地址均是 GitHub Pages 的 IP 地址，具体可查看【 <a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site</a> 】</p>
-<ol start="4">
-<li><p>点击继续后，cloudflare 会要求将我们 DNS 服务器修改为以下图中所示的的服务器，可以先截个图或者存文档里：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMMaLXL-OPC78H8UeBVXdMh5F3fQlYAAurJMRvYf7FVotxrFUOOL70BAAMCAAN3AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>响应</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">HTTP/1.1 200 OK  <br>Connection: Keep-Alive  <br>Content-Encoding: gzip  <br>Content-Type: text/html;charset=utf-8  <br>Date: Thu, 14 Feb 2019 07:23:49 GMT  <br>Transfer-Encoding: chunked  <br>  <br>&lt;html&gt;...&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-2-HTTP-中间人攻击"><a href="#1-2-HTTP-中间人攻击" class="headerlink" title="1.2 HTTP 中间人攻击"></a>1.2 HTTP 中间人攻击</h3><p>HTTP 协议使用起来确实非常的方便，但是它存在一个致命的缺点：不安全。</p>
+<p>我们知道 HTTP 协议中的报文都是以明文的方式进行传输，不做任何加密，这样会导致什么问题呢？下面来举个例子：</p>
+<ol>
+<li><p>小明在 JAVA 贴吧发帖，内容为我爱 JAVA：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMQaLcNET53fce1XOwOYwa-GGfOSGsAAk_KMRvYf7lVdys45QXkRU4BAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
 </li>
-<li><p>进入腾讯云控制台，修改的 DNS 服务器为上图中 cloudflare 提供的 DNS 服务器</p>
+<li><p>被中间人进行攻击，内容修改为我爱 PHP<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMRaLcNN0dhrf8cFBuMxdpvIcMp6nYAAlDKMRvYf7lV1ViIG0bleWgBAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
 </li>
 </ol>
-<h3 id="3-设置-Github-page"><a href="#3-设置-Github-page" class="headerlink" title="3. 设置 Github page"></a>3. 设置 Github page</h3><ol>
-<li>进入 github. Io 对应的仓库，进入 <code>Settings</code></li>
-<li>进入左栏中的 <code>pages</code>，在 <code>Custom domain</code> 中输入自己的域名，点击 <code>save</code>，如果成功会显示下图：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMNaLXMEZcNQBFBT_uehbbkC98FedIAAuvJMRvYf7FVMQQx3gSJrD0BAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></li>
-<li>这样就可以通过域名来访问自己的博客了，还可以在上图中勾选 <code>Enforcrs HTTPS</code>，这样网站仅会通过https提供服务。</li>
+<h3 id="1-3-防止中间人攻击"><a href="#1-3-防止中间人攻击" class="headerlink" title="1.3 防止中间人攻击"></a>1.3 防止中间人攻击</h3><p>这个时候可能就有人想到了，既然内容是明文那我使用对称加密的方式将报文加密这样中间人不就看不到明文了吗，于是如下改造：</p>
+<ol>
+<li>双方约定加密方式<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMSaLcNSoYmY_7a29esbSuJiWHgfx8AAlHKMRvYf7lVuwABng_MAAEjxwEAAwIAA3kAAzYE.png" srcset="/img/loading.gif" lazyload></li>
+<li>使用 AES 加密报文<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMTaLcNYz-U5ao0c-XqLtonXyqqqBsAAlLKMRvYf7lVWrA7K8yH0OsBAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload><br>这样看似中间人获取不到明文信息了，但其实在通讯过程中还是会以明文的方式暴露加密方式和秘钥，如果第一次通信被拦截到了，那么秘钥就会泄露给中间人，中间人仍然可以解密后续的通信：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMUaLcNc22OYLUdPSC50nd9509O-nIAAlPKMRvYf7lVTR8iv4508LsBAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload><br>那么对于这种情况，我们肯定就会考虑能不能将秘钥进行加密不让中间人看到呢？答案是有的，采用非对称加密，我们可以通过 RSA 算法来实现。</li>
 </ol>
-<h2 id="四、一些问题"><a href="#四、一些问题" class="headerlink" title="四、一些问题"></a>四、一些问题</h2><p>如果如下图显示 dns 配置不正确，推测可能是使用了 cloudflare 后，GitHub 验证 DNS 时返回的是 cdn 服务器的 ip 地址，而不是在 cloudflare 上开始配置的4个 GitHub page 的 ip 地址，可以在线 dig 一下自己的域名验证一下。不过只要网站能通过域名正常访问就没什么问题。<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMOaLXML7lbAduHu45XC2787jzQt6gAAuzJMRvYf7FVJki7bTjILFABAAMCAAN3AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
-<p>重新更新博客之后不能访问 404，加速时在 Github 项目根目录中创建了一个 <code>CANME</code>  （没有任何后缀）文件，在里面写上自己的域名，不要有任何的空格和其他换行，将这个文件放入source文件夹，重新部署就行。</p>
+<p>在约定加密方式的时候由服务器生成一对公私钥，服务器将公钥返回给客户端，客户端本地生成一串秘钥(AES_KEY)用于对称加密，并通过服务器发送的公钥进行加密得到(AES_KEY_SECRET)，之后返回给服务端，服务端通过私钥将客户端发送的 AES_KEY_SECRET 进行解密得到 AEK_KEY,最后客户端和服务器通过 AEK_KEY 进行报文的加密通讯，改造如下：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMVaLcNimtvuDuWZVNXeXFw_SvJBz0AAlTKMRvYf7lV9y5-UVwojAcBAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
+<p>可以看到这种情况下中间人是窃取不到用于 AES 加密的秘钥，所以对于后续的通讯是肯定无法进行解密了，那么这样做就是绝对安全了吗？</p>
+<p>所谓道高一尺魔高一丈，中间人为了对应这种加密方法又想出了一个新的破解方案，既然拿不到AES_KEY，那我就把自己模拟成一个客户端和服务器端的结合体，在用户-&gt;中间人的过程中中间人模拟服务器的行为，这样可以拿到用户请求的明文，在中间人-&gt;服务器的过程中中间人模拟客户端行为，这样可以拿到服务器响应的明文，以此来进行中间人攻击：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMWaLcNoVIZvTd5_l6_zA-8i8aMGmAAAlXKMRvYf7lVg24MJKEvkNUBAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
+<p>这一次通信再次被中间人截获，中间人自己也伪造了一对公私钥，并将公钥发送给用户以此来窃取客户端生成的 AES_KEY，在拿到 AES_KEY 之后就能轻松的进行解密了。</p>
+<p>中间人这样为所欲为，就没有办法制裁下吗，当然有啊，接下来我们看看 HTTPS 是怎么解决通讯安全问题的。</p>
+<h2 id="2-HTTPS-协议"><a href="#2-HTTPS-协议" class="headerlink" title="2. HTTPS 协议"></a>2. HTTPS 协议</h2><h3 id="2-1-HTTPS-简介"><a href="#2-1-HTTPS-简介" class="headerlink" title="2.1 HTTPS 简介"></a>2.1 HTTPS 简介</h3><p>HTTPS 其实是SSL+HTTP的简称,当然现在SSL基本已经被TLS取代了，不过接下来我们还是统一以SSL作为简称，SSL协议其实不止是应用在HTTP协议上，还在应用在各种应用层协议上，例如：FTP、WebSocket。</p>
+<p>其实SSL协议大致就和上一节非对称加密的性质一样，握手的过程中主要也是为了交换秘钥，然后再通讯过程中使用对称加密进行通讯，大概流程如下：<br><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMXaLcNudLv3xqhXsDCILcukHCfi9kAAlbKMRvYf7lVTWPjEn1YrDkBAAMCAAN5AAM2BA.png" srcset="/img/loading.gif" lazyload></p>
+<p>这里我只是画了个示意图，其实真正的 SSL 握手会比这个复杂的多，但是性质还是差不多，而且我们这里需要关注的重点在于 HTTPS 是如何防止中间人攻击的。</p>
+<p>通过上图可以观察到，服务器是通过 SSL 证书来传递公钥，客户端会对 SSL 证书进行验证，其中证书认证体系就是确保SSL安全的关键，接下来我们就来讲解下CA 认证体系，看看它是如何防止中间人攻击的。</p>
+<h3 id="2-2-CA-认证体系"><a href="#2-2-CA-认证体系" class="headerlink" title="2.2 CA 认证体系"></a>2.2 CA 认证体系</h3><p>上一节我们看到客户端需要对服务器返回的 SSL 证书进行校验，那么客户端是如何校验服务器 SSL 证书的安全性呢。</p>
+<ul>
+<li>权威认证机构</li>
+</ul>
+<p>在 CA 认证体系中，所有的证书都是由权威机构来颁发，而权威机构的 CA 证书都是已经在操作系统中内置的，我们把这些证书称之为 CA 根证书</p>
+<ul>
+<li>签发证书</li>
+</ul>
+<p>我们的应用服务器如果想要使用 SSL 的话，需要通过权威认证机构来签发 CA 证书，我们将服务器生成的公钥和站点相关信息发送给 CA 签发机构，再由 CA 签发机构通过服务器发送的相关信息用 CA 签发机构进行加签，由此得到我们应用服务器的证书，证书会对应的生成证书内容的签名，并将该签名使用 CA 签发机构的私钥进行加密得到证书指纹，并且与上级证书生成关系链。</p>
+<ul>
+<li>如何验证服务器证书</li>
+</ul>
+<p>那么客户端(浏览器)又是如何对服务器证书做校验的呢，首先会通过层级关系找到上级证书，通过上级证书里的公钥来对服务器的证书指纹进行解密得到签名(sign1)，再通过签名算法算出服务器证书的签名(sign2)，通过对比sign1和sign2，如果相等就说明证书是没有被篡改也不是伪造的。</p>
+<p>这里有趣的是，证书校验用的 RSA 是通过私钥加密证书签名，公钥解密来巧妙的验证证书有效性。</p>
+<p>这样通过证书的认证体系，我们就可以避免了中间人窃取AES_KEY从而发起拦截和修改 HTTP 通讯的报文。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>首先先通过对 HTTP 中间人攻击的来了解到 HTTP 为什么是不安全的，然后再从安全攻防的技术演变一直到 HTTPS 的原理概括，这里和大家一起学习。<br>原博客： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IHPUopud8eEOM8-T73Guuw?scene=1&click_id=2">https://mp.weixin.qq.com/s/IHPUopud8eEOM8-T73Guuw?scene=1&amp;click_id=2</a></p>
 
                 
               </div>
@@ -398,9 +386,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/GitHub/" class="print-no-link">#GitHub</a>
-      
-        <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="print-no-link">#个人博客</a>
+        <a href="/tags/%E7%BD%91%E7%BB%9C/" class="print-no-link">#网络</a>
       
     </div>
   
@@ -412,8 +398,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>使用 Cloudflare 加速 GitHub Pages 部署的个人博客</div>
-      <div>http://example.com/2024/06/13/使用 Cloudflare 加速 GitHub Pages 部署的个人博客/</div>
+      <div>HTTPS为什么是安全的</div>
+      <div>http://example.com/2024/07/30/HTTPS为什么是安全的/</div>
     </div>
     <div class="license-meta">
       
@@ -425,7 +411,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月13日</div>
+          <div>2024年7月30日</div>
         </div>
       
       
@@ -457,9 +443,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/07/30/HTTPS%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%89%E5%85%A8%E7%9A%84/" title="HTTPS为什么是安全的">
+                      <a href="/2025/06/27/%E6%9F%B3%E5%AE%97%E5%85%83%E7%94%9F%E5%B9%B3/" title="看完「刘柳」的故事才理解《江雪》的孤寂">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">HTTPS为什么是安全的</span>
+                        <span class="hidden-mobile">看完「刘柳」的故事才理解《江雪》的孤寂</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -467,8 +453,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/15/GitHub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A/" title="GitHub自建图床">
-                        <span class="hidden-mobile">GitHub自建图床</span>
+                      <a href="/2024/06/13/%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%8A%A0%E9%80%9F%20GitHub%20Pages%20%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="使用 Cloudflare 加速 GitHub Pages 部署的个人博客">
+                        <span class="hidden-mobile">使用 Cloudflare 加速 GitHub Pages 部署的个人博客</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
