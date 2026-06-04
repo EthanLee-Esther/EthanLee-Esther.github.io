@@ -19,21 +19,24 @@
   <meta name="author" content="Ethan Lee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前几篇我们分别讲解了：  [Agent 理论基础（一）模型与能力] [Agent 理论基础（二）从一次回答，到会推进任务的 Agent] [Agent 理论基础（三）Agent如何推进任务] [Agent 理论基础（四）AI如何真正做事]  我们已经解决了一个关键问题：AI 如何请求系统“做事”。 通过工具调用和 MCP，Agent 已经可以：  查询数据库 调用接口 发送邮件 操作真实系统  但">
+    <meta name="description" content="只用一个大模型吗？什么是多模态，什么又是向量模型？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ethan">
-<meta property="og:url" content="http://example.com/2026/06/04/%E5%9C%A8Agent%E7%B3%BB%E7%BB%9F%E9%87%8C%EF%BC%8C%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B%E6%9C%89%E5%95%A5%E7%94%A8%EF%BC%9F/index.html">
+<meta property="og:title" content="只用一个大模型吗？什么是多模态，什么又是向量模型">
+<meta property="og:url" content="http://example.com/2026/05/14/%E5%8F%AA%E7%94%A8%E4%B8%80%E4%B8%AA%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%90%97%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E6%A8%A1%E6%80%81%EF%BC%8C%E4%BB%80%E4%B9%88%E5%8F%88%E6%98%AF%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B%EF%BC%9F/index.html">
 <meta property="og:site_name" content="Ethan">
-<meta property="og:description" content="前几篇我们分别讲解了：  [Agent 理论基础（一）模型与能力] [Agent 理论基础（二）从一次回答，到会推进任务的 Agent] [Agent 理论基础（三）Agent如何推进任务] [Agent 理论基础（四）AI如何真正做事]  我们已经解决了一个关键问题：AI 如何请求系统“做事”。 通过工具调用和 MCP，Agent 已经可以：  查询数据库 调用接口 发送邮件 操作真实系统  但">
+<meta property="og:description" content="只用一个大模型吗？什么是多模态，什么又是向量模型？">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-06-04T09:50:26.997Z">
-<meta property="article:modified_time" content="2026-06-04T09:33:11.548Z">
+<meta property="article:published_time" content="2026-05-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-04T10:01:50.664Z">
 <meta property="article:author" content="Ethan Lee">
+<meta property="article:tag" content="大模型">
+<meta property="article:tag" content="多模态">
+<meta property="article:tag" content="向量模型">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Ethan</title>
+  <title>只用一个大模型吗？什么是多模态，什么又是向量模型 - Ethan</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="只用一个大模型吗？什么是多模态，什么又是向量模型"></span>
           
         </div>
 
@@ -225,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-06-04 17:50" pubdate>
-          2026年6月4日 下午
+        <time datetime="2026-05-14 00:00" pubdate>
+          2026年5月14日 凌晨
         </time>
       </span>
     
@@ -237,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.6k 字
         
       </span>
     
@@ -248,7 +251,7 @@
         
         
         
-          15 分钟
+          14 分钟
         
       </span>
     
@@ -285,119 +288,149 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">只用一个大模型吗？什么是多模态，什么又是向量模型</h1>
             
             
               <div class="markdown-body">
                 
-                <p>前几篇我们分别讲解了：</p>
+                <h1 id="只用一个大模型吗？什么是多模态，什么又是向量模型？"><a href="#只用一个大模型吗？什么是多模态，什么又是向量模型？" class="headerlink" title="只用一个大模型吗？什么是多模态，什么又是向量模型？"></a>只用一个大模型吗？什么是多模态，什么又是向量模型？</h1><p>很多人在第一次接触 Agent 时，往往会同时遇到一大堆新名词：</p>
 <ul>
-<li>[Agent 理论基础（一）模型与能力]</li>
-<li>[Agent 理论基础（二）从一次回答，到会推进任务的 Agent]</li>
-<li>[Agent 理论基础（三）Agent如何推进任务]</li>
-<li>[Agent 理论基础（四）AI如何真正做事]</li>
+<li>大模型</li>
+<li>Agent</li>
+<li>Agentic</li>
+<li>工具调用</li>
+<li>MCP</li>
+<li>向量模型</li>
+<li>RAG</li>
 </ul>
-<p>我们已经解决了一个关键问题：<strong>AI 如何请求系统“做事”。</strong></p>
-<p>通过工具调用和 MCP，Agent 已经可以：</p>
+<p>如果一上来就直接看代码或系统架构，这些概念很容易混在一起，最后变成一种模糊但自信的理解：</p>
+<blockquote>
+<p>“反正就是 AI，很厉害，能帮我做事。”</p>
+</blockquote>
+<p>但这种理解，在真正开始做 Agent 时，几乎一定会踩坑。</p>
+<p>因此，本节不会讨论任何实现细节，也不会涉及 Agent 的具体设计。我们只做一件事：<strong>从最基本的视角，搞清楚 AI 模型的能力边界</strong>。</p>
+<p>因为只有先弄明白——<strong>模型到底能做什么、不能做什么</strong>，后面 Agent、工具、RAG 这些概念，才会站得住。</p>
+<p>这一篇，我们搞清楚：</p>
+<p>一、不是所有模型都一样</p>
+<p>二、产品“什么都会”，并不代表模型“什么都会”</p>
+<p>三、大语言模型（LLM）</p>
+<p>四、多模态模型</p>
+<p>五、向量模型</p>
+<p>六、三类模型，各自解决什么问题</p>
+<p>七、谁在“指挥”这些能力？</p>
+<h2 id="一、不是所有模型都一样"><a href="#一、不是所有模型都一样" class="headerlink" title="一、不是所有模型都一样"></a>一、不是所有模型都一样</h2><p>在日常使用中，我们接触到的 AI 产品正在变得越来越“全能”。<br>比如像豆包这样的应用：</p>
 <ul>
-<li>查询数据库</li>
-<li>调用接口</li>
-<li>发送邮件</li>
-<li>操作真实系统</li>
+<li>你可以打字和它聊天</li>
+<li>也可以直接语音对话</li>
+<li>让它写文章、改代码、做总结</li>
+<li>甚至还能直接生成图片</li>
 </ul>
-<p>但只要你真正开始写 Agent，很快就会撞上另一个问题。</p>
-<h2 id="一、AI-怎么知道“该怎么查”"><a href="#一、AI-怎么知道“该怎么查”" class="headerlink" title="一、AI 怎么知道“该怎么查”"></a><strong>一、AI 怎么知道“该怎么查”</strong></h2><p>我们继续沿用前面那个贯穿始终的任务：</p>
+<p>当这些能力被整合在同一个界面中时，很容易给人一种直觉：</p>
 <ul>
-<li>查询最近一周的用户评论</li>
-<li>对评论内容进行分析</li>
-<li>输出结论或发送邮件</li>
+<li>“反正都是大模型”</li>
+<li>“换个模型，效果应该差不多”</li>
+<li>“AI 不就是能聊天、能写点东西吗？”</li>
+<li>这种感觉非常自然，而且几乎每个使用过 AI 产品的人都会产生。</li>
 </ul>
-<p>为了完成这个任务，我们可能已经给 Agent 提供了一个工具：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">queryDatabase</span><span class="hljs-params">(sql)</span></span><br></code></pre></td></tr></table></figure>
-
-<p>于是问题来了：</p>
-<p><strong>AI 要写什么 SQL？</strong></p>
-<p>要写一条正确的 SQL，至少需要知道：</p>
+<p>但问题在于：<strong>这种直觉，是把“产品能力”和“模型能力”混在了一起。</strong></p>
+<h2 id="二、产品“什么都会”，并不代表模型“什么都会”"><a href="#二、产品“什么都会”，并不代表模型“什么都会”" class="headerlink" title="二、产品“什么都会”，并不代表模型“什么都会”"></a>二、产品“什么都会”，并不代表模型“什么都会”</h2><p>像豆包这样看起来“什么都会”的产品，<strong>几乎不可能只靠一个模型完成</strong>。</p>
+<p>在真实系统中，它们背后往往是：</p>
 <ul>
-<li>有哪些表</li>
-<li>表之间的关系</li>
-<li>哪张表存评论</li>
-<li>时间字段叫什么</li>
-<li>用户字段在哪</li>
+<li>不同类型的模型，分别负责</li>
+<li>不同能力再由系统把这些能力组合、编排、封装</li>
+<li>最终呈现在一个统一的产品界面中</li>
 </ul>
-<p>但这些信息，对模型来说并不是“理所当然存在的”。</p>
-<h2 id="二、一个必须直面的事实：模型不知道你的系统"><a href="#二、一个必须直面的事实：模型不知道你的系统" class="headerlink" title="二、一个必须直面的事实：模型不知道你的系统"></a><strong>二、一个必须直面的事实：模型不知道你的系统</strong></h2><p>无论模型多强，它都不可能天然知道：</p>
+<p>也正因为这些能力在前台被“无缝拼接”在了一起，我们才会很容易误以为：</p>
+<blockquote>
+<p>“这个模型好像真的什么都能干。”</p>
+</blockquote>
+<p>为了避免这种混淆，我们需要换一个更基本、也更稳定的视角来看待 AI 模型。</p>
+<p>无论模型多复杂，从最基本的角度看，它们做的事情都可以抽象成一句话：</p>
+<p><strong>根据输入，生成输出</strong>。</p>
+<p>不同模型之间的差别，不在于“会不会生成”，而在于：</p>
 <ul>
-<li>你的数据库结构</li>
-<li>你的业务表名</li>
-<li>你的字段命名规范</li>
-<li>你的内部流程</li>
-<li>你系统里那些“只存在于你这里”的规则</li>
+<li>输入是什么形式</li>
+<li>输出是什么形式</li>
+<li>它们擅长处理哪一类信息</li>
 </ul>
-<p>这些内容有一个共同点，<strong>它们不是通用知识，而是系统知识。<strong>而模型的训练数据主要来自</strong>通用世界</strong>。所以，如果在没有任何额外信息的情况下，让 AI 直接生成 SQL，最常见的结果只有两种：</p>
+<p>基于这个视角，我们可以对目前常见的 AI 模型，做一个非常清晰的分类。</p>
+<h2 id="三、大语言模型（LLM）"><a href="#三、大语言模型（LLM）" class="headerlink" title="三、大语言模型（LLM）"></a>三、大语言模型（LLM）</h2><p>这是我们最熟悉、也最容易被当成“全部 AI”的一类模型。</p>
+<p>大语言模型擅长做的事情其实非常明确：<strong>理解自然语言，并生成自然语言</strong>。</p>
+<p>典型能力包括：</p>
 <ul>
-<li>写出一条“看起来合理、但执行失败”的 SQL</li>
-<li>反复试错，浪费大量 token 和时间</li>
+<li>总结一段文字</li>
+<li>翻译一段文本</li>
+<li>改写、润色、扩写内容</li>
+<li>根据描述生成代码</li>
 </ul>
-<p>这不是能力问题，而是<strong>信息缺失问题</strong>。</p>
-<h2 id="三、最直觉、但很快会失败的方案"><a href="#三、最直觉、但很快会失败的方案" class="headerlink" title="三、最直觉、但很快会失败的方案"></a><strong>三、最直觉、但很快会失败的方案</strong></h2><p>一个非常自然的想法是：“那我把所有数据库结构都塞进提示词里不就行了？”</p>
-<p>于是你可能会尝试：把所有表结构，所有字段说明，所有业务备注，一股脑丢给模型。</p>
-<p>这个方案在小系统里，可能还能勉强工作，但只要系统稍微复杂一点，就会立刻遇到现实限制：</p>
+<p>我们日常看到的很多 AI 使用场景，其实都是这一类模型在工作：</p>
 <ul>
-<li>数据库结构本身很长</li>
-<li>提示词有长度限制</li>
-<li>成本不可控</li>
-<li>每次任务只需要其中极小一部分信息</li>
+<li>写文案</li>
+<li>写代码</li>
+<li>做分析</li>
+<li>写总结</li>
 </ul>
-<p>更关键的是：<strong>即便你把所有信息都给了 AI，它也并不需要全部。</strong></p>
-<p>真正的问题其实是，<strong>在“所有系统知识”中，哪一小部分，和当前这个任务是相关的？</strong></p>
-<h2 id="四、向量模型，终于开始登场"><a href="#四、向量模型，终于开始登场" class="headerlink" title="四、向量模型，终于开始登场"></a><strong>四、向量模型，终于开始登场</strong></h2><p>这正是向量模型发挥作用的地方。</p>
-<p>我们在第一章中已经提到，向量模型只做一件事：<strong>衡量内容之间在语义层面上是否相关。</strong></p>
-<p>它并不理解业务逻辑，也不生成答案，但它非常擅长解决一个关键问题：<strong>“这些内容，和当前问题像不像？”</strong></p>
-<h2 id="五、把系统知识，变成“可检索的文本”"><a href="#五、把系统知识，变成“可检索的文本”" class="headerlink" title="五、把系统知识，变成“可检索的文本”"></a><strong>五、把系统知识，变成“可检索的文本”</strong></h2><p>一旦换一个视角，事情就会变得非常清晰。我们可以把系统中那些：</p>
+<p>这些任务的共同点只有一个：<strong>输入是文本，输出也是文本。</strong></p>
+<h2 id="四、多模态模型"><a href="#四、多模态模型" class="headerlink" title="四、多模态模型"></a>四、多模态模型</h2><p>在大语言模型的基础上，出现了能力进一步扩展的一类模型——<strong>多模态模型</strong>。</p>
+<p>这类模型不再只处理文本，还可以理解或生成：</p>
 <ul>
-<li>数据库表结构说明</li>
-<li>字段含义</li>
-<li>业务规则</li>
-<li>内部流程文档</li>
+<li>图片</li>
+<li>音频</li>
+<li>视频</li>
 </ul>
-<p>整理成一段段文本，然后使用向量模型，把这些文本转成向量，存入向量数据库，在需要时，按语义进行检索。</p>
-<p>这样一来，当 Agent 接到一个任务，比如：<strong>“查询最近一周的用户评论并统计问题类型”，<strong>系统并不会立刻让 AI 去写 SQL，而是先</strong>在“系统知识库”中，找出和“评论、时间、用户”最相关的那几段说明。</strong></p>
-<h2 id="六、RAG：不是让模型记住，而是让模型“查到”"><a href="#六、RAG：不是让模型记住，而是让模型“查到”" class="headerlink" title="六、RAG：不是让模型记住，而是让模型“查到”"></a><strong>六、RAG：不是让模型记住，而是让模型“查到”</strong></h2><p>当系统把检索到的相关信息作为上下文注入到当前任务中，再让模型基于这些信息去生成 SQL、做分析、做决策，这整套流程，就是我们常说的：</p>
-<p><strong>RAG（Retrieval-Augmented Generation，检索增强生成）</strong></p>
-<p>RAG 的关键价值，并不在“增强生成”这四个字上，而在于“<strong>检索</strong>”。</p>
-<p>它解决的是一个非常现实的问题：<strong>模型不需要记住整个系统，它只需要在需要的时候，看见该看的那一页。</strong></p>
-<h2 id="七、RAG-更多细节"><a href="#七、RAG-更多细节" class="headerlink" title="七、RAG 更多细节"></a><strong>七、RAG 更多细节</strong></h2><p>在很多介绍中，RAG 常常被描述成：“给模型加一个长期记忆”，“让 AI 记住你的私有数据”，这种说法并不完全错，但很容易产生误解。</p>
-<p>一个更准确的理解是：<strong>知识库不是模型的记忆，而是系统为 AI 准备的一本“随用随查的说明书”。</strong></p>
-<p>这些知识不属于模型本身，不需要被“学会”，也不需要被永久记住，它们只是在当前任务需要时，被系统检索出来临时提供给模型参考。</p>
-<p>当用 RAG 的方式组织系统知识，会立刻获得几个非常实在的收益：</p>
-<ol>
-<li>**上下文更短：**只给当前任务相关的信息</li>
-<li>**准确率更高：**模型基于真实结构做决策</li>
-<li>**成本可控：**不再反复试错</li>
-<li>**知识可维护：**改文档即可，不用改模型</li>
-<li>**系统边界清晰：**模型不“拥有”知识，系统拥有</li>
-</ol>
-<p>前面我们主要用“数据库结构”来举例，但在真实系统中，RAG 解决的问题远不止这些。任何具有以下特征的信息，都非常适合通过 RAG 提供给 AI：</p>
+<p>因此我们会看到一些新的能力形式：</p>
 <ul>
-<li>业务规则</li>
-<li>产品设计约定</li>
-<li>内部流程</li>
-<li>系统之间的依赖关系</li>
-<li>各种不通用、只存在于你系统中的知识</li>
+<li>看图说话</li>
+<li>图片内容理解</li>
+<li>文生图、文生视频</li>
 </ul>
-<p>它们的共同点是不会出现在通用模型的训练数据中，却是 AI 在当前场景下“必须知道”的信息。</p>
-<h2 id="八、把-Agent-的能力链条连起来"><a href="#八、把-Agent-的能力链条连起来" class="headerlink" title="八、把 Agent 的能力链条连起来"></a><strong>八、把 Agent 的能力链条连起来</strong></h2><p>到这里，我们终于可以把前几章的内容，完整地连成一条链：</p>
+<p>这里需要特别强调一个非常容易被误解的点：</p>
+<blockquote>
+<p><strong>多模态 ≠ 更聪明</strong></p>
+</blockquote>
+<p>多模态的本质含义是模型<strong>能处理的输入和输出形式变多</strong>了，而不是它在逻辑推理或判断能力上发生了质变。</p>
+<p>它解决的是“能不能看、能不能听、能不能画”，而不是“该不该做、下一步做什么”。</p>
+<h2 id="五、向量模型"><a href="#五、向量模型" class="headerlink" title="五、向量模型"></a>五、向量模型</h2><p>相比前两类模型，向量模型对大多数普通用户来说并不显眼，如果你没有接触过 AI 或 Agent 的开发，很可能几乎意识不到它们的存在。</p>
+<p>向量模型和前面两类模型，有一个非常本质的不同点是，<strong>它们不负责生成内容</strong>。</p>
+<p>向量模型的输出：</p>
 <ul>
-<li><strong>模型</strong>：负责理解与生成</li>
-<li><strong>Agent</strong>：负责目标与过程推进</li>
-<li><strong>工具 &#x2F; MCP</strong>：让 AI 能影响真实系统</li>
-<li><strong>向量模型 + RAG</strong>：让 AI 在需要时，知道该知道的事</li>
+<li>不是一句话</li>
+<li>不是一张图片</li>
+<li>而是一组数字（向量）</li>
 </ul>
-<p>这并不是在“让 AI 无所不知”，而是在用系统的方式，<strong>弥补模型不知道的那一部分内容。</strong></p>
-<p>接下来的问题就非常自然了：</p>
-<p><strong>如果把这些东西放在一起，一个最小可用的 Agent 系统，应该长什么样？</strong></p>
-<p>在下一章中，我们将把这些概念收拢起来，从系统视角，看一眼一个完整 Agent 系统的轮廓。</p>
+<p>这组数字表达的不是“内容本身”，而是：</p>
+<ul>
+<li>一段文本在<strong>语义空间中的位置</strong></li>
+<li>两段内容在语义层面上<strong>有多相似</strong></li>
+</ul>
+<p>也正因为如此，向量模型通常被用在一些“幕后但关键”的场景中：</p>
+<ul>
+<li>搜索</li>
+<li>推荐</li>
+<li>聚类</li>
+<li>RAG（检索增强生成）</li>
+</ul>
+<p>可以这样理解，<strong>向量模型不负责给答案，它负责帮你找到“该看的内容”</strong>。</p>
+<h2 id="六、三类模型，各自解决什么问题"><a href="#六、三类模型，各自解决什么问题" class="headerlink" title="六、三类模型，各自解决什么问题"></a>六、三类模型，各自解决什么问题</h2><p>如果把这三类模型放在一起对比，它们的分工其实非常清晰：</p>
+<ul>
+<li><strong>大语言模型</strong>：负责把话说清楚</li>
+<li><strong>多模态模型</strong>：让模型不只理解和生成文字</li>
+<li><strong>向量模型</strong>：判断内容之间是否相关、相似</li>
+</ul>
+<p>我们在很多 AI 产品中感受到的“全能”，并不是某一个模型什么都会，而是这些不同能力在背后被组合在了一起。</p>
+<h2 id="七、谁在“指挥”这些能力？"><a href="#七、谁在“指挥”这些能力？" class="headerlink" title="七、谁在“指挥”这些能力？"></a>七、谁在“指挥”这些能力？</h2><p>到这里，其实已经埋下了一个非常关键的问题，如果模型只是提供能力，</p>
+<ul>
+<li>那是谁在决定什么时候用哪种模型？</li>
+<li>是谁在控制流程？</li>
+<li>是谁在判断“下一步该做什么”？</li>
+</ul>
+<p>模型本身，并不会关心这些问题，它只会对你给它的输入，生成一个输出。</p>
+<p>而当我们希望 AI：</p>
+<ul>
+<li>不只是回答一句话</li>
+<li>而是完成一个有目标、有步骤的任务</li>
+</ul>
+<p>我们就必须引入一个新的概念——Agent。</p>
 
                 
               </div>
@@ -406,6 +439,38 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="print-no-link">#大模型</a>
+      
+        <a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/" class="print-no-link">#多模态</a>
+      
+        <a href="/tags/%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B/" class="print-no-link">#向量模型</a>
+      
+    </div>
   
 </div>
 
@@ -415,8 +480,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>http://example.com/2026/06/04/在Agent系统里，向量模型有啥用？/</div>
+      <div>只用一个大模型吗？什么是多模态，什么又是向量模型</div>
+      <div>http://example.com/2026/05/14/只用一个大模型吗？什么是多模态，什么又是向量模型？/</div>
     </div>
     <div class="license-meta">
       
@@ -428,7 +493,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年6月4日</div>
+          <div>2026年5月14日</div>
         </div>
       
       
@@ -460,9 +525,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/06/04/Agent%E9%9A%BE%E7%82%B9%E5%9C%A8%E4%BA%8E%E7%94%A8%E5%93%AA%E4%B8%AA%E6%A8%A1%E5%9E%8B%EF%BC%8C%E7%94%A8%E5%93%AA%E4%B8%AA%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9F/" title="">
+                      <a href="/2026/05/15/%E4%B8%80%E8%88%AC%E6%80%8E%E4%B9%88%E5%86%99skill%EF%BC%9F/" title="一般怎么写skill？">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">一般怎么写skill？</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -470,8 +535,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/06/04/AI%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E5%81%9A%E4%BA%8B%E7%9A%84%EF%BC%9F/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2026/05/08/Anaconda%EF%BC%9ADebian%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84Python%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%8E%AF%E5%A2%83%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" title="Anaconda：Debian环境下的Python数据科学环境完全指南">
+                        <span class="hidden-mobile">Anaconda：Debian环境下的Python数据科学环境完全指南</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

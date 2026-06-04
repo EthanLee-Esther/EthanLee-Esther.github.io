@@ -19,21 +19,23 @@
   <meta name="author" content="Ethan Lee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="书接上回[为什么需要agent，而不是对话框] 这次我们来聊一聊Agent如何推进任务  四、Agent 和 Workflow 的本质区别 Workflow：流程是人写死的 Agent：模型对过程拥有决策权 五、Agent 至少多了三层“意识” 六、Agent Loop：把“做事”抽象成一个循环 七、当一个 Agent 不够用的时候 八、Agentic 不是“模型技巧”，而是系统设计 九、Agen">
+    <meta name="description" content="Agent 和大模型有什么区别？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ethan">
-<meta property="og:url" content="http://example.com/2026/06/04/Agent%E6%80%8E%E4%B9%88%E6%8E%A8%E8%BF%9B%E5%B7%A5%E4%BD%9C%EF%BC%9F%E5%92%8CWorkflow%E5%8C%BA%E5%88%AB%EF%BC%9F/index.html">
+<meta property="og:title" content="Agent 和大模型有什么区别？">
+<meta property="og:url" content="http://example.com/2026/05/15/Agent%E5%92%8C%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/index.html">
 <meta property="og:site_name" content="Ethan">
-<meta property="og:description" content="书接上回[为什么需要agent，而不是对话框] 这次我们来聊一聊Agent如何推进任务  四、Agent 和 Workflow 的本质区别 Workflow：流程是人写死的 Agent：模型对过程拥有决策权 五、Agent 至少多了三层“意识” 六、Agent Loop：把“做事”抽象成一个循环 七、当一个 Agent 不够用的时候 八、Agentic 不是“模型技巧”，而是系统设计 九、Agen">
+<meta property="og:description" content="Agent 和大模型有什么区别？">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-06-04T09:50:04.603Z">
-<meta property="article:modified_time" content="2026-06-04T09:30:28.394Z">
+<meta property="article:published_time" content="2026-05-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-04T10:01:17.911Z">
 <meta property="article:author" content="Ethan Lee">
+<meta property="article:tag" content="大模型">
+<meta property="article:tag" content="Agent">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Ethan</title>
+  <title>Agent 和大模型有什么区别？ - Ethan</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="Agent 和大模型有什么区别？"></span>
           
         </div>
 
@@ -225,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-06-04 17:50" pubdate>
-          2026年6月4日 下午
+        <time datetime="2026-05-15 00:00" pubdate>
+          2026年5月15日 凌晨
         </time>
       </span>
     
@@ -237,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          755 字
         
       </span>
     
@@ -248,7 +250,7 @@
         
         
         
-          11 分钟
+          7 分钟
         
       </span>
     
@@ -285,109 +287,73 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">Agent 和大模型有什么区别？</h1>
             
             
               <div class="markdown-body">
                 
-                <p>书接上回[为什么需要agent，而不是对话框]</p>
-<p>这次我们来聊一聊Agent如何推进任务</p>
+                <h1 id="Agent和大模型有什么区别？"><a href="#Agent和大模型有什么区别？" class="headerlink" title="Agent和大模型有什么区别？"></a>Agent和大模型有什么区别？</h1><p>上文中说到<strong>模型只是能力，而不是“做事的主体”。</strong></p>
+<p>无论是大语言模型、多模态模型，还是向量模型，它们本质上都只是在做一件事：<strong>根据输入，生成输出。</strong></p>
+<p>但当我们开始尝试让 AI 解决真实问题时，很快就会发现一个现实的问题，<strong>很多任务，根本不是“一问一答”就能完成的</strong></p>
+<h2 id="一、一个“一次回答”解决不了的任务"><a href="#一、一个“一次回答”解决不了的任务" class="headerlink" title="一、一个“一次回答”解决不了的任务"></a><strong>一、一个“一次回答”解决不了的任务</strong></h2><p>我们先来看一个非常典型、也非常工程化的任务：</p>
 <ul>
-<li>四、Agent 和 Workflow 的本质区别</li>
-<li>Workflow：流程是人写死的</li>
-<li>Agent：模型对过程拥有决策权</li>
-<li>五、Agent 至少多了三层“意识”</li>
-<li>六、Agent Loop：把“做事”抽象成一个循环</li>
-<li>七、当一个 Agent 不够用的时候</li>
-<li>八、Agentic 不是“模型技巧”，而是系统设计</li>
-<li>九、Agent 要“做事”，就必须和真实世界交互</li>
+<li>从数据库中查询一些数据</li>
+<li>对这些数据进行分析</li>
+<li>最后把分析结果发送到指定的邮箱</li>
 </ul>
-<h2 id="四、Agent-和-Workflow-的本质区别"><a href="#四、Agent-和-Workflow-的本质区别" class="headerlink" title="四、Agent 和 Workflow 的本质区别"></a><strong>四、Agent 和 Workflow 的本质区别</strong></h2><p>在很多资料中，你会看到两个经常被放在一起讨论的概念：</p>
+<p>如果你把这个任务完整地丢给一个模型，让它“直接回答”，会发生什么？</p>
+<p>很可能得到的结果是：</p>
 <ul>
-<li>Workflow（工作流）</li>
-<li>Agent（智能体）</li>
+<li>一段看起来很合理的分析</li>
+<li>甚至附带了一条“假想中的 SQL”</li>
+<li>再加一句“我已经把结果发送到了邮箱”</li>
 </ul>
-<p>它们看起来很像，但在架构层面，有一个非常关键的区别。</p>
-<h3 id="Workflow：流程是人写死的"><a href="#Workflow：流程是人写死的" class="headerlink" title="Workflow：流程是人写死的"></a><strong>Workflow：流程是人写死的</strong></h3><p>在 Workflow 中，整个执行流程是提前设计好的，每一步做什么，顺序如何，都是固定的，模型只是在某些节点被调用。</p>
-<p>例如：</p>
+<p>但实际上：</p>
+<ul>
+<li>数据库并没有被查询</li>
+<li>分析并没有基于真实数据</li>
+<li>邮件也并没有真的发出去</li>
+</ul>
+<p>这并不是模型“不够聪明”，而是<strong>这个任务本身，就不适合用“一次输入、一次输出”的方式完成</strong>。</p>
+<h2 id="二、问题不在模型，而在任务本身"><a href="#二、问题不在模型，而在任务本身" class="headerlink" title="二、问题不在模型，而在任务本身"></a><strong>二、问题不在模型，而在任务本身</strong></h2><p>我们可以把任务简单分成两类：</p>
+<h3 id="一次性任务（Stateless-Task）"><a href="#一次性任务（Stateless-Task）" class="headerlink" title="一次性任务（Stateless Task）"></a><strong>一次性任务（Stateless Task）</strong></h3><p>这类任务的特点是：</p>
+<ul>
+<li>不依赖中间状态</li>
+<li>不需要多步推进</li>
+<li>输入和输出之间是强因果关系</li>
+</ul>
+<p>比如：</p>
+<ul>
+<li>总结一段文字</li>
+<li>翻译一段文本</li>
+<li>根据描述写一段代码</li>
+</ul>
+<p>这些任务，非常适合直接交给模型完成。</p>
+<h3 id="多步骤任务（Stateful-Task）"><a href="#多步骤任务（Stateful-Task）" class="headerlink" title="多步骤任务（Stateful Task）"></a><strong>多步骤任务（Stateful Task）</strong></h3><p>而刚才那个“查数据库 → 分析 → 发邮件”的任务，明显属于另一类。</p>
+<p>它的特点是：</p>
+<ul>
+<li>有明确的最终目标</li>
+<li>需要分步骤完成</li>
+<li>每一步都依赖前一步的结果</li>
+<li>中间过程必须和真实系统交互</li>
+</ul>
+<p>这类任务，本质上是一段<strong>过程</strong>，而不是一次<strong>回答</strong>。</p>
+<p>而只要任务变成了“过程”，就意味着我们需要一个东西来回答下面三个问题：</p>
 <ol>
-<li>查询数据库</li>
-<li>调用模型分析数据</li>
-<li>调用发邮件接口</li>
-</ol>
-<p>模型在 Workflow 中，不决定“下一步是什么”，只是被动参与某一步。</p>
-<p>Workflow 的优点是：</p>
-<ul>
-<li>可控</li>
-<li>稳定</li>
-<li>易于调试</li>
-</ul>
-<p>但它的灵活性非常有限。</p>
-<h3 id="Agent：模型对过程拥有决策权"><a href="#Agent：模型对过程拥有决策权" class="headerlink" title="Agent：模型对过程拥有决策权"></a><strong>Agent：模型对过程拥有决策权</strong></h3><p>而在 Agent 模式中，模型不再只是被调用的工具，它需要根据当前状态，决定下一步行动，整个任务的推进过程，是动态的。</p>
-<p>Agent 会持续思考：</p>
-<ul>
-<li>当前目标是否已经完成</li>
-<li>现有信息是否足够</li>
-<li>是否需要调用工具</li>
-<li>是否需要继续推进，还是可以结束</li>
-</ul>
-<p>换句话说，**Workflow 决定“怎么做”，Agent 决定“下一步做什么”，**这也是判断一个系统是否“Agentic”的最核心标准之一。</p>
-<h2 id="五、Agent-至少多了三层“意识”"><a href="#五、Agent-至少多了三层“意识”" class="headerlink" title="五、Agent 至少多了三层“意识”"></a><strong>五、Agent 至少多了三层“意识”</strong></h2><p>和普通的聊天式 AI 相比，一个 Agent 至少需要具备三层最基本的“任务意识”：</p>
-<ol>
-<li><strong>目标意识</strong><ul>
-<li>我现在要完成的任务是什么？</li>
-</ul>
-</li>
-<li><strong>状态意识</strong><ul>
+<li>我现在要完成什么目标？</li>
 <li>我已经做到哪一步了？</li>
-<li>当前手里有什么信息？</li>
-</ul>
-</li>
-<li><strong>行动意识</strong><ul>
-<li>接下来应该做什么？</li>
-<li>是否需要调用工具？</li>
-<li>是否可以结束任务？</li>
-</ul>
-</li>
+<li>接下来该做什么？</li>
 </ol>
-<p>正是这三层意识，让 Agent 从“回答者”，变成了“执行者”。</p>
-<h2 id="六、Agent-Loop：把“做事”抽象成一个循环"><a href="#六、Agent-Loop：把“做事”抽象成一个循环" class="headerlink" title="六、Agent Loop：把“做事”抽象成一个循环"></a><strong>六、Agent Loop：把“做事”抽象成一个循环</strong></h2><p>如果你有一定的工程经验，把上面的描述转成代码结构，在概念层面，几乎所有 Agent 系统，都会落在一个类似这样的循环中：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs kotlin"><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>    <span class="hljs-keyword">if</span> (think()) &#123;       <span class="hljs-comment">// 判断当前状态，是否需要继续</span><br>        execute();       <span class="hljs-comment">// 执行动作（可能是调用工具、生成内容等）</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">break</span>;           <span class="hljs-comment">// 目标已完成，或无需继续</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>需要注意的是，<code>think()</code>并不只是“思考一句话”，<code>execute()</code>也不一定真的执行代码，它们更多是一种<strong>职责划分。</strong></p>
-<p>Agent Loop 的价值在于把“推进任务”这件事结构化，让模型的参与变得可控、可观测，后面无论你看到多复杂的 Agent 框架，基本都可以还原到这个循环上来。</p>
-<h2 id="七、当一个-Agent-不够用的时候"><a href="#七、当一个-Agent-不够用的时候" class="headerlink" title="七、当一个 Agent 不够用的时候"></a><strong>七、当一个 Agent 不够用的时候</strong></h2><p>随着任务复杂度的提升，你很快会遇到一个问题，<strong>一个 Agent，未必适合做所有事情。</strong></p>
-<p>有些任务更偏向：</p>
+<p>模型本身，并不会天然地关心这些问题。</p>
+<h2 id="三、Agent-出现的真正原因"><a href="#三、Agent-出现的真正原因" class="headerlink" title="三、Agent 出现的真正原因"></a><strong>三、Agent 出现的真正原因</strong></h2><p>正是在这种背景下，<strong>Agent</strong> 这个概念开始出现。</p>
+<p>在不同的文章和框架中，你可能会看到对 Agent 的各种定义：</p>
 <ul>
-<li>计划与拆解</li>
-<li>信息检索</li>
-<li>数据分析</li>
-<li>结果总结</li>
+<li>有的强调“高度自治”</li>
+<li>有的强调“长期运行”</li>
+<li>有的强调“能自己规划”</li>
 </ul>
-<p>当系统中出现，多个职责清晰的 Agent，它们相互配合完成同一个目标时，我们就进入了一个更大的概念：<strong>Agentic System（智能体系统）</strong>。</p>
-<h2 id="八、Agentic-不是“模型技巧”，而是系统设计"><a href="#八、Agentic-不是“模型技巧”，而是系统设计" class="headerlink" title="八、Agentic 不是“模型技巧”，而是系统设计"></a><strong>八、Agentic 不是“模型技巧”，而是系统设计</strong></h2><p>Agentic 是一个非常新的概念。</p>
-<p>如果你现在去搜索 Agentic，会发现大量高质量的文章，集中出现在最近一两年，这并不是因为模型突然变了，而是因为 <strong>AI 第一次被当成“长期运行的系统组件”来使用。</strong></p>
-<p>Agentic 系统讨论的，不是用哪个模型，写什么提示词，而是更偏系统级的问题。</p>
-<p>例如：</p>
-<ul>
-<li>如何拆解任务</li>
-<li>如何管理状态</li>
-<li>如何控制不确定性</li>
-<li>如何让多个 Agent 协作</li>
-<li>如何让 AI 在确定的系统中稳定运行</li>
-</ul>
-<p>从这个角度看，<strong>Agentic 其实是后端领域的问题。</strong></p>
-<h2 id="九、Agent-要“做事”，就必须和真实世界交互"><a href="#九、Agent-要“做事”，就必须和真实世界交互" class="headerlink" title="九、Agent 要“做事”，就必须和真实世界交互"></a><strong>九、Agent 要“做事”，就必须和真实世界交互</strong></h2><p>到这里，其实已经引出了下一个绕不开的问题，Agent 可以决定下一步做什么，但<strong>真正的事情，依然必须由真实系统来执行</strong>。</p>
-<ul>
-<li>查询数据库</li>
-<li>调用接口</li>
-<li>发送邮件</li>
-<li>读写文件</li>
-</ul>
-<p>这些能力，模型本身是做不到的。</p>
-<p>那么 Agent 是如何“请求”这些能力的？系统又是如何安全、可控地把这些能力交给 AI 使用的？</p>
-<p>这正是下一章要讨论的核心内容：<strong>工具调用（Tool Calling）以及 MCP。</strong></p>
-<p>在下一章中，我们将看到：<strong>AI 并不是在“直接做事”，而是在“指挥系统做事”。</strong></p>
+<p>这些说法都不算错，但如果从工程角度抽象，Agent 的核心其实非常朴素，<strong>Agent 是一个带着目标、会分步骤推进任务的 AI 行为单元。</strong></p>
+<p>它关注的不是“怎么回答一句话”，而是“如何把一件事情真正做完”</p>
 
                 
               </div>
@@ -396,6 +362,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="print-no-link">#大模型</a>
+      
+        <a href="/tags/Agent/" class="print-no-link">#Agent</a>
+      
+    </div>
   
 </div>
 
@@ -405,8 +401,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>http://example.com/2026/06/04/Agent怎么推进工作？和Workflow区别？/</div>
+      <div>Agent 和大模型有什么区别？</div>
+      <div>http://example.com/2026/05/15/Agent和大模型有什么区别？/</div>
     </div>
     <div class="license-meta">
       
@@ -418,7 +414,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年6月4日</div>
+          <div>2026年5月15日</div>
         </div>
       
       
@@ -450,9 +446,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/06/04/AI%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E5%81%9A%E4%BA%8B%E7%9A%84%EF%BC%9F/" title="">
+                      <a href="/2026/05/17/Agent%E6%80%8E%E4%B9%88%E6%8E%A8%E8%BF%9B%E5%B7%A5%E4%BD%9C%EF%BC%9F%E5%92%8CWorkflow%E5%8C%BA%E5%88%AB%EF%BC%9F/" title="Agent 怎么推进工作？和 Workflow 区别？">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">Agent 怎么推进工作？和 Workflow 区别？</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -460,8 +456,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/06/04/Agent%E5%92%8C%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2026/05/15/%E4%B8%80%E8%88%AC%E6%80%8E%E4%B9%88%E5%86%99skill%EF%BC%9F/" title="一般怎么写skill？">
+                        <span class="hidden-mobile">一般怎么写skill？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

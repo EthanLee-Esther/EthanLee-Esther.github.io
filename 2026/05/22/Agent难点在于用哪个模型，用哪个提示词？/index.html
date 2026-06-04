@@ -19,21 +19,25 @@
   <meta name="author" content="Ethan Lee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="**Agent 的价值，不在于“多聪明”，而在于“能不能把任务推进下去”。**但只要任务涉及真实世界，就会立刻遇到一个无法回避的问题：AI 到底是怎么“做事”的？ 本章我们讲一讲：  一、AI 再聪明，也只是“想” 二、模型和系统的天然分工 三、最原始、也最直接的方式：工具调用 四、当工具越来越多，问题就不只是“调不调” 五、MCP：把“工具”变成可管理的能力 六、AI 得知道“该用哪个工具”">
+    <meta name="description" content="Agent难点在于用哪个模型，用哪个提示词？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ethan">
-<meta property="og:url" content="http://example.com/2026/06/04/AI%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E5%81%9A%E4%BA%8B%E7%9A%84%EF%BC%9F/index.html">
+<meta property="og:title" content="Agent难点在于用哪个模型，用哪个提示词？">
+<meta property="og:url" content="http://example.com/2026/05/22/Agent%E9%9A%BE%E7%82%B9%E5%9C%A8%E4%BA%8E%E7%94%A8%E5%93%AA%E4%B8%AA%E6%A8%A1%E5%9E%8B%EF%BC%8C%E7%94%A8%E5%93%AA%E4%B8%AA%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9F/index.html">
 <meta property="og:site_name" content="Ethan">
-<meta property="og:description" content="**Agent 的价值，不在于“多聪明”，而在于“能不能把任务推进下去”。**但只要任务涉及真实世界，就会立刻遇到一个无法回避的问题：AI 到底是怎么“做事”的？ 本章我们讲一讲：  一、AI 再聪明，也只是“想” 二、模型和系统的天然分工 三、最原始、也最直接的方式：工具调用 四、当工具越来越多，问题就不只是“调不调” 五、MCP：把“工具”变成可管理的能力 六、AI 得知道“该用哪个工具”">
+<meta property="og:description" content="Agent难点在于用哪个模型，用哪个提示词？">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-06-04T09:50:15.946Z">
-<meta property="article:modified_time" content="2026-06-04T09:31:35.503Z">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMeaiFHyOKjKRdVwHCHloeNH6LM-MsAAkwRaxtQJQlVsn2TzU1pFrABAAMCAAN5AAM7BA.png">
+<meta property="article:published_time" content="2026-05-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-04T10:01:03.364Z">
 <meta property="article:author" content="Ethan Lee">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="提示词">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMeaiFHyOKjKRdVwHCHloeNH6LM-MsAAkwRaxtQJQlVsn2TzU1pFrABAAMCAAN5AAM7BA.png">
   
   
   
-  <title>Ethan</title>
+  <title>Agent难点在于用哪个模型，用哪个提示词？ - Ethan</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="Agent难点在于用哪个模型，用哪个提示词？"></span>
           
         </div>
 
@@ -225,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-06-04 17:50" pubdate>
-          2026年6月4日 下午
+        <time datetime="2026-05-22 00:00" pubdate>
+          2026年5月22日 凌晨
         </time>
       </span>
     
@@ -237,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.2k 字
         
       </span>
     
@@ -248,7 +252,7 @@
         
         
         
-          13 分钟
+          11 分钟
         
       </span>
     
@@ -285,109 +289,61 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">Agent难点在于用哪个模型，用哪个提示词？</h1>
             
             
               <div class="markdown-body">
                 
-                <p>**Agent 的价值，不在于“多聪明”，而在于“能不能把任务推进下去”。**但只要任务涉及真实世界，就会立刻遇到一个无法回避的问题：<strong>AI 到底是怎么“做事”的？</strong></p>
-<p>本章我们讲一讲：</p>
+                <p>到这里，其实可以先停下来想一个问题。如果把前面几章的内容拆开来看，每一部分都不算复杂，模型、Agent、工具、RAG，这些概念单独拎出来，都很好理解。</p>
+<p>但真正让人困惑的，往往不是某一个概念本身，而是——<strong>它们放在一起之后，到底是怎么协作的？</strong></p>
+<p>很多人在理解 Agent 时，会不自觉地把注意力重新拉回“模型”身上。比如纠结用哪个模型、推理能力够不够强、是不是换个模型就能解决问题。</p>
+<p>但当你把视角抬高一点，从系统层面重新看一眼，就会发现一个很重要的事实：<strong>Agent 系统真正复杂的地方，从来不在模型本身。</strong></p>
+<h2 id="一、模型只是其中的一环，而不是中心"><a href="#一、模型只是其中的一环，而不是中心" class="headerlink" title="一、模型只是其中的一环，而不是中心"></a><strong>一、模型只是其中的一环，而不是中心</strong></h2><p>在一个真实的 Agent 系统中，模型并不是“主角”，而更像是一个能力模块。</p>
+<p>它负责理解语言、生成内容、做判断，但它并不掌控流程，也不掌控执行，模型并不知道任务从哪里开始，也不知道什么时候该结束，更不会关心中间结果是否已经被正确使用。</p>
+<p>这件事一旦想清楚，很多误解都会自然消失，Agent 系统并不是“一个模型变得更厉害了”，而是<strong>系统第一次把模型当成了一个可以被组织、被约束、被调用的组件</strong>。</p>
+<h2 id="二、Agent-的本质，是让系统“有了一个会思考的执行单元”"><a href="#二、Agent-的本质，是让系统“有了一个会思考的执行单元”" class="headerlink" title="二、Agent 的本质，是让系统“有了一个会思考的执行单元”"></a><strong>二、Agent 的本质，是让系统“有了一个会思考的执行单元”</strong></h2><p>如果说模型解决的是“怎么想、怎么说”，那么 Agent 解决的，是“这件事该怎么一步步做完”。</p>
+<p>Agent 并不直接干活，它更多是在做一件很像人的事情：不断判断当前处在什么状态，以及下一步是否值得继续推进。</p>
+<p>它会看目标是否已经完成，也会看手里的信息是否足够。必要的时候，它会请求系统提供新的信息；不必要的时候，它会选择结束。</p>
+<p>从这个角度看，Agent 更像是一个<strong>持续运行的决策单元</strong>，而不是一次性的“问答接口”。</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMeaiFHyOKjKRdVwHCHloeNH6LM-MsAAkwRaxtQJQlVsn2TzU1pFrABAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="三、工具，让-Agent-不再停留在“想法层面”"><a href="#三、工具，让-Agent-不再停留在“想法层面”" class="headerlink" title="三、工具，让 Agent 不再停留在“想法层面”"></a><strong>三、工具，让 Agent 不再停留在“想法层面”</strong></h2><p>但光有判断是不够的。</p>
+<p>Agent 可以决定“我需要查数据库”，却无法真的去查，它可以判断“应该发一封邮件”，却无法真的发送。工具的存在，本质上是在告诉 Agent：<strong>你不是孤立存在的，你背后有一个真实系统。</strong></p>
+<p>当 Agent 通过工具调用，把“请求”交给系统，而系统再把真实执行结果返回给 Agent 时，AI 的行为才第一次真正和现实世界发生了闭环。</p>
+<p>这一步非常关键。因为从这一刻开始，AI 不再只是“给建议”，而是开始参与“结果的形成”。</p>
+<h2 id="四、RAG-解决的，从来不是“聪不聪明”"><a href="#四、RAG-解决的，从来不是“聪不聪明”" class="headerlink" title="四、RAG 解决的，从来不是“聪不聪明”"></a><strong>四、RAG 解决的，从来不是“聪不聪明”</strong></h2><p>在很多介绍中，RAG 经常被包装成一种“增强 AI 能力”的技术。但如果你真的做过 Agent，就会发现它解决的，其实是一个更现实的问题：</p>
+<p><strong>AI 根本不知道你的系统。</strong></p>
+<p>不知道你的表结构，不知道你的业务规则，也不知道那些只存在于你公司、你项目里的约定。</p>
+<p>RAG 的作用，<strong>不是让模型“学会这些东西”，而是让系统在合适的时候，把合适的信息递到模型面前。</strong></p>
+<h2 id="五、把所有概念连起来，Agent-才真正成立"><a href="#五、把所有概念连起来，Agent-才真正成立" class="headerlink" title="五、把所有概念连起来，Agent 才真正成立"></a><strong>五、把所有概念连起来，Agent 才真正成立</strong></h2><p>当你把视角从单点概念，拉回整个系统，会发现一件很有意思的事。</p>
 <ul>
-<li>一、AI 再聪明，也只是“想”</li>
-<li>二、模型和系统的天然分工</li>
-<li>三、最原始、也最直接的方式：工具调用</li>
-<li>四、当工具越来越多，问题就不只是“调不调”</li>
-<li>五、MCP：把“工具”变成可管理的能力</li>
-<li>六、AI 得知道“该用哪个工具”</li>
+<li>模型负责思考和表达</li>
+<li>Agent 负责目标和推进</li>
+<li>工具负责执行</li>
+<li>RAG 负责补齐模型不知道的那部分世界</li>
 </ul>
-<h2 id="一、AI-再聪明，也只是“想”"><a href="#一、AI-再聪明，也只是“想”" class="headerlink" title="一、AI 再聪明，也只是“想”"></a><strong>一、AI 再聪明，也只是“想”</strong></h2><p>我们先回到一个非常基本的事实。无论模型看起来多智能，它都无法：</p>
+<p>没有哪一部分是“万能的”，但每一部分都有非常清晰的职责边界。</p>
+<p>也正因为如此，Agent 系统并不是一个“技巧集合”，而是一种<strong>重新组织 AI 能力的方式</strong>。</p>
+<p>走到这里，其实已经可以理解，为什么 Agent 和 Agentic 这个话题，会在工程圈里迅速升温。</p>
+<p>因为这里讨论的，已经不再是怎么写提示词，用哪个模型，而是一些非常熟悉的软件工程问题。</p>
 <ul>
-<li>真的查询数据库</li>
-<li>真的发送邮件</li>
-<li>真的调用内部系统</li>
-<li>真的修改文件</li>
+<li>状态怎么管理</li>
+<li>流程怎么控制</li>
+<li>不确定性怎么兜底</li>
+<li>组件之间怎么解耦</li>
+<li>系统如何演进而不失控</li>
 </ul>
-<p>原因很简单：**这些行为，本质上都是程序在执行代码，<strong>模型所做的一切，始终停留在</strong>“生成内容”**这一层：</p>
+<p>AI 的不确定性，并没有消失，只是第一次被放进了一个<strong>试图保持确定性的系统结构中</strong>。</p>
+<h2 id="六、概念阶段结束"><a href="#六、概念阶段结束" class="headerlink" title="六、概念阶段结束"></a><strong>六、概念阶段结束</strong></h2><p>到这一章为止，其实已经完成了一件很重要的事。</p>
+<p>你现在再回头看：</p>
 <ul>
-<li>它可以生成一条 SQL</li>
-<li>可以生成一段接口参数</li>
-<li>可以生成“我应该发送一封邮件”的判断</li>
+<li>模型</li>
+<li>Agent</li>
+<li>工具</li>
+<li>MCP</li>
+<li>向量</li>
+<li>RAG</li>
 </ul>
-<p>但如果没有真实系统配合，这些都只是“想法”。</p>
-<h2 id="二、模型和系统的天然分工"><a href="#二、模型和系统的天然分工" class="headerlink" title="二、模型和系统的天然分工"></a><strong>二、模型和系统的天然分工</strong></h2><p>一旦接受了这个事实，整个 Agent 系统的分工就会变得非常清晰：</p>
-<ul>
-<li><strong>模型负责判断与决策</strong></li>
-<li><strong>系统负责真实执行</strong></li>
-</ul>
-<p>换句话说，**AI 决定“该不该做、做什么”，程序决定“怎么做、能不能做”，**这条分工线，是所有 Agent 系统稳定运行的基础。</p>
-<h2 id="三、最原始、也最直接的方式：工具调用"><a href="#三、最原始、也最直接的方式：工具调用" class="headerlink" title="三、最原始、也最直接的方式：工具调用"></a><strong>三、最原始、也最直接的方式：工具调用</strong></h2><p>为了让 AI 能影响真实系统，我们需要给它一条“合法出口”，最简单的方式就是：<strong>提前写好一组函数，把它们作为“工具”提供给 AI。</strong></p>
-<p>例如：</p>
-<ul>
-<li>查询数据库 → <code>queryDatabase(sql)</code></li>
-<li>发送邮件 → <code>sendEmail(to, content)</code></li>
-</ul>
-<p>这些函数的内部实现：</p>
-<ul>
-<li>怎么连数据库</li>
-<li>怎么做鉴权</li>
-<li>怎么处理异常</li>
-</ul>
-<p><strong>AI 完全不需要知道，也不应该知道。</strong></p>
-<p>AI 只需要知道三件事：</p>
-<ol>
-<li>有哪些工具</li>
-<li>每个工具是干什么的</li>
-<li>需要什么参数</li>
-</ol>
-<p>然后再给 AI 一条非常关键的规则：如果在完成任务过程中，你认为需要使用某个工具，请告诉我，<strong>要调用哪个工具，以及对应的参数是什么。</strong></p>
-<p>当 AI 按照约定，返回<strong>工具名称</strong>和<strong>参数结构</strong>后，系统就可以：</p>
-<ol>
-<li>解析 AI 的返回</li>
-<li>调用真实的函数或接口</li>
-<li>获取执行结果</li>
-<li>再把结果原样交还给 AI</li>
-</ol>
-<p>AI 再根据这些<strong>真实结果</strong>，继续推进任务，这种协作方式，就是我们通常所说的：Tool Calling 或 Function Calling，它的核心思想并不复杂，但非常重要：<strong>AI 不执行代码，它“请求”系统执行代码。</strong></p>
-<h2 id="四、当工具越来越多，问题就不只是“调不调”"><a href="#四、当工具越来越多，问题就不只是“调不调”" class="headerlink" title="四、当工具越来越多，问题就不只是“调不调”"></a><strong>四、当工具越来越多，问题就不只是“调不调”</strong></h2><p>一旦系统中工具开始增长，你很快会遇到一组结构性问题：</p>
-<ul>
-<li>工具越来越多，怎么统一描述？</li>
-<li>每个工具需要哪些参数？</li>
-<li>新增一个工具，要不要改一堆提示词？</li>
-<li>工具只能是我项目里的函数吗？</li>
-<li>能不能用别人已经写好的工具？</li>
-</ul>
-<p>如果这些问题都靠“临时约定”解决，**工具本身就会变成新的复杂源头。**这时候，问题已经不再是“怎么写函数”，而是：<strong>怎么管理工具这个概念本身。</strong></p>
-<p>在早期的工具调用设计中，工具往往等价于项目里的一个函数或某个类的方法，但随着 Agent 系统复杂度提升，一个非常重要的变化开始出现：<strong>工具，不一定非得存在于你的代码里。</strong></p>
-<p>从系统角度看：</p>
-<ul>
-<li>查询数据库，是一种能力</li>
-<li>发邮件，是一种能力</li>
-<li>调用第三方接口，也是一种能力</li>
-</ul>
-<p>至于这项能力是本地函数、远程服务、还是别人写好的现成系统，对 Agent 来说，都不重要。重要的是：能力如何被描述，如何被发现，以及如何被安全地调用。</p>
-<h2 id="五、MCP：把“工具”变成可管理的能力"><a href="#五、MCP：把“工具”变成可管理的能力" class="headerlink" title="五、MCP：把“工具”变成可管理的能力"></a><strong>五、MCP：把“工具”变成可管理的能力</strong></h2><p>正是在这样的背景下，MCP 这个概念出现了。</p>
-<p>你可以把 MCP 理解为一套约定与运行方式，用来解决一个核心问题：**如何把工具，从“项目内部的函数”， **<strong>变成“可被 AI 统一使用的外部能力”。</strong></p>
-<p>在 MCP 的模式下，工具可以是独立运行的服务，可以由其他团队提供，甚至可以直接复用别人已经实现好的工具只要遵循同一套约定，Agent 就可以“看见”并使用它们。</p>
-<p>这里发生了一个非常关键的转变：<strong>Agent 不再依赖“我写了什么函数”，而是依赖“系统对外暴露了什么能力”。</strong></p>
-<p>如果把这一章的内容串起来，会发现一条非常清晰的演化路径：</p>
-<ol>
-<li>一开始，只是想让 AI 能“调用函数”</li>
-<li>接着，希望工具能被更好地描述和约束</li>
-<li>再往后，希望工具可以被复用、共享、独立运行</li>
-<li>最终，把工具抽象成“能力”，并通过统一协议暴露</li>
-</ol>
-<p>Tool Calling 解决的是“能不能调用”<strong>，而 MCP 关注的是</strong>“能力如何被组织和管理”。</p>
-<h2 id="六、AI-得知道“该用哪个工具”"><a href="#六、AI-得知道“该用哪个工具”" class="headerlink" title="六、AI 得知道“该用哪个工具”"></a><strong>六、AI 得知道“该用哪个工具”</strong></h2><p>到这里，我们其实已经解决了“AI 如何请求系统做事”的问题。但还有一个更根本的问题，尚未解决：<strong>AI 怎么知道，在当前任务下，该用哪个工具？</strong></p>
-<p>比如：</p>
-<ul>
-<li>要查询数据库，写哪张表？</li>
-<li>要分析数据，用哪种结构？</li>
-<li>哪些信息和当前任务是相关的？</li>
-</ul>
-<p>如果 AI 对系统一无所知，再好的工具也用不好。</p>
-<p>而这正是下一章要讨论的核心内容：<strong>向量模型、向量数据库，以及 RAG。</strong></p>
-<p>在下一章中，我们将看到：<strong>工具解决的是“能不能做”，RAG 解决的是“知道不知道”。</strong></p>
-<p>两者结合，Agent 才真正具备“做事”的能力。</p>
+<p>它们已经不再是零散的名词，而是可以自然连成一条逻辑链。这意味着，<strong>概念阶段已经足够了</strong>。 </p>
 
                 
               </div>
@@ -396,6 +352,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Agent/" class="print-no-link">#Agent</a>
+      
+        <a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D/" class="print-no-link">#提示词</a>
+      
+    </div>
   
 </div>
 
@@ -405,8 +391,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>http://example.com/2026/06/04/AI到底怎么做事的？/</div>
+      <div>Agent难点在于用哪个模型，用哪个提示词？</div>
+      <div>http://example.com/2026/05/22/Agent难点在于用哪个模型，用哪个提示词？/</div>
     </div>
     <div class="license-meta">
       
@@ -418,7 +404,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年6月4日</div>
+          <div>2026年5月22日</div>
         </div>
       
       
@@ -450,18 +436,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/06/04/%E5%9C%A8Agent%E7%B3%BB%E7%BB%9F%E9%87%8C%EF%BC%8C%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B%E6%9C%89%E5%95%A5%E7%94%A8%EF%BC%9F/" title="">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/06/04/Agent%E6%80%8E%E4%B9%88%E6%8E%A8%E8%BF%9B%E5%B7%A5%E4%BD%9C%EF%BC%9F%E5%92%8CWorkflow%E5%8C%BA%E5%88%AB%EF%BC%9F/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2026/05/20/%E5%9C%A8Agent%E7%B3%BB%E7%BB%9F%E9%87%8C%EF%BC%8C%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B%E6%9C%89%E5%95%A5%E7%94%A8%EF%BC%9F/" title="在Agent系统里，向量模型有啥用？">
+                        <span class="hidden-mobile">在Agent系统里，向量模型有啥用？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -19,12 +19,12 @@
   <meta name="author" content="Ethan Lee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="“Skill 和 Prompt 有什么区别？” “Skill 多了以后，怎么选择和管理？” “Skill 会不会污染上下文？” “如何评估一个 Skill 是否真的有用？” 往下讲一个更细的点：当 Agent 能力越来越多，怎么把重复经验沉淀成 Skill。 这个问题很容易答浅。 不少录友一听 Skill，就会说： “Skill 不就是一段提示词吗？” 这句话不能说完全错。 但还不够。 如果继续追">
+    <meta name="description" content="一般怎么写skill？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ethan">
-<meta property="og:url" content="http://example.com/2026/06/04/%E4%B8%80%E8%88%AC%E6%80%8E%E4%B9%88%E5%86%99skill%EF%BC%9F/index.html">
+<meta property="og:title" content="一般怎么写skill？">
+<meta property="og:url" content="http://example.com/2026/05/15/%E4%B8%80%E8%88%AC%E6%80%8E%E4%B9%88%E5%86%99skill%EF%BC%9F/index.html">
 <meta property="og:site_name" content="Ethan">
-<meta property="og:description" content="“Skill 和 Prompt 有什么区别？” “Skill 多了以后，怎么选择和管理？” “Skill 会不会污染上下文？” “如何评估一个 Skill 是否真的有用？” 往下讲一个更细的点：当 Agent 能力越来越多，怎么把重复经验沉淀成 Skill。 这个问题很容易答浅。 不少录友一听 Skill，就会说： “Skill 不就是一段提示词吗？” 这句话不能说完全错。 但还不够。 如果继续追">
+<meta property="og:description" content="一般怎么写skill？">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/UVianz7ybbib4xO9Y0oGA41oEJk1H0MtdIPS5wNIH7JcP0m9ZjNoRI06UbibClzic75GCgN183BiaZjrHOmxcJyJYtQTIuHciahnN6Ec7MTnX9LV0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0">
 <meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/UVianz7ybbib6ejH3hfJUP3FpJ3ZD5ia5vibDYoQYLicq4IFDOuqB95djic64QqgUPrYPzgDH76xCAN4fK8HOKvrbKCh6HQIJ2JVgcBHq3v5GzXRM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1">
@@ -33,15 +33,16 @@
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/UVianz7ybbib7PtVvdZPHPtesCjjGJlB5XWIh1ibMjKFZCWW7iakcfic9YdkicaJLjOdUqicOqGWM5JsLNicM6xeUe8NDVfBQRYEz3kLpmBvWkY51Fw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/UVianz7ybbib5097f8gicrWklsrHqt85ANla8q9wftk9z0ZVgBPyPTxiccWRO0ZKfn3fvFpx3U15suBfa2O5BpWQiao5fcaWRJIfd8ictgowzbwjQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/UVianz7ybbib56S9T8sG6bM2HJRUG3FDIOXYDPliaNN9sKPRqHv3iccaQrKaX2IUarfDTc3C5Z8bgb7Kc2D0FRIySEia5Xibx0iaRm1ddupZh4V5HE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6">
-<meta property="article:published_time" content="2026-06-04T09:50:48.887Z">
-<meta property="article:modified_time" content="2026-06-04T09:46:27.392Z">
+<meta property="article:published_time" content="2026-05-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-04T09:59:44.359Z">
 <meta property="article:author" content="Ethan Lee">
+<meta property="article:tag" content="skill">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_png/UVianz7ybbib4xO9Y0oGA41oEJk1H0MtdIPS5wNIH7JcP0m9ZjNoRI06UbibClzic75GCgN183BiaZjrHOmxcJyJYtQTIuHciahnN6Ec7MTnX9LV0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0">
   
   
   
-  <title>Ethan</title>
+  <title>一般怎么写skill？ - Ethan</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +223,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="一般怎么写skill？"></span>
           
         </div>
 
@@ -233,8 +234,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-06-04 17:50" pubdate>
-          2026年6月4日 下午
+        <time datetime="2026-05-15 00:00" pubdate>
+          2026年5月15日 凌晨
         </time>
       </span>
     
@@ -293,7 +294,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">一般怎么写skill？</h1>
             
             
               <div class="markdown-body">
@@ -842,6 +843,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/skill/" class="print-no-link">#skill</a>
+      
+    </div>
   
 </div>
 
@@ -851,8 +880,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>http://example.com/2026/06/04/一般怎么写skill？/</div>
+      <div>一般怎么写skill？</div>
+      <div>http://example.com/2026/05/15/一般怎么写skill？/</div>
     </div>
     <div class="license-meta">
       
@@ -864,7 +893,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年6月4日</div>
+          <div>2026年5月15日</div>
         </div>
       
       
@@ -896,12 +925,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2026/05/15/Agent%E5%92%8C%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/" title="Agent 和大模型有什么区别？">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Agent 和大模型有什么区别？</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/06/04/Agent%E9%9A%BE%E7%82%B9%E5%9C%A8%E4%BA%8E%E7%94%A8%E5%93%AA%E4%B8%AA%E6%A8%A1%E5%9E%8B%EF%BC%8C%E7%94%A8%E5%93%AA%E4%B8%AA%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9F/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2026/05/14/%E5%8F%AA%E7%94%A8%E4%B8%80%E4%B8%AA%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%90%97%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E6%A8%A1%E6%80%81%EF%BC%8C%E4%BB%80%E4%B9%88%E5%8F%88%E6%98%AF%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B%EF%BC%9F/" title="只用一个大模型吗？什么是多模态，什么又是向量模型">
+                        <span class="hidden-mobile">只用一个大模型吗？什么是多模态，什么又是向量模型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
