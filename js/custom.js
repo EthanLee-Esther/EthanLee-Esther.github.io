@@ -327,7 +327,6 @@ new Ribbons({
     animateSections: true
 }); 
 
-//背景黑色线条
 
 
 // 樱花飘落bynote.cn

@@ -1,0 +1,817 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/head.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#A89B91">
+  <meta name="author" content="Ethan Lee">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Ubuntu安装之后的一系列设置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Ubuntu后的配置">
+<meta property="og:url" content="http://example.com/2025/06/12/ubuntu%E5%AE%89%E8%A3%85%E4%B9%8B%E5%90%8E%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Ethan">
+<meta property="og:description" content="Ubuntu安装之后的一系列设置">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-08T14:54:23.510Z">
+<meta property="article:author" content="Ethan Lee">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>安装Ubuntu后的配置 - Ethan</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ETHAN&#39;S BLOG</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="安装Ubuntu后的配置"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-12 00:00" pubdate>
+          2025年6月12日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">安装Ubuntu后的配置</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>这段时间一直在折腾 Linux 系统，发现深深的喜欢上了这个系统，简洁、高效、占用小、免费… 就是有些需要找一些 windows 系统的平替软件，基本都能满足。之前折腾了好几次，每次弄完之后都没有记录笔记，导致每次重装系统之后都要一遍遍的搜索着弄，这次记录一下，之后便于还原系统。</p>
+<h1 id="1-安装系统时的分区"><a href="#1-安装系统时的分区" class="headerlink" title="1. 安装系统时的分区"></a>1. 安装系统时的分区</h1><p>这里分为两种情况，一是单系统，二是双系统。先说单系统，单系统很简单所有 All in one partition 就行。如果是双系统，就复杂一点，需要创建一个 swap 分区，约是内存的两倍，剩下的空间创建一个”根分区”。</p>
+<h1 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h1><h2 id="2-1-更换国内源"><a href="#2-1-更换国内源" class="headerlink" title="2.1 更换国内源"></a>2.1 更换国内源</h2><p>直接在软件更新中更换</p>
+<h2 id="2-2-sudo-的时候总要问密码，是不是很烦？"><a href="#2-2-sudo-的时候总要问密码，是不是很烦？" class="headerlink" title="2.2 sudo 的时候总要问密码，是不是很烦？"></a>2.2 sudo 的时候总要问密码，是不是很烦？</h2><p>那就不让它问了：</p>
+<ol>
+<li>建立一个新文件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo vim /etc/sudoers.d/your-user-name<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：把 your-user-name 改成你的名字</p>
+</blockquote>
+<ol start="2">
+<li>在里面写一行</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">your-user-name ALL = NOPASSWD : ALL<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改一下权限</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo chmod 0440 /etc/sudoers.d/your-user-name<br></code></pre></td></tr></table></figure>
+
+<p>以后就不会再问密码了</p>
+<h2 id="2-3-安装-vim"><a href="#2-3-安装-vim" class="headerlink" title="2.3 安装 vim"></a>2.3 安装 vim</h2><p>这里用的 vim 是代码随想录配置的 vim，配置的很好，直接用：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">git <span class="hljs-built_in">clone</span> https://github.com/youngyangyang04/PowerVim.git<br><span class="hljs-built_in">cd</span> PowerVim<br>sh install.sh<br></code></pre></td></tr></table></figure>
+
+<p>这里安装时先要安装 vim：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> apt install vim<br></code></pre></td></tr></table></figure>
+
+<p>在安装卡尔的 vim 的时候 ubuntu 会出现两个错误：</p>
+<ol>
+<li>出错 Syntax error: “ (“ unexpected 解决方法</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">ln</span> -fs /bin/bash /bin/sh<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Taglist: Exuberant ctags ( <a target="_blank" rel="noopener" href="http://ctags.sf.net/">http://ctags.sf.net</a> ) not found in PATH. Plugin is<br>那是因为当前系统没有安装 ctags 导致的，安装一个即可：</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> apt-get install ctags<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>不能设定语言为 zh_CN. Gb 2312</li>
+</ol>
+<p>首先，安装中文支持包 language-pack-zh-hans：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> apt-get install language-pack-zh-hans<br></code></pre></td></tr></table></figure>
+
+<p>然后，修改&#x2F;etc&#x2F;environment（在文件的末尾追加）：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">LANG=<span class="hljs-string">&quot;zh_CN.UTF-8&quot;</span><br>LANGUAGE=<span class="hljs-string">&quot;zh_CN:zh:en_US:en&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>再修改&#x2F;var&#x2F;lib&#x2F;locales&#x2F;supported. D&#x2F;local (没有这个文件就新建，同样在末尾追加)：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sh">en_US.UTF-8 UTF-8<br>zh_CN.UTF-8 UTF-8<br>zh_CN.GBK GBK<br>zh_CN GB2312<br></code></pre></td></tr></table></figure>
+
+<p>最后，执行命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> locale-gen<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>对于中文乱码是空格的情况，安装中文字体解决。</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> apt-get install fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming<br></code></pre></td></tr></table></figure>
+
+<p>vim 的Github 地址：<a target="_blank" rel="noopener" href="https://github.com/youngyangyang04/PowerVim">https://github.com/youngyangyang04/PowerVim</a></p>
+<h2 id="2-4-忽略终端大小写命令行补全"><a href="#2-4-忽略终端大小写命令行补全" class="headerlink" title="2.4 忽略终端大小写命令行补全"></a>2.4 忽略终端大小写命令行补全</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shel"># 编辑文件<br>vim ~/.inputrc<br><br><br># 添加以下设置<br># 忽略大小写<br>set completion-ignore-case on<br># 在模糊匹配时包括隐藏文件<br>set show-all-if-ambiguous on<br><br># 重启终端或者运行以下命令<br>bind -f ~/.inputrc<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-输入法"><a href="#3-输入法" class="headerlink" title="3.输入法"></a>3.输入法</h1><p>我目前用的输入法是 ibus 导入自己的词库就好用了；就是修改配置不太方便</p>
+<h2 id="fcitx"><a href="#fcitx" class="headerlink" title="fcitx"></a>fcitx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-built_in">sudo</span> apt install fcitx5 fcitx5-rime fcitx5-config-qt <span class="hljs-comment"># 或 fcitx5-config-gtk</span><br><span class="hljs-comment"># 安装中文语言包（如果未安装）</span><br><span class="hljs-built_in">sudo</span> apt install fonts-wqy-zenhei<br><span class="hljs-comment"># 配置fcitx</span><br>im-config<br><span class="hljs-comment">#安装gnome插件</span><br>https://extensions.gnome.org/extension/261/kimpanel/<br></code></pre></td></tr></table></figure>
+
+<h1 id="4-gnome扩展"><a href="#4-gnome扩展" class="headerlink" title="4.gnome扩展"></a>4.gnome扩展</h1><ol>
+<li>首先安装扩展管理器</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">安装必要的软件包</span><br>sudo apt update<br>sudo apt install gnome-shell-extension-manager<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">或者安装 chrome-gnome-shell</span><br>sudo apt install chrome-gnome-shell<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>AppIndicator and KStatusNotifierltem Support</strong> 在顶部面板添加系统托盘区域，支持传统 Linux 应用（如 Electron 应用、Qt&#x2F;KDE 应用）的状态图标显示。</li>
+<li><strong>Clipboard Indicator</strong> 在顶部面板添加剪贴板历史管理器，可查看、搜索、固定或清除复制的历史记录。</li>
+<li><strong>Coverflow Alt-Tab</strong> 修改 Alt+Tab 切换窗口的视觉效果，提供类似 macOS Cover Flow 的 3D 翻转动画或平铺预览。</li>
+<li><strong>Dash to Dock</strong> 自定义 Dock（程序坞）行为：调整位置、大小、动画，或将默认 Dash 转换为常驻 Dock。</li>
+<li><strong>Extension List</strong> 在 GNOME 设置中创建扩展管理界面，方便启用&#x2F;禁用&#x2F;删除扩展，无需通过浏览器访问 extensions.gnome.org。</li>
+<li><strong>GNOME Fuzzy App Search</strong> 增强应用搜索功能，支持模糊匹配（例如输入“frefox”可匹配“Firefox”），提升应用启动器（Overview）的搜索效率。</li>
+<li><strong>ibus font setting</strong> 调整 IBus 输入法的候选词字体和大小，改善非拉丁文字（如中文、日文）的输入显示体验。</li>
+<li><strong>Just Perfection</strong> 提供大量细微的 GNOME Shell 界面调整选项，如隐藏面板元素、调整动画速度、移除屏幕角标等。</li>
+<li><strong>Proxy Switcher</strong> 在顶部面板添加代理切换菜单，支持快速切换系统代理配置（如 HTTP&#x2F;Socks5），无需进入系统设置。</li>
+<li><strong>Vitals</strong> 在顶部面板显示系统监控信息，如 CPU&#x2F;内存&#x2F;磁盘使用率、温度、网络速度、电池健康度等。</li>
+<li><strong>Workspace Indicator</strong> 在顶部面板显示当前工作区（虚拟桌面）编号，部分版本支持重命名工作区。</li>
+<li><strong>Auto Move Windows</strong> 根据应用类型或规则，自动将新窗口移动到指定工作区（例如自动将终端放到工作区2）。</li>
+</ol>
+<h1 id="5-下拉式终端-guake"><a href="#5-下拉式终端-guake" class="headerlink" title="5. 下拉式终端-guake"></a>5. 下拉式终端-guake</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">更新包列表</span><br>sudo apt update<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 Guake</span><br>sudo apt install guake<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">重启 Guake</span><br>pkill guake &amp;&amp; guake &amp;<br></code></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>使用此终端需要使用Xorg桌面环境，使用WayLand会有Bug，目前未解决；</p>
+</blockquote>
+<h1 id="6-切换XORG和Wayland"><a href="#6-切换XORG和Wayland" class="headerlink" title="6.切换XORG和Wayland"></a>6.切换XORG和Wayland</h1><h2 id="6-1-在登录界面切换（推荐方法）"><a href="#6-1-在登录界面切换（推荐方法）" class="headerlink" title="6.1 在登录界面切换（推荐方法）"></a>6.1 在登录界面切换（推荐方法）</h2><p><strong>Ubuntu 24.04 默认启用 Wayland</strong>。在登录界面切换：</p>
+<ol>
+<li>注销当前会话（点击右上角 → 注销）</li>
+<li>在登录界面，点击用户名</li>
+<li>在密码框下方，点击<strong>齿轮图标</strong> ⚙️</li>
+<li>选择： <strong>Ubuntu</strong> 或 <strong>Ubuntu on Xorg</strong> → 使用 Xorg <strong>Ubuntu on Wayland</strong> → 使用 Wayland</li>
+</ol>
+<h2 id="6-2-修改默认配置"><a href="#6-2-修改默认配置" class="headerlink" title="6.2 修改默认配置"></a>6.2 修改默认配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/gdm3/custom.conf<br></code></pre></td></tr></table></figure>
+
+<p>找到并修改 <code>WaylandEnable</code>行：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment"># 禁用 Wayland，强制使用 Xorg</span><br><span class="hljs-attr">WaylandEnable</span>=<span class="hljs-literal">false</span><br><br><span class="hljs-comment"># 或启用 Wayland（默认）</span><br><span class="hljs-attr">WaylandEnable</span>=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 或自动选择</span><br><span class="hljs-comment"># WaylandEnable=auto</span><br></code></pre></td></tr></table></figure>
+
+<p>保存后重启：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart gdm3<br></code></pre></td></tr></table></figure>
+
+<h1 id="7-图形界面崩溃后怎么办"><a href="#7-图形界面崩溃后怎么办" class="headerlink" title="7.图形界面崩溃后怎么办"></a>7.图形界面崩溃后怎么办</h1><h2 id="紧急恢复（崩溃时操作）"><a href="#紧急恢复（崩溃时操作）" class="headerlink" title="紧急恢复（崩溃时操作）"></a><strong>紧急恢复（崩溃时操作）</strong></h2><ol>
+<li><p><strong>切换 TTY（文本终端）</strong></p>
+<ul>
+<li>快捷键：<code>Ctrl + Alt + F2</code>~ <code>F6</code>（F1 通常是图形界面）</li>
+<li>登录后尝试重启图形服务。</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<p>   <strong>重启 GNOME&#x2F;Wayland 会话</strong></p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 仅重启 GNOME Shell（保留登录状态）</span><br>killall -HUP gnome-shell<br></code></pre></td></tr></table></figure>
+
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 重启整个会话（退回登录界面）</span><br>pkill -9 gnome-shell<br></code></pre></td></tr></table></figure>
+
+<p>3. </p>
+<p>   <strong>强制重启 GDM（显示管理器）</strong></p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart gdm<br><span class="hljs-comment"># 或使用 lightdm/sddm</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+      
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>安装Ubuntu后的配置</div>
+      <div>http://example.com/2025/06/12/ubuntu安装之后的一系列设置/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ethan Lee</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/06/27/%E6%9F%B3%E5%AE%97%E5%85%83%E7%94%9F%E5%B9%B3/" title="看完「刘柳」的故事才理解《江雪》的孤寂">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">看完「刘柳」的故事才理解《江雪》的孤寂</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/12/%E9%BE%99%E7%94%9F%E4%B9%9D%E5%AD%90/" title="龙生九子到底有什么不同？">
+                        <span class="hidden-mobile">龙生九子到底有什么不同？</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="" target="_blank" rel="nofollow noopener"><span>Ethan</span></a> <i class="iconfont icon-love"></i> <a href="" target="_blank" rel="nofollow noopener"><span>Esther</span></a> 
+    </div>
+  
+  
+  
+
+  <div class="runtime">
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      <script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("06/01/2023 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已运行了 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+      setInterval("createtime()",250);
+      </script>
+  </div>
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":9}});</script></body>
+</html>
