@@ -1,0 +1,958 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/head.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#A89B91">
+  <meta name="author" content="Ethan Lee">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="学习 Spring 做一些记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring 学习笔记">
+<meta property="og:url" content="http://example.com/2022/04/03/Spring/index.html">
+<meta property="og:site_name" content="Ethan">
+<meta property="og:description" content="学习 Spring 做一些记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAIBEWooKXX-vqVAKHjLb8UWqqr9dhZRAAIQEmsb8htAVYWlVjgHjb3KAQADAgADeQADOwQ.png">
+<meta property="article:published_time" content="2022-04-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-09T15:06:48.337Z">
+<meta property="article:author" content="Ethan Lee">
+<meta property="article:tag" content="Spring全家桶">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAIBEWooKXX-vqVAKHjLb8UWqqr9dhZRAAIQEmsb8htAVYWlVjgHjb3KAQADAgADeQADOwQ.png">
+  
+  
+  
+  <title>Spring 学习笔记 - Ethan</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ETHAN&#39;S BLOG</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Spring 学习笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-03 00:00" pubdate>
+          2022年4月3日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Spring 学习笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="spring是什么？特性？有哪些模块？"><a href="#spring是什么？特性？有哪些模块？" class="headerlink" title="spring是什么？特性？有哪些模块？"></a>spring是什么？特性？有哪些模块？</h3><p>轻量级、非入侵式的控制反转和面向切面的框架</p>
+<p>特性：</p>
+<ol>
+<li>IOC和DI支持</li>
+<li>声明式事务支持</li>
+<li>快捷测试</li>
+<li>快速集成</li>
+<li>复杂API模板封装</li>
+</ol>
+<p>模块：</p>
+<ul>
+<li><strong>Spring core</strong>：核心基础，提供IOC和依赖注入DI特性</li>
+<li><strong>Spring Context</strong>：上下文容器，BeanFactory的加强子接口</li>
+<li><strong>Spring Web</strong>：提供web开发支持</li>
+<li><strong>Spring Mvc</strong></li>
+<li><strong>Spring Dao</strong></li>
+<li><strong>Spring ORM</strong>：支持流行的ORM框架整合</li>
+<li><strong>Spng AOP</strong></li>
+</ul>
+<h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><blockquote>
+<h3 id="什么是IOC？什么是DI？"><a href="#什么是IOC？什么是DI？" class="headerlink" title="什么是IOC？什么是DI？"></a>什么是IOC？什么是DI？</h3></blockquote>
+<p>IOC（控制反转）：对象的生命周期和依赖关系交给容器管理，我们需要什么，容器就给我什么。</p>
+<p>DI（依赖注入）：容器在把对象实例化时将它依赖的对象注入给它</p>
+<blockquote>
+<h3 id="简单说一下IOC的实现机制？"><a href="#简单说一下IOC的实现机制？" class="headerlink" title="简单说一下IOC的实现机制？"></a>简单说一下IOC的实现机制？</h3></blockquote>
+<p>IOC就是让容器去管理对象，自动化生成对象，我们需要什么就拿什么。</p>
+<ol>
+<li>首先创建一个bean的配置文件，配置文件中指定bean名字和bean所对应的类。</li>
+<li>定义bean的定义类，对应配置文件中bean的实体</li>
+<li>定义资源加载器，加载配置文件中类和bean的信息</li>
+<li>定义对象注册器，通过对象名字获取对象，创建一个map集合作为缓存，默认为单例，若存在则直接从map中获取，不存在则通过名字和对象放入map中</li>
+<li>定义对象工厂类，初始化时创建了对象的注册器，完成了资源的加载。通过名字获取对象，首先从缓存中拿，若没有，则创建对象，传入类，通过反射获取类的实例和名字，创建出来放入缓存中。</li>
+</ol>
+<blockquote>
+<h3 id="说说BeanFactory和ApplicantContext"><a href="#说说BeanFactory和ApplicantContext" class="headerlink" title="说说BeanFactory和ApplicantContext?"></a>说说BeanFactory和ApplicantContext?</h3></blockquote>
+<p>我的理解是BeanFactory是心脏，ApplicantContext就是身躯。</p>
+<p>首先ApplicantContext就是BeanFactory派生来的，在BeanFactory基础上提供了更多的功能，像bean的实例化&#x2F;串联、统一的资源文件访问方式、同时加载多个配置文件、支持国际化这些。</p>
+<p>至于他们的区别就是从四个方面来说：</p>
+<ul>
+<li>加载方式：<br>BeanFactory是延迟加载注入，只有第一次使用的时候才会实例化，导致有时候不能发现一些配置问题，第一次使用的时候才抛错<br>ApplicantContext是在容器启动时就一次创建所有对象，预载入所有单例对象。</li>
+<li>创建方式：<br>BeanFactory是编程式创建<br>ApplicantContext除了编程式创建，还可以声明式创建 ContextLoader</li>
+<li>注册方式：<br> 两者都支持BeanPostProcessor、BeanFactoPostProcessor的使用，但是BeanFactory支持手动注册，ApplicantContext是自动注册</li>
+<li>依赖关系<br> BeanFactory是spring最底层的接口，提供了对象定义、配置文件读取、加载、对象实例化、生命周期控制、维护依赖关系等一系列功能。<br>  ApplicantContext除了BeanFactory拥有的功能以外，还提供额外功能：<br>             - 统一资源文件访问方式<br>             - 同时加载多个配置文件<br>             - 继承Messageresource，支持国际化<br>             - 在监听器中注册bean的事件</li>
+</ul>
+<blockquote>
+<h3 id="Spring-容器启动阶段会干什么？"><a href="#Spring-容器启动阶段会干什么？" class="headerlink" title="Spring 容器启动阶段会干什么？"></a>Spring 容器启动阶段会干什么？</h3></blockquote>
+<p>启动时分为两个阶段：容器启动阶段和Bean实例化阶段。</p>
+<p>其中容器启动阶段是加载配置文件中的信息到bean定义中。</p>
+<p>实例化阶段就是实例化对象，装配依赖，生命周期回调。</p>
+<p>容器启动开始，首先会通过一些工具类像BeanDefinitionReader解析加载的configuration metadata，将分析后的信息加载到对象定义类中，通过对象定义类注册到对象定义注册器里就完成了容器的启动。</p>
+<blockquote>
+<h3 id="SpringBean的生命周期？"><a href="#SpringBean的生命周期？" class="headerlink" title="SpringBean的生命周期？"></a>SpringBean的生命周期？</h3></blockquote>
+<p>Bean的生命周期大致分为四个阶段：<strong>实例化</strong>、<strong>属性赋值</strong>、<strong>初始化</strong>、<strong>销毁</strong>。</p>
+<p>实例化：实例化一个bean对象<br>属性赋值：设置bean的相关属性和依赖<br>初始化：初始化通过调用BeanNameAware设置对象名，接着设置对象工厂，调用前置初始化处理方法，初始化bean，自定义init方法，后置初始化处理方法，使用bean。<br>销毁：DisposableBean销毁方法，自定义销毁方法。</p>
+<blockquote>
+<h3 id="Bean定义和依赖定义有哪些方式？"><a href="#Bean定义和依赖定义有哪些方式？" class="headerlink" title="Bean定义和依赖定义有哪些方式？"></a>Bean定义和依赖定义有哪些方式？</h3></blockquote>
+<p>有三种方式：</p>
+<ol>
+<li>直接编码</li>
+<li>配置文件</li>
+<li>注解</li>
+</ol>
+<ul>
+<li>直接编码：一般用不到，其他方式最终都是通过直接编码的方式实现</li>
+<li>配置文件：通过xml、properties等配置文件配置相应的依赖关系，读取配置文件，完成相关依赖注入</li>
+<li>注解：用的最多的一种方式，扫描注解，完成依赖注入</li>
+</ul>
+<blockquote>
+<h3 id="依赖注入的方法？"><a href="#依赖注入的方法？" class="headerlink" title="依赖注入的方法？"></a>依赖注入的方法？</h3></blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs puml">@startmindmap<br>* 依赖注入方法<br>    * 构造方法注入<br>    * 属性注入<br>    * 工厂方法注入<br>        * 非静态工厂方法<br>        * 静态工厂<br>@endmindmap<br></code></pre></td></tr></table></figure>
+
+
+<blockquote>
+<h3 id="Spring-有哪些自动装配的方式？"><a href="#Spring-有哪些自动装配的方式？" class="headerlink" title="Spring 有哪些自动装配的方式？"></a>Spring 有哪些自动装配的方式？</h3></blockquote>
+<blockquote>
+<p>什么是自动装配？</p>
+</blockquote>
+<p>自动装配就是Spring IOC容器知道所有的bean信息，通过反射机制可以获取实现类的构造方法、属性等信息。通过这些信息就可以对容器中的bean自动装配，无需显式进行依赖配置。</p>
+<p>自动装配方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs puml">@startmindmap<br>* Spring自动装配<br>    * byType<br>    * byName<br>    * constructor<br>    * autodetect<br>@endmindmap<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>byName</strong>：根据名字装配</li>
+<li><strong>byType</strong>：根据类型自动装配</li>
+<li><strong>constructor</strong>：与类型装配相似，但是是针对构造方法而言</li>
+<li><strong>autodetect</strong>：根据Bean的自省机制来决定是byType还是constructor，如果Bean提供了默认的构造函数，则通过bytype，否则通过 constructor</li>
+</ul>
+<blockquote>
+<h3 id="Spring-中的Bean的作用域有哪些？"><a href="#Spring-中的Bean的作用域有哪些？" class="headerlink" title="Spring 中的Bean的作用域有哪些？"></a>Spring 中的Bean的作用域有哪些？</h3></blockquote>
+<p>五种作用域：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs puml">@startmindmap<br>* 作用域<br>    * singleton<br>    * prototype<br>    * request<br>    * session<br>    * global-session<br>@endmindmap<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>singleton：仅存在一个实例，Bean以单例形式存在，默认作用域</li>
+<li>prototype：每次从容器中调用bean时，都回获取一个新的实例</li>
+<li>request：每一次http请求都会产生一个新的Bean，只在这一次请求中有效</li>
+<li>session：一个session中共用一个bean，不同的session不同的Bean</li>
+<li>globalSession：同一个全局session使用同一个Bean</li>
+</ul>
+<blockquote>
+<h3 id="Spring-中的单例Bean会存在线程安全问题吗？"><a href="#Spring-中的单例Bean会存在线程安全问题吗？" class="headerlink" title="Spring 中的单例Bean会存在线程安全问题吗？"></a>Spring 中的单例Bean会存在线程安全问题吗？</h3></blockquote>
+<p>首先Spring中的单例Bean不是线程安全的。</p>
+<p>因为是单例Bean，所有线程共享。如果说单例Bean是无状态的（不做除了除了查询意外的任何操作），那么这个单例就是线程安全的。如果这单例是有状态的会对Bean中的成员变量进行读写操作，那么就可能存在线程安全问题。</p>
+<blockquote>
+<p>如何解决这些单例bean的线程安全问题？</p>
+</blockquote>
+<ol>
+<li>将Bean定义为多例（不推荐）</li>
+<li>将Bean中的成员变量保存到Threadloal中</li>
+</ol>
+<blockquote>
+<h3 id="说说循环依赖？"><a href="#说说循环依赖？" class="headerlink" title="说说循环依赖？"></a>说说循环依赖？</h3></blockquote>
+<blockquote>
+<p>什么是循环依赖？</p>
+</blockquote>
+<p>循环依赖就是自己依赖自己，或者a中依赖b的，b中依赖a的。</p>
+<blockquote>
+<p>Spring 中支持解决哪些循环依赖？</p>
+</blockquote>
+<p>AB 循环依赖：</p>
+<ul>
+<li>ab均采用构造器注入，不支持</li>
+<li>ab均采用setter方法注入，支持</li>
+<li>ab均采用属性自动注入，支持</li>
+<li>a中注入的b为setter注入，b中注入的a为构造器注入，支持</li>
+<li>b中注入的a为setter注入，a中注入的b为构造器注入，不支持（原因是spring创建bean时默认按照自然排序创建，a先于b创建）</li>
+</ul>
+<blockquote>
+<p>如何解决循环依赖的问题？</p>
+</blockquote>
+<p>Spring提供了三级缓存解决</p>
+<ul>
+<li>一级缓存：单例池，专门保存实例化、属性赋值（注入）、初始化完成的bean实例</li>
+<li>二级缓存：早起曝光对象，用于保存实例化完成的bean实例</li>
+<li>三级缓存：早起曝光对象工厂，用于保存bean创建工厂，以便于后面扩展有机会创建代理对象</li>
+</ul>
+<p>AB循环依赖过程：</p>
+<ol>
+<li>创建A实例：实例化A时，将A实例化对象工厂放入三级缓存，虽然不完整，暴露出来让大家知道。</li>
+<li>A注入属性时，发现依赖B，B还没有被创建，去实例化B，实例化B的时候发现依赖A，从一级缓存找到三级缓存，三级缓存发现了对象工厂A，虽然不完善，但是存在，把A放入二级缓存，删除三级缓存的A，B实例化完成。</li>
+<li>接着A完成属性赋值，在一级缓存中拿到B，A也完成了初始化，将二级缓存中的A删除，A放入一级缓存。</li>
+<li>最后AB都完成实例化和初始化存在一级缓存。</li>
+</ol>
+<blockquote>
+<p>为什么要三级缓存？二级不行吗？</p>
+</blockquote>
+<p>不行，主要是为了生成代理对象，如果没有代理对象，使用二级缓存也是没有问题的，但是如果存在代理，三级缓存没有问题，二级缓存就不行了。</p>
+<p>三级缓存中存放的是生成的具体对象的匿名内部类、获取Object的时候，他就可以生成代理对象，也可以返回普通对象。使用三级缓存是为了每次从中拿到的都是同一个对象。</p>
+<p>如果只有二级缓存的话，往二级缓存中放一个普通bean对象，bean初始化过程中使用BeanPostProcessor生成代理对象之后，覆盖掉二级缓存中的普通Bean对象，就可能导致对象不一致。</p>
+<blockquote>
+<p>@Autowired 实现原理？</p>
+</blockquote>
+<p>实现@Autowired的功能，主要也是通过后置处理器AutowiredAnnotationBeanPostProcessor。</p>
+<p>创建Bean的过程中，调用doCreateBean（）方法，在此方法中调用populateBean（）方法进行属性填充，完成自动装配等工作。<br>populateBean（）方法中调用了两次后置处理器，第一次是为了判断是否需要属性填充，如果不需要，直接return，如果需要继续往下执行，调用postProcessPropertyValue（）方法解析Autowired注解，实现自动装配。</p>
+<p>查找@Autowired，现在容器中找，结果为一个时，直接装配，不止一个时，根据名称查找，不存在会抛出异常。解决：required &#x3D; false</p>
+<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><blockquote>
+<p>说一说什么是AOP?</p>
+</blockquote>
+<p>面向切面变成，就是把业务逻辑中一些相同的代码抽取到一个单独模块中，让业务逻辑更加清爽。</p>
+<h3 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h3><p><strong>AOP（Aspect-Oriented Programming，面向切面编程）</strong> 是一种编程范式，旨在将那些<strong>横跨多个模块的通用逻辑（称为”横切关注点”）<strong>从业务代码中分离出来，以实现代码的</strong>模块化</strong>和<strong>解耦</strong>。</p>
+<h3 id="二、核心概念"><a href="#二、核心概念" class="headerlink" title="二、核心概念"></a>二、核心概念</h3><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>切面</strong></td>
+<td>横切关注点的模块化封装，如日志、事务、权限等</td>
+</tr>
+<tr>
+<td><strong>连接点</strong></td>
+<td>程序执行中的某个点，如方法调用、异常抛出</td>
+</tr>
+<tr>
+<td><strong>切入点</strong></td>
+<td>定义”在哪些连接点上”应用切面的表达式</td>
+</tr>
+<tr>
+<td><strong>通知&#x2F;增强</strong></td>
+<td>切面在连接点上执行的动作，包括：Before、After、Around、AfterReturning、AfterThrowing</td>
+</tr>
+<tr>
+<td><strong>织入</strong></td>
+<td>将切面应用到目标对象并创建代理的过程</td>
+</tr>
+</tbody></table>
+<h3 id="三、为什么需要-AOP？"><a href="#三、为什么需要-AOP？" class="headerlink" title="三、为什么需要 AOP？"></a>三、为什么需要 AOP？</h3><h4 id="❌-没有-AOP-时（代码臃肿、耦合严重）"><a href="#❌-没有-AOP-时（代码臃肿、耦合严重）" class="headerlink" title="❌ 没有 AOP 时（代码臃肿、耦合严重）"></a>❌ 没有 AOP 时（代码臃肿、耦合严重）</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scss">public void <span class="hljs-built_in">transfer</span>() &#123;<br>    log<span class="hljs-selector-class">.info</span>(&quot;开始转账&quot;);        <span class="hljs-comment">// 日志逻辑</span><br>    auth<span class="hljs-selector-class">.check</span>();               <span class="hljs-comment">// 权限逻辑</span><br>    try &#123;<br>        tx<span class="hljs-selector-class">.begin</span>();             <span class="hljs-comment">// 事务逻辑</span><br>        <span class="hljs-comment">// 核心业务逻辑：转账</span><br>        tx<span class="hljs-selector-class">.commit</span>();<br>    &#125; <span class="hljs-built_in">catch</span>(Exception e) &#123;<br>        tx<span class="hljs-selector-class">.rollback</span>();          <span class="hljs-comment">// 事务回滚</span><br>        log<span class="hljs-selector-class">.error</span>(&quot;转账失败&quot;);   <span class="hljs-comment">// 日志逻辑</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>🤯 每个业务方法都充斥着日志、权限、事务等<strong>非核心代码</strong>，散落各处，难以维护。</p>
+</blockquote>
+<h4 id="✅-使用-AOP-后（职责清晰、优雅解耦）"><a href="#✅-使用-AOP-后（职责清晰、优雅解耦）" class="headerlink" title="✅ 使用 AOP 后（职责清晰、优雅解耦）"></a>✅ 使用 AOP 后（职责清晰、优雅解耦）</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">// 核心业务只关注业务逻辑</span><br><span class="hljs-variable">@Transaction</span><br><span class="hljs-variable">@Log</span><br><span class="hljs-variable">@Auth</span><br>public void <span class="hljs-built_in">transfer</span>() &#123;<br>    <span class="hljs-comment">// 核心业务逻辑：转账</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>🎯 通过注解或配置，将横切关注点<strong>统一管理</strong>，业务代码变得纯净。</p>
+</blockquote>
+<h3 id="四、五种通知类型"><a href="#四、五种通知类型" class="headerlink" title="四、五种通知类型"></a>四、五种通知类型</h3><table>
+<thead>
+<tr>
+<th>通知类型</th>
+<th>执行时机</th>
+<th>典型场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Before</strong></td>
+<td>目标方法执行前</td>
+<td>参数校验、权限检查</td>
+</tr>
+<tr>
+<td><strong>AfterReturning</strong></td>
+<td>目标方法正常返回后</td>
+<td>记录返回结果</td>
+</tr>
+<tr>
+<td><strong>AfterThrowing</strong></td>
+<td>目标方法抛出异常后</td>
+<td>异常日志、告警</td>
+</tr>
+<tr>
+<td><strong>After</strong></td>
+<td>目标方法执行后（无论是否异常）</td>
+<td>资源释放</td>
+</tr>
+<tr>
+<td><strong>Around</strong></td>
+<td>包裹目标方法（最强大）</td>
+<td>性能统计、事务管理</td>
+</tr>
+</tbody></table>
+<h3 id="五、AOP-的实现方式"><a href="#五、AOP-的实现方式" class="headerlink" title="五、AOP 的实现方式"></a>五、AOP 的实现方式</h3><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+<th>代表框架</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>编译时织入</strong></td>
+<td>在编译阶段修改字节码</td>
+<td>AspectJ</td>
+</tr>
+<tr>
+<td><strong>类加载时织入</strong></td>
+<td>类加载时修改字节码</td>
+<td>AspectJ + Agent</td>
+</tr>
+<tr>
+<td><strong>运行时动态代理</strong></td>
+<td>运行时生成代理对象</td>
+<td><strong>Spring AOP</strong>（JDK动态代理 &#x2F; CGLIB）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>🔔 Spring AOP 默认使用 <strong>JDK 动态代理</strong>（目标实现了接口时）或 <strong>CGLIB</strong>（目标未实现接口时）。</p>
+</blockquote>
+<h3 id="六、经典应用场景"><a href="#六、经典应用场景" class="headerlink" title="六、经典应用场景"></a>六、经典应用场景</h3><ul>
+<li>📝 <strong>日志记录</strong>：统一记录方法入参、出参、耗时</li>
+<li>🔐 <strong>权限校验</strong>：统一鉴权拦截</li>
+<li>💾 <strong>事务管理</strong>：Spring <code>@Transactional</code> 的底层实现</li>
+<li>⚡ <strong>性能监控</strong>：方法耗时统计</li>
+<li>🔄 <strong>缓存管理</strong>：方法结果缓存</li>
+<li>🛡️ <strong>异常处理</strong>：统一异常捕获与转换</li>
+</ul>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAIBEWooKXX-vqVAKHjLb8UWqqr9dhZRAAIQEmsb8htAVYWlVjgHjb3KAQADAgADeQADOwQ.png" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/" class="print-no-link">#Spring全家桶</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Spring 学习笔记</div>
+      <div>http://example.com/2022/04/03/Spring/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ethan Lee</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/09/03/SpringCloud/" title="Spring Cloud">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Spring Cloud</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/03/%E4%BA%91%E5%8C%BB%E7%96%97%E5%B9%B3%E5%8F%B0/" title="云医疗平台项目笔记">
+                        <span class="hidden-mobile">云医疗平台项目笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="" target="_blank" rel="nofollow noopener"><span>Ethan</span></a> <i class="iconfont icon-love"></i> <a href="" target="_blank" rel="nofollow noopener"><span>Esther</span></a> 
+    </div>
+  
+  
+  
+
+  <div class="runtime">
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      <script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("06/01/2023 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已运行了 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+      setInterval("createtime()",250);
+      </script>
+  </div>
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":9}});</script></body>
+</html>

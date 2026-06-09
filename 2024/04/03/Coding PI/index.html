@@ -1,0 +1,1001 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/head.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#A89B91">
+  <meta name="author" content="Ethan Lee">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="这是一个和朋友做的一个开源社区项目，类似于CSDN和掘金之类的社区，由于这些社区都不太人性化，所有就做了这个项目。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coding PI">
+<meta property="og:url" content="http://example.com/2024/04/03/Coding%20PI/index.html">
+<meta property="og:site_name" content="Ethan">
+<meta property="og:description" content="这是一个和朋友做的一个开源社区项目，类似于CSDN和掘金之类的社区，由于这些社区都不太人性化，所有就做了这个项目。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANOaibh9_lKew7p4jJiPOkIzRBNQPUAAnMQaxuHejlVGJiOwOXBR-UBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANPaibiI3DIpB1mRBMFypjN7KWae_wAAnQQaxuHejlVV7kxY-uwK4IBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANQaibiJmh7lcAOg2fPW831czGt374AAnUQaxuHejlV1XFyVZ2rd4ABAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANRaibiLGR4mrUbAnvG0-BPfeVP2HAAAnYQaxuHejlV2IEKkwl604UBAAMCAAN4AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANSaibiMIhqGyP37Qp8xO0TRzW6OyMAAncQaxuHejlVjoTmR9UaH5kBAAMCAAN4AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANTaibiNrFDbFHA9m5JDuczsXR7-P0AAngQaxuHejlVibWGVBhsNt0BAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANUaibiPYRWQSF2BIU5pJX39YuLNOwAAnkQaxuHejlVEkn0UzMbcUkBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANVaibiQyL5qvNW3k1-w3aRfsHpFzYAAnoQaxuHejlVSL_GmB-VSkEBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANWaibiSBBI4M-DRFmUReKM6NOiS-gAAnsQaxuHejlVV5vu0Xpj4OYBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANXaibiW5Rw26Fory3xdwybUG4pOQkAAnwQaxuHejlVosfSdBG4zt4BAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANYaibiXye96WTcMA6BJHpBjlkxYRIAAn0QaxuHejlVI7AHtWtpnPcBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANZaibib-kxgArEC9VAtAfhwTpP32AAAn4QaxuHejlVk_ZqXjAHAsABAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANaaibicsbAUAPgx6KgVb3C6jY9rqUAAn8QaxuHejlVsrbqFJAB9lsBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANbaibikG6SEn-4t2qHKS5TCtYcs08AAoAQaxuHejlV1HHiP3592OwBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANcaibil5ssZI82iIhFQ6r9BtlVyG8AAoEQaxuHejlV6050wTnNxHABAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANdaibipEUFQGDV9J8BCT3erihOalUAAoIQaxuHejlV4VnZCPw3xJgBAAMCAAN5AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANeaibi2-9B0J2bUO3_DQP66Bf-16wAAoMQaxuHejlVvre1ToZiP_UBAAMCAAN3AAM7BA.png">
+<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANfaibi4Xbqjiuj_ZJ7H4z5bMKBexoAAoQQaxuHejlVi2GE3nOC3sgBAAMCAAN3AAM7BA.png">
+<meta property="article:published_time" content="2024-04-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-09T15:02:14.902Z">
+<meta property="article:author" content="Ethan Lee">
+<meta property="article:tag" content="项目">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANOaibh9_lKew7p4jJiPOkIzRBNQPUAAnMQaxuHejlVGJiOwOXBR-UBAAMCAAN5AAM7BA.png">
+  
+  
+  
+  <title>Coding PI - Ethan</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ETHAN&#39;S BLOG</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Coding PI"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-04-03 00:00" pubdate>
+          2024年4月3日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          73 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Coding PI</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Coding-PI"><a href="#Coding-PI" class="headerlink" title="Coding PI"></a>Coding PI</h1><p>这是一个和朋友做的一个开源社区项目，类似于CSDN和掘金之类的社区，由于这些社区都不太人性化，所有就做了这个项目，目前项目还没有部署上线，这个项目是一个前后端分离的项目，我主要负责的是后端的开发，前端的话是另一个同学写的。坐着两个项目一共花了6个月时间。</p>
+<h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p>整个系统架构分为展示层、应用层、服务层。</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANOaibh9_lKew7p4jJiPOkIzRBNQPUAAnMQaxuHejlVGJiOwOXBR-UBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916152546279">![[image-20230916152546279.png]]</p>
+<h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANPaibiI3DIpB1mRBMFypjN7KWae_wAAnQQaxuHejlVV7kxY-uwK4IBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916152938326"></p>
+<h2 id="系统模块设计"><a href="#系统模块设计" class="headerlink" title="系统模块设计"></a>系统模块设计</h2><p>针对前面技术派的业务架构拆分，技术派的实际项目划分，主要是五个模块，相反并没由将上面的每个应用、服务抽离为独立的模块，主要是为了避免过渡设计，粒度划分太细会增加整个项目的理解维护成本</p>
+<p>这里设置五个相对独立的模块，则主要是基于边界特别清晰这一思考点进行，后续做微服务演进时，下面每个模块可以作为独立的微服务存在</p>
+<h3 id="用户模块"><a href="#用户模块" class="headerlink" title="用户模块"></a>用户模块</h3><p>在技术派中，整个用户模块从功能角度可以分为</p>
+<ul>
+<li>注册登录</li>
+<li>权限管理（是的，权限管理也放在这里了）</li>
+<li>业务逻辑</li>
+</ul>
+<h4 id="登陆注册"><a href="#登陆注册" class="headerlink" title="登陆注册"></a>登陆注册</h4><h5 id="设计方案"><a href="#设计方案" class="headerlink" title="设计方案"></a>设计方案</h5><p>注册登录除了常见的用户名+密码的登录方式之外，现在也有流行的手机号+验证，第三方授权登录；我们最终选择微信公众号登录方式</p>
+<p>对于个人公众号，很多权限没有；因此这个登录的具体实现，有两种实现策略</p>
+<ul>
+<li><p>点击登录，登录页显示二维码 + 输入框 -&gt; 用户关注公众号，输入 “login” 获取登录验证码 -&gt; 在登录界面输入验证码实现登录</p>
+</li>
+<li><p>点击登录，登录页显示二维码 + 验证码 -&gt; 用户关注公众号，将登录页面上的验证码输入到微信公众号 -&gt; 自动登录</p>
+</li>
+</ul>
+<p>其中第一种策略，类似于手机号&#x2F;验证码的登录方式，主要是根据系统返回的验证码来主动登录</p>
+<p>优点：</p>
+<p>代码实现简单，逻辑清晰</p>
+<p>缺点：</p>
+<p>操作流程复杂，用户需要输入两次</p>
+<p>对于第二种策略，如果是企业公众号，是可以省略输入验证码这一步骤的，借助动态二维码来直接实现扫码登录；对于我们这种个人公众号，则需要多来一步，通过输入验证码来将微信公众号的用户与需要登录的用户绑定起来</p>
+<p>登录工作流程如下：</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANQaibiJmh7lcAOg2fPW831czGt374AAnUQaxuHejlV1XFyVZ2rd4ABAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916153538283"></p>
+<h5 id="库表设计"><a href="#库表设计" class="headerlink" title="库表设计"></a>库表设计</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE TABLE</span> `<span class="hljs-keyword">user</span>` (<br>  `id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键ID&#x27;</span>,<br>  `third_account_id` <span class="hljs-type">varchar</span>(<span class="hljs-number">128</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;第三方用户ID&#x27;</span>,<br>  `user_name` <span class="hljs-type">varchar</span>(<span class="hljs-number">64</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;用户名&#x27;</span>,<br>  `password` <span class="hljs-type">varchar</span>(<span class="hljs-number">128</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;密码&#x27;</span>,<br>  `login_type` tinyint(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;登录方式: 0-微信登录，1-账号密码登录&#x27;</span>,<br>  `deleted` tinyint(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;是否删除&#x27;</span>,<br>  `create_time` <span class="hljs-type">timestamp</span> <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>  `update_time` <span class="hljs-type">timestamp</span> <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;最后更新时间&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY KEY</span> (`id`),<br>  KEY `key_third_account_id` (`third_account_id`),<br>  KEY `key_user_name` (`user_name`),<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8mb4 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;用户登录表&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>注意上面的表结构设计，我们冗余了 <code>user_name</code>, <code>password</code> 用户名密码的登录方式，主要是给管理员登录后台使用</p>
+<p>用户首次登录之后，会在user表中插入一条数据，主要关注 <code>third_account_id</code> 这个字段，它记录的是微信开放平台返回的唯一用户id</p>
+<h4 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h4><p>权限管理分为：用户身份识别+鉴权</p>
+<h5 id="方案设计"><a href="#方案设计" class="headerlink" title="方案设计"></a>方案设计</h5><p><strong>用户身份识别</strong></p>
+<p>目前使用 session+cookie 方式（后续会迭代为分布式 session + jwt ）</p>
+<p>整体流程：</p>
+<ul>
+<li>用户登录成功，服务器生成sessionId -&gt; userId 映射关系</li>
+<li>服务器返回sessionId，写到客户端的浏览器cookie</li>
+<li>后续用户请求，携带cookie</li>
+<li>服务器从cookie中获取sessionId，然后找到uesrId</li>
+</ul>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANRaibiLGR4mrUbAnvG0-BPfeVP2HAAAnYQaxuHejlV2IEKkwl604UBAAMCAAN4AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916154419869"></p>
+<p>服务内部身份传递：<br>另外一个需要考虑的点则是用户的身份如何在整个系统内传递？ 对于一期我们采用的单体架构而言，借助ThreadLocal来实现</p>
+<ul>
+<li>自定义Filter，实现用户身份识别（即上面的流程，从cookie中拿到SessionId，转userId)</li>
+<li>定义全局上下文ReqInfoContext：将用户信息，写入全局共享的ThreadLocal中</li>
+<li>在系统内，需要获取当前用户的地方，直接通过访问 ReqInfoContext上下文获取用户信息</li>
+<li>请求返回前，销毁上下文中当前登录用户信息</li>
+</ul>
+<p><strong>鉴权：</strong></p>
+<p>服务内部身份传递：<br>另外一个需要考虑的点则是用户的身份如何在整个系统内传递？ 对于一期我们采用的单体架构而言，借助ThreadLocal来实现</p>
+<ul>
+<li>自定义Filter，实现用户身份识别（即上面的流程，从cookie中拿到SessionId，转userId)</li>
+<li>定义全局上下文ReqInfoContext：将用户信息，写入全局共享的ThreadLocal中</li>
+<li>在系统内，需要获取当前用户的地方，直接通过访问 ReqInfoContext上下文获取用户信息</li>
+<li>请求返回前，销毁上下文中当前登录用户信息</li>
+</ul>
+<h5 id="库表设计-1"><a href="#库表设计-1" class="headerlink" title="库表设计"></a>库表设计</h5><p>我们将用户角色信息写入用户基本信息表中，没有单独抽出一个角色表，然后进行映射，主要是因为这个系统逻辑相对清晰，没有太复杂的角色关系，因此采用了轻量级的设计方案</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- pai_coding.user_info definition</span><br><br><span class="hljs-keyword">CREATE TABLE</span> `user_info` (<br>  `id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键ID&#x27;</span>,<br>  `user_id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;用户ID&#x27;</span>,<br>  `user_name` <span class="hljs-type">varchar</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;用户名&#x27;</span>,<br>  `photo` <span class="hljs-type">varchar</span>(<span class="hljs-number">128</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;用户图像&#x27;</span>,<br>  `position` <span class="hljs-type">varchar</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;职位&#x27;</span>,<br>  `company` <span class="hljs-type">varchar</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;公司&#x27;</span>,<br>  `profile` <span class="hljs-type">varchar</span>(<span class="hljs-number">225</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;个人简介&#x27;</span>,<br>  `user_role` <span class="hljs-type">int</span>(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;0 普通用户 1 超管&#x27;</span>,<br>  `extend` <span class="hljs-type">varchar</span>(<span class="hljs-number">1024</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span> COMMENT <span class="hljs-string">&#x27;扩展字段&#x27;</span>,<br>  `ip` json <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;用户的ip信息&#x27;</span>,<br>  `deleted` tinyint(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;是否删除&#x27;</span>,<br>  `create_time` <span class="hljs-type">timestamp</span> <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>  `update_time` <span class="hljs-type">timestamp</span> <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;最后更新时间&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY KEY</span> (`id`),<br>  KEY `key_user_id` (`user_id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8mb4 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;用户个人信息表&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="业务逻辑"><a href="#业务逻辑" class="headerlink" title="业务逻辑"></a>业务逻辑</h4><p>在业务模块，主要说两块，一个是用户的轨迹，一个是订阅关注</p>
+<h5 id="订阅关注"><a href="#订阅关注" class="headerlink" title="订阅关注"></a>订阅关注</h5><p>订阅关注这块业务主要是用户可以相互关注，核心点就在于维护用户与用户之间的订阅关系</p>
+<p>业务逻辑上面没有太复杂的东西，核心就是需要一张表来记录关注与被关注情况</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- pai_coding.user_relation definition</span><br><br><span class="hljs-keyword">CREATE TABLE</span> `user_relation` (<br>  `id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键ID&#x27;</span>,<br>  `user_id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;作者用户ID&#x27;</span>,<br>  `follow_user_id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;关注userId的用户id，即粉丝userId&#x27;</span>,<br>  `follow_state` tinyint(<span class="hljs-number">2</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;阅读状态: 0-未关注，1-已关注，2-取消关注&#x27;</span>,<br>  `create_time` <span class="hljs-type">timestamp</span> <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>  `update_time` <span class="hljs-type">timestamp</span> <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;最后更新时间&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY KEY</span> (`id`),<br>  <span class="hljs-keyword">UNIQUE</span> KEY `uk_user_follow` (`user_id`,`follow_user_id`),<br>  KEY `key_follow_user_id` (`follow_user_id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8mb4 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;用户关系表&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="用户轨迹"><a href="#用户轨迹" class="headerlink" title="用户轨迹"></a>用户轨迹</h5><p>在技术派的整体设计中，我们希望记录用户的阅读历史、关注列表、收藏列表、评价的文章列表，对于这种用户行为轨迹的诉求，我们采用设计一张大宽表的策略，其主要目的在于</p>
+<ol>
+<li>记录用户的关键动作</li>
+<li>便于文章的相关计数</li>
+</ol>
+<p>接下来看一下表结构设计</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- pai_coding.user_foot definition</span><br><br><span class="hljs-keyword">CREATE TABLE</span> `user_foot` (<br>  `id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键ID&#x27;</span>,<br>  `user_id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;用户ID&#x27;</span>,<br>  `document_id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;文档ID（文章/评论）&#x27;</span>,<br>  `document_type` tinyint(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;1&#x27;</span> COMMENT <span class="hljs-string">&#x27;文档类型：1-文章，2-评论&#x27;</span>,<br>  `document_user_id` <span class="hljs-type">int</span>(<span class="hljs-number">10</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;发布该文档的用户ID&#x27;</span>,<br>  `collection_stat` tinyint(<span class="hljs-number">3</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;收藏状态: 0-未收藏，1-已收藏，2-取消收藏&#x27;</span>,<br>  `read_stat` tinyint(<span class="hljs-number">3</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;阅读状态: 0-未读，1-已读&#x27;</span>,<br>  `comment_stat` tinyint(<span class="hljs-number">3</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;评论状态: 0-未评论，1-已评论，2-删除评论&#x27;</span>,<br>  `praise_stat` tinyint(<span class="hljs-number">3</span>) unsigned <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span> COMMENT <span class="hljs-string">&#x27;点赞状态: 0-未点赞，1-已点赞，2-取消点赞&#x27;</span>,<br>  `create_time` <span class="hljs-type">timestamp</span> <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>  `update_time` <span class="hljs-type">timestamp</span> <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;最后更新时间&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY KEY</span> (`id`),<br>  <span class="hljs-keyword">UNIQUE</span> KEY `idx_user_doucument` (`user_id`,`document_id`,`document_type`),<br>  KEY `idx_doucument_id` (`document_id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8mb4 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;用户足迹表&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>我们将用户 + 文章设计唯一键，用来记录用户对自己阅读过的文章的行为，因此可以直接通过这个表获取用户的历史轨迹<br>同时也可以从文章的角度出发，查看被哪些用户点赞、收藏过</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>用户模块的核心支撑在上面几块，请重点关注上面的示意图与表结构；当然用户的功能点不止于上面几个，比如基础的个人主页、用户信息等也属于用户模块的业务范畴</p>
+<h3 id="文章模块"><a href="#文章模块" class="headerlink" title="文章模块"></a>文章模块</h3><p>我们将文章和专栏都放在一起，同样也将类目管理、标签管理等也都放在这个模块中，实际上若文章模块过于庞大，也是可以按照最开始的划分进行继续拆分的；这里放在一起的主要原因在于他们都是围绕基本的文章这一业务属性来的，可以聚合在一起</p>
+<h4 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h4><h4 id="文章库表设计"><a href="#文章库表设计" class="headerlink" title="文章库表设计"></a>文章库表设计</h4><p>文章的核心就在于发布、查看</p>
+<p>基本的发布流程：</p>
+<ol>
+<li>用户登录，进入发布页面</li>
+<li>输入标题、文章</li>
+<li>选择分类、标签，封面、简介</li>
+<li>提交文章，进入待审核状态，仅用户可看详情</li>
+<li>管理员审核通过，所有人可看详情</li>
+</ol>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANSaibiMIhqGyP37Qp8xO0TRzW6OyMAAncQaxuHejlVjoTmR9UaH5kBAAMCAAN4AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916161403761"></p>
+<p><strong>文章库表设计</strong></p>
+<p>考虑到文章的内容通常较大，在很多的业务场景中，我们实际上是不需要文章内容的，如首页、推荐列表等都只需要文章的标题等信息；此外我们也希望对文章做一个版本管理（比如上线之后，再修改则新生成一个版本）<br>因此我们对文章设计了两张表</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANTaibiNrFDbFHA9m5JDuczsXR7-P0AAngQaxuHejlVibWGVBhsNt0BAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916161715564"></p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANUaibiPYRWQSF2BIU5pJX39YuLNOwAAnkQaxuHejlVEkn0UzMbcUkBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916161802262"></p>
+<p>文章对应的分类，我们要求一个文章只能挂在一个分类下</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANVaibiQyL5qvNW3k1-w3aRfsHpFzYAAnoQaxuHejlVSL_GmB-VSkEBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916162050356"></p>
+<p>文章对应的标签属性，一个文章可以有多个标签</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANWaibiSBBI4M-DRFmUReKM6NOiS-gAAnsQaxuHejlVV5vu0Xpj4OYBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916162145870"></p>
+<h4 id="专栏"><a href="#专栏" class="headerlink" title="专栏"></a>专栏</h4><p>专栏主要是一系列文章的合集，基于此最简单的设计方案就是加一个专栏表，然后再加一个专栏与文章的映射表</p>
+<p>但是需要注意的是专栏中文章的顺序，支持调整</p>
+<h4 id="专栏库表设计"><a href="#专栏库表设计" class="headerlink" title="专栏库表设计"></a>专栏库表设计</h4><p>专栏表</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANXaibiW5Rw26Fory3xdwybUG4pOQkAAnwQaxuHejlVosfSdBG4zt4BAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916163720232"></p>
+<p>专栏文章表</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANYaibiXye96WTcMA6BJHpBjlkxYRIAAn0QaxuHejlVI7AHtWtpnPcBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916163736588"></p>
+<h4 id="点赞收藏"><a href="#点赞收藏" class="headerlink" title="点赞收藏"></a>点赞收藏</h4><p>再技术派中，对于文章提供了点赞、收藏、评论三种交互，这里重点看一下点赞与收藏；</p>
+<p>点赞与收藏，实际上就是用户与文章之间的操作行为，再前面的<code>user_foot</code>表就已经介绍具体的表结构, 文章的统计计数就是根据这个表数据来的，当前用户与文章的点赞、收藏关系，同样是根据这个表来的</p>
+<p>唯一需要注意的点，就是这个数据的插入、更新策略：</p>
+<ul>
+<li>首次阅读文章时：插入一条数据</li>
+<li>点赞：若记录存在，则更新状态，之前时点赞的，设置为取消点赞；若记录不存在，则插入一条点赞的记录</li>
+<li>收藏：同上</li>
+</ul>
+<h3 id="评论模块"><a href="#评论模块" class="headerlink" title="评论模块"></a>评论模块</h3><h4 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h4><p>我们将评论和回复都当成普通的评论，只是主体不同而已，因此一篇文章的评论列表，我们需要重点关注的就是，如何构建评论与其回复之间的层级关系</p>
+<p>对于这种评论与回复的层级关系，可以是建辅助表来处理；也可以是表内的父子关系来处理，这里我们采用第二种策略</p>
+<ul>
+<li>每个评论记录它的上一级评论id（若只是针对文章的评论，那么上一级评论id &#x3D; 0）</li>
+<li>我们通过父子关系，在业务层进行逻辑还原</li>
+</ul>
+<h4 id="库表设计-2"><a href="#库表设计-2" class="headerlink" title="库表设计"></a>库表设计</h4><p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANZaibib-kxgArEC9VAtAfhwTpP32AAAn4QaxuHejlVk_ZqXjAHAsABAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916165411667"></p>
+<p>注意：</p>
+<ul>
+<li>为什么再表中需要冗余一个顶级评论id ？</li>
+<li>主要的目的是简化业务层评论关系还原的复杂性</li>
+</ul>
+<p>通过上面的表结构，关系还原的策略：</p>
+<ul>
+<li><p>先查出文章的顶级评论（parent_comment_id &#x3D; 0）</p>
+</li>
+<li><p>接下来就是针对每个顶级评论，查询它下面的所有回复 ( top_comment_id &#x3D; comment_id) </p>
+<ul>
+<li>构建顶级评论下的回复父子关系（根据parent_comment_id来构建依赖关系）</li>
+</ul>
+</li>
+</ul>
+<h4 id="评论点赞"><a href="#评论点赞" class="headerlink" title="评论点赞"></a>评论点赞</h4><p>技术派中同样支持对评论进行点赞，取消点赞；对于点赞的整体业务逻辑操作，实际上与文章的点赞一致，因此我们直接复用了文章的点赞逻辑，借助 user_foot 来实现的</p>
+<p>说明</p>
+<ul>
+<li>上面这种实现并不是一种优雅的选择，从<code>user_foot</code>的设计也能看出，它实际上与评论点赞这个业务是有些隔离的</li>
+<li>采用上面这个方案的主要原因在于，点赞这种属于通用的服务，使用mysql来维系点赞与否以及计数统计，再数据量大了之后，基本上玩不转；后续会介绍如何设计一个通用的点赞服务，以此来替换技术派中当前的点赞实现</li>
+<li>这种设计思路也经常体现在一个全新项目的设计中，最开始的设计并不会想着一蹴而就，整一个非常完美的系统出来，我们需要的是在最开始搭好基座、方便后续扩展；另外一点就是，如何在当前系统的基础上，最小成本的支持业务需求（相信各位小伙伴在日常工作中，这些事情不会陌生）</li>
+</ul>
+<h3 id="消息模块"><a href="#消息模块" class="headerlink" title="消息模块"></a>消息模块</h3><p>消息模块主要是记录一些定义的事件，用于同步给用户；我们整体采用Event&#x2F;Listener的异步方案来进行<br>在单机应用中，借助Spring Event&#x2F;Listener机制来实现；在集群中，将借助MQ消息中间件来实现</p>
+<h4 id="消息通知"><a href="#消息通知" class="headerlink" title="消息通知"></a>消息通知</h4><p>我们主要定义以下五种消息类型</p>
+<ul>
+<li>评论</li>
+<li>点赞</li>
+<li>收藏</li>
+<li>关注</li>
+<li>系统消息</li>
+</ul>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANaaibicsbAUAPgx6KgVb3C6jY9rqUAAn8QaxuHejlVsrbqFJAB9lsBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916205139921"></p>
+<p>当发生方面的行为之后，再相应的地方进行主动埋点，手动发送一个消息事件，然后异步消费事件，生成消息通知</p>
+<p>需要注意一点：</p>
+<ul>
+<li>当用户点赞了一个文章，产生一个点赞消息之后；又取消了点赞，这个消息会怎样？</li>
+<li>撤销还是依然保留？（技术派中选择的方案是撤销）</li>
+</ul>
+<h4 id="库表设计-3"><a href="#库表设计-3" class="headerlink" title="库表设计"></a>库表设计</h4><p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANbaibikG6SEn-4t2qHKS5TCtYcs08AAoAQaxuHejlV1HHiP3592OwBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916205621247"></p>
+<h3 id="通用模块"><a href="#通用模块" class="headerlink" title="通用模块"></a>通用模块</h3><h4 id="统计计数"><a href="#统计计数" class="headerlink" title="统计计数"></a>统计计数</h4><p>针对文章的阅读计数，没访问一次计数+1， 因此前面的user_foot不能使用（因为未登录的用户是不会生成<code>user_foot</code>记录的）</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANcaibil5ssZI82iIhFQ6r9BtlVyG8AAoEQaxuHejlV6050wTnNxHABAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916205850547"></p>
+<h4 id="pv-uv"><a href="#pv-uv" class="headerlink" title="pv&#x2F;uv"></a>pv&#x2F;uv</h4><p>每天访问的pv&#x2F;uv记录，在filter层记录</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANdaibipEUFQGDV9J8BCT3erihOalUAAoIQaxuHejlV4VnZCPw3xJgBAAMCAAN5AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916210135570"></p>
+<h4 id="全局字典"><a href="#全局字典" class="headerlink" title="全局字典"></a>全局字典</h4><p>统一配置、全局字典相关的，主要是减少代码中的硬编码</p>
+<p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANeaibi2-9B0J2bUO3_DQP66Bf-16wAAoMQaxuHejlVvre1ToZiP_UBAAMCAAN3AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230916210340491"></p>
+<h4 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h4><p>文章的图片上传，我们支持服务器本地存储和oss存储，其中dev开发环境，默认是本地存储，即图片传到本地的一个目录下；prod生产环境，会将图片上传到阿里云的oss（其他厂商的oss也没有什么本质区别，都是一个post请求，将文件上传而已）</p>
+<p>注意：</p>
+<ul>
+<li>再具体的实现中，需要自动检测文章中的图片，进行转存，避免直接引入外部的资源，导致失效问题</li>
+</ul>
+<ul>
+<li><p>下载外网资源，是否会有安全问题？ </p>
+<ul>
+<li>采用资源类型限制、校验</li>
+<li>生产环境中不存储资源到本地服务器&#x2F;或者限制本地存储的文件名</li>
+</ul>
+</li>
+<li><p>下载外网资源，转存是否会导致整个文章发布过程很慢？ </p>
+<ul>
+<li>并发转存策略</li>
+</ul>
+</li>
+</ul>
+<h4 id="搜索推荐"><a href="#搜索推荐" class="headerlink" title="搜索推荐"></a>搜索推荐</h4><p>技术派当前的搜索推荐主要是基于数据库来实现，会同步引入ES进行替换当前的数据库方案</p>
+<h2 id="写入简历"><a href="#写入简历" class="headerlink" title="写入简历"></a>写入简历</h2><p><strong>社区共享平台（团队合作项目）2023.05-2023.09</strong></p>
+<p>Spring Boot MyBatis-Plus MySQL Redis Elasticsearch RabbitMQ</p>
+<p>**项目描述：**本项目旨在建立一个资源共享为核心的信息交流平台，为实验室老师和历届学生提供便捷的通道，促进联系建立和资源分享，该项目采用强后端分离架构，完成了文章的发布、评论、点赞、收藏等功能；提供系统通知模块和用户私信功能实现用户之间的交互；实现系统UV(Unique Visitor)、DAU(Daily Active User)等统计。</p>
+<p><strong>工作内容</strong></p>
+<h3 id="通过-AOP-TraceID-记录接口访问日志，实现任务的追踪、监控和诊断。"><a href="#通过-AOP-TraceID-记录接口访问日志，实现任务的追踪、监控和诊断。" class="headerlink" title="通过 AOP + TraceID 记录接口访问日志，实现任务的追踪、监控和诊断。"></a>通过 AOP + TraceID 记录接口访问日志，实现任务的追踪、监控和诊断。</h3><p>该项目中使用AOP的共有两处，一处是用于方法执行耗时统计，另一处是动态切换数据源。</p>
+<h4 id="方法耗时统计"><a href="#方法耗时统计" class="headerlink" title="方法耗时统计"></a>方法耗时统计</h4><p>参照SkyWalking中的SkyWalkingTraceldGenerator类生成 TraceID。</p>
+<p>生成的TraceID包含了三部分：</p>
+<ol>
+<li>第一部分是应用实例id，它是在类加载时生成的uuid，对于每个进程，它是唯一的。</li>
+<li>第二部分是当前线程的id</li>
+<li>第三部分是一个由时间戳和线程序列号组成的数字，时间戳是毫秒级的，而线程序列号是一个在0到9999之间的数。</li>
+</ol>
+<p>项目中自己实现的是包含了四部分：</p>
+<ul>
+<li>IP地址（8位）：获取当前机器IP地址，并将其转换为十六进制格式</li>
+<li>时间戳（13位）：使用Java8的Instant类获取当前的毫秒级时间戳。</li>
+<li>进程号（5位）：使用Java的ManagementFactory类获取JVM进程的PID，并保证总长度为5位。。</li>
+<li>自增序列号（4位）：一个在1000到9999之间循环自增的数。</li>
+</ul>
+<p>通过slf4j的MDC上下文诊断映射，存储traceid的信息。通过拦截器在每一个请求中添加全链路traceId</p>
+<p>通过自定义注解MdcDot，自定义注解中有值为业务编码，默认为空，定义切面和切点实现记录每个方法的执行效率。这里采用环绕通知，首先获取当前系统时间，然后检查是否有MdcDot注解并获取业务编码，解析业务编码对应方法参数中的值返回。放入MDC中，只有MDC中有值才执行成功，计算结束时间，清空MDC。</p>
+<p>总结就是，MDC存储全链路traceId用于追踪，监控，还要存储带有自定义注解方法的业务编码，用于计算执行时间，写入日志，清空业务编码。</p>
+<h4 id="动态数据源切换"><a href="#动态数据源切换" class="headerlink" title="动态数据源切换"></a>动态数据源切换</h4><p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAANfaibi4Xbqjiuj_ZJ7H4z5bMKBexoAAoQQaxuHejlVi2GE3nOC3sgBAAMCAAN3AAM7BA.png" srcset="/img/loading.gif" lazyload alt="image-20230919095615188"></p>
+<p>主要借助AbstractRoutingDataSource 来实现动态数据源</p>
+<ul>
+<li>defaultTargetDataSource ：标识默认使用的数据源</li>
+<li>Map&lt;Object,Object&gt; targetDataSources：动态数据源可以根据key来切换使用的数据源</li>
+<li>determineCurrentLookupKey：返回当前数据源使用的标识</li>
+</ul>
+<p>首先是多数据源配置，通过spring的dynamic.primary来指定默认启用的数据源。</p>
+<p>定义一个数据源配置加载类，借助spring的ConfigurationProperties来实现读取加载默认数据源和多数据源配置。</p>
+<p>当配置了多数据源时，启用数据源初始化，通过配置文件中加载的数据源配置，装配到目标数据源targetDataSources中，过程中会根据不同的类型选择数据源，其中包括了一个默认数据源。最后返回一个自定义的路由数据源，重写了determineCurrentLookupKey，可以通过数据源持有上下文获取注解的标识，从而选择数据源。</p>
+<p>通过自定义注解，有两个值，一个是默认主库，一个是启用的数据源，如果有启用的数据源则优先使用。</p>
+<p>定义切面和切点，使用环绕通知，可用于类和方法上。通过获取类或者方法上的所有自定义注解，将注解中的标识放入数据源持有上下文中。接着就能执行方法，执行方法是就会通过上下文中的数据源标识选择目标数据源中的对应的数据源。执行成功之后清空上下文中的数据源标识。</p>
+<h5 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h5><ol>
+<li>此处数据源持有的上下文实现是直接使用线程上下文实现的，类别是string类型，当一个方法是有数据源选择注解时，此时方法内部开了子线程做异步处理，那么上下文存储的数据源会失效</li>
+<li>一个方法上指定了数据源，它又调用其他也指定了的数据源的方法，当前的方案会存在数据源的选择冲突</li>
+<li>druid数据源不兼容</li>
+</ol>
+<p><strong>问题一和二：</strong></p>
+<p>上下文赋值只能赋值一次，为了解决，想到的是使用栈的数据结构–后进先出，实现嵌套的数据源切换方案</p>
+<p>定义一个数据源node节点来存储数据源，它除了存储当前选中的数据源外，还存储上一次选择的数据源。将上下文中的string类型替换为数据源节点类型。使用InheritableThreadLocal继承线程上下文，实现主子线程数据共享。</p>
+<p>每当有一个新的数据源选中时，新创建一个节点，并重新加入上下文中，之前的节点作为当前新节点的上一个节点。</p>
+<p>清空上下文时也要注意，按照栈的方式，如果没有选中的数据源直接返回，如果存在上一个节点，则将上一个节点重新写入上下文，若不存在，清空上下文。</p>
+<p><strong>问题三</strong></p>
+<p>spring boot默认使用的数据源是HiKariDataSource</p>
+<p>在数据源初始化是添加判断，使用一个工具类判断是否有druid的引用，判断不是druid就使用默认的数据源初始化，如果是，则初始化druid，使用Binder来手动基于spring的配置信息来实例并初始化bean。</p>
+<p>通过使用 Binder，您可以轻松地将配置属性绑定到 Java 类，使配置属性在应用程序中更易于访问和管理。</p>
+<p>如果初始化druid数据源之后，配合@ConditionalOnExpression注解，判断是否需要注入一个bean，创建druid的可视化监控。</p>
+<p>druid的监控配置</p>
+<p>先配置管理后台的servLet，访问的入口为&#x2F;druid&#x2F;</p>
+<p>IP白名单 (没有配置或者为空，则允许所有访问)</p>
+<h3 id="微信公众号实现自动登录"><a href="#微信公众号实现自动登录" class="headerlink" title="微信公众号实现自动登录"></a>微信公众号实现自动登录</h3><p>用户在前端点击登录时，会展示公众号二维码和带输入的验证码，并会和前端构建一个半长连接，同时保存验证码和半长连接之间的映射关系。</p>
+<p>当用户向公众号发送验证码时，微信公众号会将用户发送信息转发给服务器，然后通过验证码来识别请求登录的用户身份。</p>
+<p>由于验证码保存了和半长连接的映射关系，所以可以找到该半长连接，实现用户的自动登录跳转。</p>
+<p>这里微信公众平台会返回一个用于唯一标识的uuid，在用户表中存储一个第三方用户id。唯一用户识别。</p>
+<p>获取登录验证码时，实现了两个缓存，一个是验证码和半长连接之间的映射关系，另一个是设备id和验证码之间的映射关系。并设置过期时间为5分钟，当获取一个不存在设备id的验证码，通过循环不断生成验证码，直到是一个唯一的验证码。保证同一个设备唯一性，验证码的唯一性和有效性。</p>
+<p>添加设备id是保证同一个设备用于不断刷新页面时，不断向验证码和半长连接映射添加kv对，但是保证验证码依然是五分钟时效，且验证码不会变（刷新除外）。</p>
+<p>登录成功之后生成session并保存，在filter过滤器中将用户信息存入上下文，用于用户身份识别。</p>
+<h3 id="将消息发送到RabbitMQ，实现消息异步解耦，提升系统效率和服务稳定性"><a href="#将消息发送到RabbitMQ，实现消息异步解耦，提升系统效率和服务稳定性" class="headerlink" title="将消息发送到RabbitMQ，实现消息异步解耦，提升系统效率和服务稳定性"></a>将消息发送到RabbitMQ，实现消息异步解耦，提升系统效率和服务稳定性</h3><p>消息队列主要有两种模式，“点对点模式” 和 “发布订阅模式”。</p>
+<p><strong>点对点模式</strong></p>
+<p>一个具体的消息只能由一个消费者消费。且一个消息被处理的时候，该消息会被锁住或者被移除并且其他消费者无法处理该消息。如果处理失败一般会放回消息队列，其他消费者可以继续处理。</p>
+<p><strong>发布订阅模式</strong></p>
+<p>单个消息能被多个订阅者并发的获取和处理。</p>
+<p>分为临时订阅（消费者存在才存在）和持久订阅（一直存在，除非主动删除）</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>AMQP协议</p>
+<p>具有现代特征的二进制协议，应用层协议的一个开放标准，提供统一消息服务的应用层标准高级消息队列协议。</p>
+<p>工作原理</p>
+<p>AMQP协议由三部分组成生产者、消费者和服务端。</p>
+<ol>
+<li>生产者连接到server，建立一个连接，开启一个信道</li>
+<li>生产者声明交换机和队列，设置相关属性，并通过路由键将交换机和队列进行绑定</li>
+<li>消费者也需要建立连接，开启信道等操作，便于接受信息</li>
+<li>生产者发送消息，发送到服务端中的虚拟机</li>
+<li>虚拟机中的交换器根据路由键选择路由规则，发送到不同的消息队列中。</li>
+<li>订阅了消息队列的消费者就可以获取到消息，进行消费。<br>![[Pasted image 20230920210312.png]]</li>
+</ol>
+<p>四种常用交换器：direct（点对点）、topic（通配符匹配）、fanout（发布订阅）、headers（根据头部信息进行匹配）</p>
+<p>项目中使用了RabbitMQ的点对点交换机，在mq配置类中实现ApplicationRunner接口，重写run方法，实现mq的初始化。考虑到每次的连接创建都要new一个并发量起来的话会持续消耗内存，机器肯定扛不住的。所以创建了mq的连接池，使用基于链表实现的阻塞线程安全队列Blockingqueue实现。</p>
+<p>所以发送消息过程就是从连接池拿到连接，创建信道，声明交换机，发送消息，将连接归还连接池<br>消费消息就是：从连接池拿到连接，创建信道，确认消息队列，绑定队列到交换机，接收并消费消息，将连接归还连接池。</p>
+<p>对于文章的点赞、收藏、评论这些会走mq的消息机制，同时持久化到db中。</p>
+<h3 id="通过Redis实现计数统计和用户活跃度排行，并通过Redis-MySQL提高系统并发"><a href="#通过Redis实现计数统计和用户活跃度排行，并通过Redis-MySQL提高系统并发" class="headerlink" title="通过Redis实现计数统计和用户活跃度排行，并通过Redis + MySQL提高系统并发"></a>通过Redis实现计数统计和用户活跃度排行，并通过Redis + MySQL提高系统并发</h3><h4 id="用户活跃度"><a href="#用户活跃度" class="headerlink" title="用户活跃度"></a>用户活跃度</h4><p>这里使用redis的一个zset数据结构实现，zset是redis的一个有序的数据结构，同时set能保证数据的唯一性，利用zset自带一个权重功能来实现排序，系统中的话就是score，就是每当用户在执行的一些操作，比如说点赞、评论或者是发布文章这些时，我们都会对用户进行一个加分的操作。通过redis的incr指令去进行加分操作，我们在进行用户更新活跃度的时候会进行一个幂等判定，防止重复添加，若幂等了直接返回，否则，执行更新，并做好幂等保存。这里的幂等策略是每个用户维护一个活跃更新操作历史记录表，直接将用户的历史日志，保存在redis的hash数据结构中，每天一个记录。</p>
+<ul>
+<li>key：<code>activity_rank_&#123;user_id&#125;_&#123;年月日&#125;_</code></li>
+<li>field：<code>活跃度更新key</code>_</li>
+<li>value：<code>添加的活跃度</code></li>
+</ul>
+<p>但是这里存在一个并发问题，幂等无法百分比百生效，可能存在重复添加或者扣减的情况。多次操作redis存在事务问题。</p>
+<p>并发中可能存在两个用户同时加分或者减分，就会造成资源抢占的问题，一开始是通过幂等，但是我们的系统在后续的过程中，如果要实现一个分布式这样一个情况的话，一开始设计了一个解决这种并发的方案。就是通过redis分布式锁。</p>
+<p>首先一开始使用redis的setnx和setex，来保证这样一个原子性的操作。我在更新用户活跃度的时候要么同时成功，要么同时失败。比如果我们对一个数据进行查询的时候通过缓存查询，缓存中没有就去数据库中查询，访问缓存到数据库这样一个过程中就会存在并发的问题。数据库的效率本来就没有缓存高，资源是比较紧张的，如果如果这时大量数据涌入就会出现数据库宕机的情况，所以我们要对这个过程进行加锁。</p>
+<p>对于redis实现分布式锁中的问题就是一个过期时间的问题，就是业务执行完之后，但是我们的锁还被持有着，虽然有过期时间和redis的淘汰策略，但是还是不太好，redis对于我们这个系统还是很重要的。</p>
+<p>所以考虑到了一种解决方案是通过在finally模块，执行完业务之后我们去释放锁，但是释放锁有会存在一个问题，就是释放锁的时候会释放别人的锁，也就是a线程执行过程中，时间过期，锁被自动释放，b线程就会获取到该锁，执行业务逻辑。但是此时线程A需要释放锁，所以释放的是B的锁。所以再次解决，设置一个value值，来防止是防止释放其他锁。因为每个用户的userid对应一个key，当key进来时设置一个value值，在执行finally块的时候通过先比较value值再进行释放锁就能保证不会释放其他锁。</p>
+<p>但是问题又来了，过期时间如何设置，过期时间过短，可能业务还没有完成，锁就被释放了。过期时间太长的话，枷锁成功之后没有执行到释放锁，节点宕机了，那么锁未过期这段时间其他线程不能够获取。</p>
+<p>解决通过实现一个守护线程，每隔一段时间去看看业务是否执行完毕，如果没有执行完毕就延长过期时间，也就是锁续期。</p>
+<p>针对以上情况选择了redisson实现分布式锁，redission实现分布式锁解决了锁过期问题，还有释放他人的锁，它还是可重入锁。它的内部机制是过期时间是30秒，然后会有一个定时任务每10秒查询一次锁是否被释放，如果没有释放就延长30秒。<br>如果没有获取到锁，将while循环获取继续加锁。主要就是这么一个设计过程。也写了相应的代码。<br>更新完用户活跃度之后，我们通过redis的zrevrange进行倒序排序，因为我们更新完之后都是从小到大的，倒序排序去前30名作为一个数据的展示。</p>
+<p>redisson还存在一个问题，就是高一致性，redisson是无法解决高一致性的。可以通过红锁或者zk锁，但是会丢失高可用性，对用户体验不好。</p>
+<h4 id="计数统计"><a href="#计数统计" class="headerlink" title="计数统计"></a>计数统计</h4><p>如果要查询用户统计信息，我们的用户信息是通过redis的hash数据结构来实现，key为用户id，值为用户的关注数、已发布文章数、文章阅读数这些。通过redis就能查询所有的用户统计信息，然后通过定时任务每天更新统计信息，确保信息的一致性。</p>
+<p>redis + mysql 的使用，存在缓存一致性的问题。开始设计了两种方案：</p>
+<ul>
+<li><strong>实时一致性方案</strong>：是先写MySQL，再删除redis，这种虽然也会存在两者不一致的问题，但是条件有点苛刻，所以是满足实时性条件下，能尽量满足一致性的最优解。</li>
+<li><strong>最终一致性方案：</strong> 先写mysql，通过binlog，异步更新redis，可以通过binlog，结合消息队列异步更新redis，是最终一致性最优解。</li>
+</ul>
+<p>考虑到项目的实时性要求高，选择实时一致性方案处理。所有涉及到db更新操作都需要按照这种方式处理。如果redis删除失败，MySQL的更新需要添加事务回滚，避免查询读取到脏数据。</p>
+<p>对于用户的统计计数和用户的活跃度数据是通过rabbitmq来获取的。</p>
+<h3 id="使用DFA算法实现铭感词过滤，防止一些不文明的词汇出现"><a href="#使用DFA算法实现铭感词过滤，防止一些不文明的词汇出现" class="headerlink" title="使用DFA算法实现铭感词过滤，防止一些不文明的词汇出现"></a>使用DFA算法实现铭感词过滤，防止一些不文明的词汇出现</h3><p>DFA算法数据结构是一个DFA树，准确来说应该是森林，每个节点代表一个字符，从根节点到叶子节点就是一个完整的敏感词。</p>
+<p>项目中选用了一个 sensitive-word 作为库，使用基于mybatis拦截器的自定义数据库脱敏实现方案。</p>
+<p>通过自定义注解，放在需要脱敏的数据库实体对象的成员上，实现查询拦截器，返回数据库内容到数据库实体对象上时，若判断有对应的注解，则赋值敏感词替换后的内容。</p>
+<p>具体实现层，添加了一个缓存，存储添加了注解的数据库实体对象的成员，减少每次对实体成员的判定。</p>
+<p><strong>mybatis拦截器原理</strong></p>
+<p>通过拦截注解intercepts指定拦截的方法，我们拦截的时结果处理器中的处理结果方法。拦截到结果集之后通过查询缓存中是否有对应元数据，如果没有则回调构造带有自定义注解的元数据，然后放入缓存中。然后通过遍历元数据列表替换敏感词，如果是字符串则直接替换，如果是集合类型和非基本类型的对象，递归替换。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%A1%B9%E7%9B%AE/" class="print-no-link">#项目</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Coding PI</div>
+      <div>http://example.com/2024/04/03/Coding PI/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ethan Lee</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年4月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/06/13/%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%8A%A0%E9%80%9F%20GitHub%20Pages%20%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="使用 Cloudflare 加速 GitHub Pages 部署的个人博客">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">使用 Cloudflare 加速 GitHub Pages 部署的个人博客</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/23/MYDB/" title="MYDB">
+                        <span class="hidden-mobile">MYDB</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="" target="_blank" rel="nofollow noopener"><span>Ethan</span></a> <i class="iconfont icon-love"></i> <a href="" target="_blank" rel="nofollow noopener"><span>Esther</span></a> 
+    </div>
+  
+  
+  
+
+  <div class="runtime">
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      <script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("06/01/2023 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已运行了 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+      setInterval("createtime()",250);
+      </script>
+  </div>
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":9}});</script></body>
+</html>
