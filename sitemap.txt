@@ -1,4 +1,3 @@
-http://example.com/2026/05/24/%E4%B8%80%E8%88%AC%E6%80%8E%E4%B9%88%E5%86%99skill%EF%BC%9F/
 http://example.com/2025/01/07/Windows%E7%BB%88%E7%AB%AF%E4%B8%AD%E7%9A%84%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/
 http://example.com/2020/09/24/%E7%A7%8B%E5%A4%9C%E5%AF%84%E6%80%80/
 http://example.com/2021/01/03/%E9%86%89%E4%BA%91%E9%97%B4/
@@ -63,7 +62,6 @@ http://example.com/tags/Agent/
 http://example.com/tags/AI%E6%80%8E%E4%B9%88%E5%81%9A%E4%BA%8B/
 http://example.com/tags/Workflow/
 http://example.com/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D/
-http://example.com/tags/skill/
 http://example.com/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/
 http://example.com/tags/%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B/
 http://example.com/tags/Ubuntu/
