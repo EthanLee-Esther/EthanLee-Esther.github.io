@@ -1,9 +1,16 @@
-/* 引入古风字体（如果国内加载慢，可把 fonts.googleapis.com 换成 fonts.loli.net） */
-@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap');
+/* ====== 声明本地字体 ====== */
+@font-face {
+  font-family: 'lishu';  /* 自定义字体名称，随便起，下面引用一致就行 */
+  src: url('/fonts/lishu.ttf') format('truetype'); /* 相对于网站根目录的路径 */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* 优化：先显示系统默认字体，加载完再替换，防止白屏 */
+}
 
-/* ====== 全局基础：纸张底色 + 古典字体 ====== */
+
+/* ====== 全局基础：纸张底色 + 隶书字体 ====== */
 body {
-  font-family: 'ZCOOL XiaoWei', '楷体', 'KaiTi', 'STKaiti', serif !important;
+  font-family: 'lishu', '隶书', 'STLiti', cursive !important;
   background-color: #faf5e4 !important;
   background-image:
     linear-gradient(90deg, transparent 79px, rgba(210,190,150,0.15) 79px, rgba(210,190,150,0.15) 81px, transparent 81px),
@@ -28,7 +35,7 @@ a:hover {
 
 /* ====== 标题：毛笔字体 + 装饰线 ====== */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ma Shan Zheng', '楷体', 'STKaiti', cursive !important;
+  font-family: 'lishu', '隶书', 'LiSu', 'STLiti', cursive !important;
   color: #2c2c2c !important;
   position: relative !important;
   padding-bottom: 0.5rem !important;
@@ -104,8 +111,16 @@ hr { border: none !important; height: 2px !important; background: linear-gradien
 .ancient-top-banner { width: 100%; height: 4px; background: linear-gradient(90deg, transparent 0%, #d4a853 10%, #b83b3b 30%, #b83b3b 70%, #d4a853 90%, transparent 100%); position: fixed; top: 0; left: 0; z-index: 10000; }
 .ancient-bottom-banner { width: 100%; height: 3px; background: linear-gradient(90deg, transparent 0%, #b83b3b 20%, #d4a853 50%, #b83b3b 80%, transparent 100%); position: fixed; bottom: 0; left: 0; z-index: 10000; }
 
-/* ====== 鼠标墨迹 ====== */
-.ancient-ink { position: fixed; background: radial-gradient(circle, rgba(60,30,20,0.5) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 9998; transition: opacity 0.4s ease; }
+/* ====== 鼠标墨迹（加浓加大版） ====== */
+.ancient-ink {
+  position: fixed;
+  background: radial-gradient(circle, rgba(25,15,10,0.7) 0%, rgba(50,35,25,0.35) 50%, transparent 75%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: opacity 0.5s ease;
+  filter: blur(1.5px); /* 轻微模糊，模拟墨迹在宣纸上的毛边 */
+}
 
 /* ====== 页面加载动画 ====== */
 @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
@@ -114,3 +129,115 @@ hr { border: none !important; height: 2px !important; background: linear-gradien
 .post-block:nth-child(2) { animation-delay: 0.35s !important; }
 .post-block:nth-child(3) { animation-delay: 0.5s !important; }
 .post-block:nth-child(n+4) { animation-delay: 0.65s !important; }
+
+/* ============================================
+   墨水晕开爆炸特效
+   ============================================ */
+
+/* --- 1. 中心大墨晕：模拟墨滴落纸的晕开 --- */
+.ancient-ink-burst-main {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10001;
+  transform: translate(-50%, -50%);
+  animation: inkBurstMain 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+}
+@keyframes inkBurstMain {
+  0% {
+    width: 4px;
+    height: 4px;
+    opacity: 1;
+    filter: blur(0px);
+  }
+  30% {
+    opacity: 0.9;
+    filter: blur(1px);
+  }
+  100% {
+    width: 90px;
+    height: 85px;
+    opacity: 0;
+    filter: blur(6px); /* 最终高度模糊，像墨完全晕进纸里 */
+  }
+}
+
+/* --- 2. 外圈涟漪：墨水在纸纤维中扩散的波纹 --- */
+.ancient-ink-burst-ripple {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(25,15,10,0.4);
+  background: transparent;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  animation: inkBurstRipple 0.9s ease-out forwards;
+}
+@keyframes inkBurstRipple {
+  0% {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    border-width: 3px;
+  }
+  100% {
+    width: 120px;
+    height: 115px;
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+/* --- 3. 飞溅墨点：大小不一向四周甩出 --- */
+.ancient-ink-burst-splash {
+  position: fixed;
+  border-radius: 45% 55% 50% 50%; /* 不规则圆形，更像真实墨滴 */
+  pointer-events: none;
+  z-index: 10002;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 2px 1px rgba(25,15,10,0.2); /* 墨滴周围有轻微晕影 */
+  animation: inkBurstSplash 0.7s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+@keyframes inkBurstSplash {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(-50% + var(--tx)),
+      calc(-50% + var(--ty))
+    ) scale(1);
+  }
+}
+
+/* --- 4. 墨雾颗粒：极小的飞沫 --- */
+.ancient-ink-burst-mist {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10003;
+  transform: translate(-50%, -50%);
+  animation: inkBurstMist 0.6s ease-out forwards;
+}
+@keyframes inkBurstMist {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(-50% + var(--mtx)),
+      calc(-50% + var(--mty))
+    ) scale(1.2);
+  }
+}
