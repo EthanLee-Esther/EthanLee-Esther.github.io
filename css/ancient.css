@@ -1,0 +1,116 @@
+/* 引入古风字体（如果国内加载慢，可把 fonts.googleapis.com 换成 fonts.loli.net） */
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap');
+
+/* ====== 全局基础：纸张底色 + 古典字体 ====== */
+body {
+  font-family: 'ZCOOL XiaoWei', '楷体', 'KaiTi', 'STKaiti', serif !important;
+  background-color: #faf5e4 !important;
+  background-image:
+    linear-gradient(90deg, transparent 79px, rgba(210,190,150,0.15) 79px, rgba(210,190,150,0.15) 81px, transparent 81px),
+    linear-gradient(rgba(180,160,120,0.06) .1em, transparent .1em) !important;
+  background-size: 100% 2em !important;
+  background-attachment: fixed !important;
+  color: #3e3e3e !important;
+}
+
+/* ====== 链接：朱红 ====== */
+a {
+  color: #b83b3b !important;
+  border-bottom: 1px dashed rgba(184,59,59,0.3) !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #8b0000 !important;
+  border-bottom: 1px solid #8b0000 !important;
+  text-shadow: 0 0 4px rgba(139,0,0,0.15) !important;
+}
+
+/* ====== 标题：毛笔字体 + 装饰线 ====== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ma Shan Zheng', '楷体', 'STKaiti', cursive !important;
+  color: #2c2c2c !important;
+  position: relative !important;
+  padding-bottom: 0.5rem !important;
+}
+h1::after, h2::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 60px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #b83b3b, transparent) !important;
+  border-radius: 2px !important;
+}
+
+/* ====== 容器：书卷卡片 ====== */
+.container, .main-content, .post-block {
+  background: rgba(254,252,243,0.92) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 0 0 1px rgba(210,190,150,0.3) !important;
+  border: 1px solid rgba(210,190,150,0.4) !important;
+}
+
+/* ====== 引用：古风书卷 ====== */
+blockquote {
+  border-left: 4px solid #b83b3b !important;
+  background: linear-gradient(135deg, #fef9e7 0%, #fdf2d1 100%) !important;
+  padding: 1rem 1.5rem 1rem 2rem !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  position: relative !important;
+  font-style: italic !important;
+}
+blockquote::before {
+  content: '\201C' !important;
+  font-size: 3.5rem !important;
+  color: rgba(184,59,59,0.25) !important;
+  position: absolute !important;
+  left: 8px !important;
+  top: -10px !important;
+}
+
+/* ====== 代码块 ====== */
+pre { background: #2b2120 !important; border: 1px solid #4a3530 !important; border-radius: 6px !important; }
+pre code { color: #e8d5b5 !important; background: transparent !important; border: none !important; }
+code { background: rgba(210,190,150,0.2) !important; border: 1px solid rgba(210,190,150,0.3) !important; border-radius: 3px !important; color: #b83b3b !important; }
+
+/* ====== 按钮：朱红印章 ====== */
+.btn, button, input[type="submit"] {
+  background: linear-gradient(135deg, #b83b3b, #952e2e) !important;
+  color: #fefcf3 !important; border: 1px solid #8b0000 !important; border-radius: 4px !important;
+  font-family: 'Ma Shan Zheng', cursive !important; letter-spacing: 2px !important;
+}
+.btn:hover, button:hover { background: linear-gradient(135deg, #952e2e, #8b0000) !important; transform: translateY(-1px) !important; }
+
+/* ====== 滚动条 ====== */
+::-webkit-scrollbar { width: 8px !important; height: 8px !important; }
+::-webkit-scrollbar-track { background: #e6dcc3 !important; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #b83b3b, #952e2e) !important; border-radius: 4px !important; }
+
+/* ====== 图片：水墨画框 ====== */
+.post-content img {
+  border: 3px solid rgba(210,190,150,0.6) !important; border-radius: 4px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1) !important; padding: 4px !important; background: #fefcf3 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.post-content img:hover { transform: scale(1.02) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important; }
+
+/* ====== 分隔线 ====== */
+hr { border: none !important; height: 2px !important; background: linear-gradient(90deg, transparent, rgba(184,59,59,0.4), rgba(210,190,150,0.6), rgba(184,59,59,0.4), transparent) !important; }
+
+/* ====== 装饰横条 ====== */
+.ancient-top-banner { width: 100%; height: 4px; background: linear-gradient(90deg, transparent 0%, #d4a853 10%, #b83b3b 30%, #b83b3b 70%, #d4a853 90%, transparent 100%); position: fixed; top: 0; left: 0; z-index: 10000; }
+.ancient-bottom-banner { width: 100%; height: 3px; background: linear-gradient(90deg, transparent 0%, #b83b3b 20%, #d4a853 50%, #b83b3b 80%, transparent 100%); position: fixed; bottom: 0; left: 0; z-index: 10000; }
+
+/* ====== 鼠标墨迹 ====== */
+.ancient-ink { position: fixed; background: radial-gradient(circle, rgba(60,30,20,0.5) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 9998; transition: opacity 0.4s ease; }
+
+/* ====== 页面加载动画 ====== */
+@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+.post-block { animation: fadeInUp 0.5s ease forwards !important; opacity: 0; }
+.post-block:nth-child(1) { animation-delay: 0.2s !important; }
+.post-block:nth-child(2) { animation-delay: 0.35s !important; }
+.post-block:nth-child(3) { animation-delay: 0.5s !important; }
+.post-block:nth-child(n+4) { animation-delay: 0.65s !important; }
