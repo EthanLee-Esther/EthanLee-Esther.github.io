@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2026/06/12/rime%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
+    
+    <lastmod>2026-06-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2025/01/07/Windows%E7%BB%88%E7%AB%AF%E4%B8%AD%E7%9A%84%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2026-06-09</lastmod>
@@ -633,6 +642,20 @@
   
   <url>
     <loc>http://example.com/tags/%E9%BE%99%E7%94%9F%E4%B9%9D%E5%AD%90/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/rime/</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

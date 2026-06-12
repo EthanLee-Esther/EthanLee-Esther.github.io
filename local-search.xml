@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>rime(小狼毫)+雾凇+皮肤+万象大模型+个人词库补充</title>
+    <link href="/2026/06/12/rime%E8%BE%93%E5%85%A5%E6%B3%95/"/>
+    <url>/2026/06/12/rime%E8%BE%93%E5%85%A5%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="一、安装小狼毫"><a href="#一、安装小狼毫" class="headerlink" title="一、安装小狼毫"></a>一、安装小狼毫</h1><p>官网下载rime安装包 <a href="https://rime.im/">rime</a> ;</p><blockquote><p>不要下错，rime全平台都支持，我是用的是Windows——也就是小狼毫；</p></blockquote><p>安装时没有雾凇拼音，但必须要选一个，随便选：</p><p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAIBF2orybJaaBiXNuh2sl7q1I-i3qGRAAJbD2sbbHZhVf-uQqy0VmLwAQADAgADeAADPAQ.png" alt="image-20260612165615719"></p><h1 id="二、安装雾凇拼音"><a href="#二、安装雾凇拼音" class="headerlink" title="二、安装雾凇拼音"></a>二、安装雾凇拼音</h1><p><a href="https://github.com/">GitHub</a> 上自己搜索下载，下载后整个文件复制去rime的安装目录，全部覆盖；</p><p>重新选择雾凇拼音即可；</p><p>可直接修改配置文件，配置文件中都有注释说明，自行了解：</p><p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAIBGGor40EOTSserhTBBGJnfETi5A3YAAKQD2sbbHZhVRlKYLS5qfAjAQADAgADeQADPAQ.png" alt="image-20260612184521351"></p><h1 id="三、皮肤"><a href="#三、皮肤" class="headerlink" title="三、皮肤"></a>三、皮肤</h1><p>rime提供了很多好看的皮肤，可自己选择喜欢的，当然，如果实在看不上，也可以自己定制（就是比较折腾）；</p><h1 id="四、万象大模型（进阶）"><a href="#四、万象大模型（进阶）" class="headerlink" title="四、万象大模型（进阶）"></a>四、万象大模型（进阶）</h1><p>输入法能配置大模型没听过吧，还是本地的，也就是说装了之后我依然可以不联网，隐私有保障；</p><ol><li><p>先下载 <a href="https://github.com/amzxyz/RIME-LMDG/releases">万象模型</a></p></li><li><p>然后打开<code>rime_ice.custom.yaml</code>这个文件，输入一下内容；（文件没有就新建）</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-attr">__include:</span> <span class="hljs-string">octagram</span>   <span class="hljs-comment">#启用语言模型</span><br><span class="hljs-comment">#语言模型</span><br><span class="hljs-attr">octagram:</span><br>  <span class="hljs-attr">__patch:</span><br>    <span class="hljs-attr">grammar:</span><br>      <span class="hljs-attr">language:</span> <span class="hljs-string">wanxiang-lts-zh-hans</span><br>      <span class="hljs-attr">collocation_max_length:</span> <span class="hljs-number">5</span><br>      <span class="hljs-attr">collocation_min_length:</span> <span class="hljs-number">2</span><br>    <span class="hljs-attr">translator/contextual_suggestions:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">translator/max_homophones:</span> <span class="hljs-number">7</span><br>    <span class="hljs-attr">translator/max_homographs:</span> <span class="hljs-number">7</span><br></code></pre></td></tr></table></figure></li><li><p>将大模型文件（<code>wanxiang-lts-zh-hans.gram</code>）复制到rime配置文件更目录，重新部署就可以；</p></li></ol><h1 id="五、个人词库"><a href="#五、个人词库" class="headerlink" title="五、个人词库"></a>五、个人词库</h1><p>其实雾凇拼音的词库已经够用了，如果你实在需要自己的词库也可以下载第三方词库，但是雾凇的词库使用的<code>YAML</code>文件，就需要格式转换，可以自己去GitHub上找一下深<strong>蓝词库转换</strong>，常用的词库都已转换，转换完复制去文件夹下，配置一下<code>rime_ice.dict.yaml</code>文件，如：</p><p><img src="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAIBGWor6vzWsaCMweUPvXzSFsEOaS83AAKfD2sbbHZhVdmGAAH7ylFMJQEAAwIAA3gAAzwE.png" alt="image-20260612191814929"></p><p>重新部署一下，OK，完工；享受码字的快乐吧！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术分享</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>输入法</tag>
+      
+      <tag>rime</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>AI如何真正做事</title>
     <link href="/2026/05/22/Agent%E9%9A%BE%E7%82%B9%E5%9C%A8%E4%BA%8E%E7%94%A8%E5%93%AA%E4%B8%AA%E6%A8%A1%E5%9E%8B%EF%BC%8C%E7%94%A8%E5%93%AA%E4%B8%AA%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9F/"/>
     <url>/2026/05/22/Agent%E9%9A%BE%E7%82%B9%E5%9C%A8%E4%BA%8E%E7%94%A8%E5%93%AA%E4%B8%AA%E6%A8%A1%E5%9E%8B%EF%BC%8C%E7%94%A8%E5%93%AA%E4%B8%AA%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9F/</url>
