@@ -1,0 +1,810 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/head.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#A89B91">
+  <meta name="author" content="Ethan Lee">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="从0到1，手把手教你写一个属于自己的AI Skill">
+<meta property="og:type" content="article">
+<meta property="og:title" content="skill是什么？如何编写？">
+<meta property="og:url" content="http://example.com/2026/06/25/%E4%BB%8E0%E7%BC%96%E5%86%99skill/index.html">
+<meta property="og:site_name" content="Ethan">
+<meta property="og:description" content="从0到1，手把手教你写一个属于自己的AI Skill">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-25T15:13:21.697Z">
+<meta property="article:author" content="Ethan Lee">
+<meta property="article:tag" content="skill">
+<meta property="article:tag" content="AI">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>skill是什么？如何编写？ - Ethan</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/ancient.css">
+  </head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ETHAN&#39;S BLOG</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="skill是什么？如何编写？"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-25 00:00" pubdate>
+          2026年6月25日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">skill是什么？如何编写？</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="从0到1，手把手教你写一个属于自己的AI-Skill"><a href="#从0到1，手把手教你写一个属于自己的AI-Skill" class="headerlink" title="从0到1，手把手教你写一个属于自己的AI Skill"></a>从0到1，手把手教你写一个属于自己的AI Skill</h1><blockquote>
+<p>你离「让AI替你干活」只差一个文件夹的距离<br>你有没有这样的经历。<br>每天打开AI对话窗口，输入同样的指令。”用Python写一个爬虫，加异常处理，输出CSV格式”。”帮我review这段代码，检查安全性、性能、边界情况”。”按这个模板生成周报，数据来源是上周的销售表”。<br>你复制粘贴同一段话。一遍，又一遍。<br>有没有办法让AI记住你的工作方式，下次只说一句”帮我review”它就自动执行整套流程？<br>有。Skill。</p>
+</blockquote>
+<hr>
+<h2 id="一、Skill是什么？先搞懂三件事"><a href="#一、Skill是什么？先搞懂三件事" class="headerlink" title="一、Skill是什么？先搞懂三件事"></a>一、Skill是什么？先搞懂三件事</h2><h3 id="1-1-一个文件夹，让AI学会新本领"><a href="#1-1-一个文件夹，让AI学会新本领" class="headerlink" title="1.1 一个文件夹，让AI学会新本领"></a>1.1 一个文件夹，让AI学会新本领</h3><p>Skill的官方定义：<strong>一种给AI Agent增加能力和专业知识的标准化方式</strong>。<br>翻译成人话：你把你重复做的工作写成一本操作手册，放进一个文件夹。AI需要的时候，自己翻开手册照着做。<br>一个Skill就是一个文件夹：</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs nix">my-skill<span class="hljs-symbol">/</span><br>├── SKILL.md          <span class="hljs-comment"># 必需：核心指令文件</span><br>├── scripts<span class="hljs-symbol">/</span>          <span class="hljs-comment"># 可选：可执行脚本</span><br>├── references<span class="hljs-symbol">/</span>       <span class="hljs-comment"># 可选：参考文档</span><br>├── assets<span class="hljs-symbol">/</span>           <span class="hljs-comment"># 可选：模板、图片资源</span><br>└── ...               <span class="hljs-comment"># 其他任意文件</span><br></code></pre></td></tr></table></figure>
+<p>核心只有 <strong>SKILL.md</strong> 这一个文件是必需的，其他都是锦上添花。</p>
+<h3 id="1-2-它和普通提示词有什么区别？"><a href="#1-2-它和普通提示词有什么区别？" class="headerlink" title="1.2 它和普通提示词有什么区别？"></a>1.2 它和普通提示词有什么区别？</h3><p>很多人问：我不就是把提示词写进文件里吗？有什么区别？<br>区别大了。</p>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>普通提示词</th>
+<th>Skill</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>存储方式</td>
+<td>每次复制粘贴</td>
+<td>存成文件，一次编写永久使用</td>
+</tr>
+<tr>
+<td>触发机制</td>
+<td>手动输入</td>
+<td>AI自动判断何时使用</td>
+</tr>
+<tr>
+<td>上下文占用</td>
+<td>每次对话都占</td>
+<td>平时不占，需要时才加载</td>
+</tr>
+<tr>
+<td>可复用性</td>
+<td>仅限当前对话</td>
+<td>跨项目、跨工具、跨团队</td>
+</tr>
+<tr>
+<td>版本管理</td>
+<td>无</td>
+<td>可git管理，团队共享</td>
+</tr>
+<tr>
+<td><strong>Skill &#x3D; 可复用的过程性知识包。</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="1-3-什么场景适合写Skill？"><a href="#1-3-什么场景适合写Skill？" class="headerlink" title="1.3 什么场景适合写Skill？"></a>1.3 什么场景适合写Skill？</h3><p>一个简单的判断标准：<strong>同一件事你让AI做了两次以上，就该写成Skill。</strong><br>常见场景：</p>
+<ul>
+<li>代码审查流程（每次都要说”检查安全性、性能、边界情况”）</li>
+<li>周报&#x2F;月报生成（固定的数据源+固定的模板）</li>
+<li>项目初始化（创建目录、配置文件、依赖安装）</li>
+<li>文档生成（API文档、变更日志、README）</li>
+<li>代码规范检查（团队约定的代码风格、命名规则）</li>
+</ul>
+<hr>
+<h2 id="二、Skill的工作原理：三层加载机制"><a href="#二、Skill的工作原理：三层加载机制" class="headerlink" title="二、Skill的工作原理：三层加载机制"></a>二、Skill的工作原理：三层加载机制</h2><p>理解Skill怎么工作，才能写好Skill。<br>AI Agent加载Skill不是一次性读完所有内容，而是<strong>分三阶段渐进加载</strong>：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs dos">阶段一：发现（Discovery）<br>  → 只读每个Skill的名称和描述<br>  → Agent启动时完成<br>  → 装<span class="hljs-number">100</span>个Skill也不占上下文<br>阶段二：激活（Activation）<br>  → 用户任务匹配某个Skill的描述<br>  → 把完整的SKILL.<span class="hljs-built_in">md</span>读入上下文<br>  → 开始执行指令<br>阶段三：执行（Execution）<br>  → 按指令调用脚本或加载参考文件<br>  → 完成具体任务<br></code></pre></td></tr></table></figure>
+<h2 id="这个机制带来的好处：description是Skill的开关。写得好，AI在需要时自动激活。写得不好，Skill永远不会被触发。"><a href="#这个机制带来的好处：description是Skill的开关。写得好，AI在需要时自动激活。写得不好，Skill永远不会被触发。" class="headerlink" title="这个机制带来的好处：description是Skill的开关。写得好，AI在需要时自动激活。写得不好，Skill永远不会被触发。"></a>这个机制带来的好处：<strong>description是Skill的开关</strong>。写得好，AI在需要时自动激活。写得不好，Skill永远不会被触发。</h2><h2 id="三、5分钟创建你的第一个Skill"><a href="#三、5分钟创建你的第一个Skill" class="headerlink" title="三、5分钟创建你的第一个Skill"></a>三、5分钟创建你的第一个Skill</h2><p>我们做一个”代码审查助手”Skill。它帮你自动检查代码的安全性、性能和边界情况。</p>
+<h3 id="第一步：创建目录"><a href="#第一步：创建目录" class="headerlink" title="第一步：创建目录"></a>第一步：创建目录</h3><p>打开终端，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Claude Code</span><br><span class="hljs-built_in">mkdir</span> -p ~/.claude/skills/code-review-helper<br><span class="hljs-comment"># OpenClaw</span><br><span class="hljs-built_in">mkdir</span> -p ~/.openclaw/workspace/skills/code-review-helper<br><span class="hljs-comment"># AiPy</span><br><span class="hljs-built_in">mkdir</span> -p skills/code-review-helper<br></code></pre></td></tr></table></figure>
+<h3 id="第二步：编写SKILL-md"><a href="#第二步：编写SKILL-md" class="headerlink" title="第二步：编写SKILL.md"></a>第二步：编写SKILL.md</h3><p>在 <code>code-review-helper</code> 目录下创建 <code>SKILL.md</code> 文件，写入：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>name: code-review-helper<br><span class="hljs-section">description: 代码审查助手。当用户要求review代码、检查安全性、性能优化、边界情况处理时使用。</span><br><span class="hljs-section">---</span><br><span class="hljs-section"># Code Review Helper</span><br><span class="hljs-section">## 目标</span><br>对用户提供的代码进行系统性审查，输出结构化的审查报告。<br><span class="hljs-section">## 审查维度</span><br>按以下顺序逐项检查：<br><span class="hljs-section">### 1. 安全性</span><br><span class="hljs-bullet">-</span> SQL注入、XSS、CSRF等常见安全漏洞<br><span class="hljs-bullet">-</span> 敏感信息硬编码（API Key、密码等）<br><span class="hljs-bullet">-</span> 输入验证和清理<br><span class="hljs-section">### 2. 性能</span><br><span class="hljs-bullet">-</span> 不必要的循环或递归<br><span class="hljs-bullet">-</span> 数据库查询优化（N+1问题等）<br><span class="hljs-bullet">-</span> 内存泄漏风险<br><span class="hljs-section">### 3. 边界情况</span><br><span class="hljs-bullet">-</span> 空值/空集合处理<br><span class="hljs-bullet">-</span> 异常输入<br><span class="hljs-bullet">-</span> 并发访问<br><span class="hljs-section">### 4. 可读性</span><br><span class="hljs-bullet">-</span> 命名是否清晰<br><span class="hljs-bullet">-</span> 函数是否过长<br><span class="hljs-bullet">-</span> 注释是否必要<br><span class="hljs-section">## 输出格式</span><br></code></pre></td></tr></table></figure>
+<h2 id="审查结果"><a href="#审查结果" class="headerlink" title="审查结果"></a>审查结果</h2><h3 id="🔴-严重问题"><a href="#🔴-严重问题" class="headerlink" title="🔴 严重问题"></a>🔴 严重问题</h3><ul>
+<li>[问题描述]（行号）→ 修复建议</li>
+</ul>
+<h3 id="🟡-建议改进"><a href="#🟡-建议改进" class="headerlink" title="🟡 建议改进"></a>🟡 建议改进</h3><ul>
+<li>[问题描述]（行号）→ 修复建议</li>
+</ul>
+<h3 id="✅-良好实践"><a href="#✅-良好实践" class="headerlink" title="✅ 良好实践"></a>✅ 良好实践</h3><ul>
+<li>[做得好的地方]</li>
+</ul>
+<h3 id="综合评分：X-10"><a href="#综合评分：X-10" class="headerlink" title="综合评分：X&#x2F;10"></a>综合评分：X&#x2F;10</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section">## 约束</span><br><span class="hljs-bullet">-</span> 不要修改用户的代码，只给出建议<br><span class="hljs-bullet">-</span> 每个问题必须标注具体行号<br><span class="hljs-bullet">-</span> 优先修复严重问题<br></code></pre></td></tr></table></figure>
+<h3 id="第三步：测试"><a href="#第三步：测试" class="headerlink" title="第三步：测试"></a>第三步：测试</h3><p>在AI Agent中输入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">帮我review这段代码：<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_user</span>(<span class="hljs-params"><span class="hljs-built_in">id</span></span>):<br>    query = <span class="hljs-string">f&quot;SELECT * FROM users WHERE id = <span class="hljs-subst">&#123;<span class="hljs-built_in">id</span>&#125;</span>&quot;</span><br>    <span class="hljs-keyword">return</span> db.execute(query)<br></code></pre></td></tr></table></figure>
+<h2 id="如果Skill正确触发，AI应该自动按你定义的维度审查，输出结构化报告。"><a href="#如果Skill正确触发，AI应该自动按你定义的维度审查，输出结构化报告。" class="headerlink" title="如果Skill正确触发，AI应该自动按你定义的维度审查，输出结构化报告。"></a>如果Skill正确触发，AI应该自动按你定义的维度审查，输出结构化报告。</h2><h2 id="四、写好SKILL-md的核心技巧"><a href="#四、写好SKILL-md的核心技巧" class="headerlink" title="四、写好SKILL.md的核心技巧"></a>四、写好SKILL.md的核心技巧</h2><h3 id="4-1-description是命门"><a href="#4-1-description是命门" class="headerlink" title="4.1 description是命门"></a>4.1 description是命门</h3><p>description是AI判断是否使用Skill的唯一依据。写得好不好，直接决定Skill能不能被触发。<br><strong>错误写法：</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">description:</span> <span class="hljs-string">帮助处理代码</span><br></code></pre></td></tr></table></figure>
+<p>太模糊，AI不知道什么时候用。<br><strong>正确写法：</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">description:</span> <span class="hljs-string">代码审查助手。当用户要求review代码、检查安全性、性能优化、边界情况处理时使用。</span><br></code></pre></td></tr></table></figure>
+<p>具体、可判断、包含触发关键词。</p>
+<h3 id="4-2-黄金结构公式"><a href="#4-2-黄金结构公式" class="headerlink" title="4.2 黄金结构公式"></a>4.2 黄金结构公式</h3><p>一个高质量的SKILL.md通常包含：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 元数据（YAML frontmatter）<br><span class="hljs-bullet">   -</span> name: 技能名称<br><span class="hljs-bullet">   -</span> description: 触发描述（最重要）<br><span class="hljs-bullet">2.</span> 目标<br><span class="hljs-bullet">   -</span> 一句话说清这个Skill做什么<br><span class="hljs-bullet">3.</span> 步骤<br><span class="hljs-bullet">   -</span> 分步骤写出执行流程<br><span class="hljs-bullet">   -</span> 越具体越好<br><span class="hljs-bullet">4.</span> 输出格式<br><span class="hljs-bullet">   -</span> 规定最终交付物的格式<br><span class="hljs-bullet">5.</span> 约束<br><span class="hljs-bullet">   -</span> 禁止事项、边界条件、注意事项<br></code></pre></td></tr></table></figure>
+<h3 id="4-3-渐进式披露"><a href="#4-3-渐进式披露" class="headerlink" title="4.3 渐进式披露"></a>4.3 渐进式披露</h3><p>把最重要的指令直接写在SKILL.md里。深度内容放到references&#x2F;目录，需要时再加载。</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs nix">my-skill<span class="hljs-symbol">/</span><br>├── SKILL.md              <span class="hljs-comment"># 核心指令（必读）</span><br>├── references<span class="hljs-symbol">/</span><br>│   ├── format-guide.md   <span class="hljs-comment"># 格式规范（需要时才读）</span><br>│   └── examples.md       <span class="hljs-comment"># 示例（需要时才读）</span><br>└── scripts<span class="hljs-symbol">/</span><br>    └── validate.py       <span class="hljs-comment"># 验证脚本（需要时才运行）</span><br></code></pre></td></tr></table></figure>
+<h3 id="4-4-单一职责原则"><a href="#4-4-单一职责原则" class="headerlink" title="4.4 单一职责原则"></a>4.4 单一职责原则</h3><p>一个Skill只做一件事。不要写一个”万能Skill”。</p>
+<ul>
+<li>❌ <code>super-helper</code>（什么都能干，什么都干不好）</li>
+<li>✅ <code>code-review-helper</code>（专注代码审查）</li>
+<li>✅ <code>weekly-report-generator</code>（专注周报生成）</li>
+<li>✅ <code>api-doc-writer</code>（专注API文档）</li>
+</ul>
+<hr>
+<h2 id="五、进阶技巧"><a href="#五、进阶技巧" class="headerlink" title="五、进阶技巧"></a>五、进阶技巧</h2><h3 id="5-1-用Skill-creator让AI帮你写Skill"><a href="#5-1-用Skill-creator让AI帮你写Skill" class="headerlink" title="5.1 用Skill-creator让AI帮你写Skill"></a>5.1 用Skill-creator让AI帮你写Skill</h3><p>Anthropic官方提供了<a target="_blank" rel="noopener" href="https://github.com/anthropics/skills">skill-creator</a>，一个专门创建Skill的Skill。<br>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Claude Code</span><br>claude code<br><span class="hljs-comment"># 然后输入：</span><br>帮我安装 skill-creator<br></code></pre></td></tr></table></figure>
+<p>使用：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sqf">帮我创建一个<span class="hljs-built_in">Skill</span>，功能是：每周五下午<span class="hljs-number">5</span>点自动生成团队周报，数据来源是Jira和GitHub，输出格式是Markdown。<br></code></pre></td></tr></table></figure>
+<p>AI会自动设计框架、编写SKILL.md、生成脚本。</p>
+<h3 id="5-2-多Skill协同"><a href="#5-2-多Skill协同" class="headerlink" title="5.2 多Skill协同"></a>5.2 多Skill协同</h3><p>你可以把多个Skill组合使用。比如用”代码审查Skill”审查完代码后，自动调用”文档生成Skill”生成变更日志。<br>在SKILL.md中声明依赖：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section">## 依赖</span><br><span class="hljs-bullet">-</span> 本Skill执行前，确保已加载 <span class="hljs-code">`changelog-generator`</span> Skill<br></code></pre></td></tr></table></figure>
+<h3 id="5-3-跨工具兼容"><a href="#5-3-跨工具兼容" class="headerlink" title="5.3 跨工具兼容"></a>5.3 跨工具兼容</h3><p>Agent Skills是开放标准，一个Skill可以在多个工具中使用：</p>
+<ul>
+<li>Claude Code → <code>.claude/skills/</code></li>
+<li>OpenClaw → <code>.openclaw/workspace/skills/</code></li>
+<li>Cursor → <code>.cursor/skills/</code></li>
+<li>Codex → <code>.codex/skills/</code></li>
+<li>Gemini CLI → <code>.gemini/skills/</code></li>
+<li>AiPy → <code>skills/</code><br>写一次，到处用。</li>
+</ul>
+<hr>
+<h2 id="六、从哪获取优质Skill"><a href="#六、从哪获取优质Skill" class="headerlink" title="六、从哪获取优质Skill"></a>六、从哪获取优质Skill</h2><h3 id="官方渠道"><a href="#官方渠道" class="headerlink" title="官方渠道"></a>官方渠道</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/anthropics/skills">Anthropic官方Skills</a> — 生产级示例</li>
+<li><a target="_blank" rel="noopener" href="https://agentskills.io/">agentskills.io</a> — 官方标准网站</li>
+</ul>
+<h3 id="社区市场"><a href="#社区市场" class="headerlink" title="社区市场"></a>社区市场</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://skillsmp.com/">skillsmp.com</a> — 聚合6万+开源Skill</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/itgoyo/awesome-agent-skills">awesome-agent-skills</a> — 精选列表</li>
+</ul>
+<h3 id="终极来源：自己写"><a href="#终极来源：自己写" class="headerlink" title="终极来源：自己写"></a>终极来源：自己写</h3><h2 id="全网最好用的Skill，永远是你自己写出来的。因为只有你最清楚自己的工作流程、业务逻辑和团队规范。"><a href="#全网最好用的Skill，永远是你自己写出来的。因为只有你最清楚自己的工作流程、业务逻辑和团队规范。" class="headerlink" title="全网最好用的Skill，永远是你自己写出来的。因为只有你最清楚自己的工作流程、业务逻辑和团队规范。"></a>全网最好用的Skill，永远是你自己写出来的。因为只有你最清楚自己的工作流程、业务逻辑和团队规范。</h2><h2 id="七、写在最后"><a href="#七、写在最后" class="headerlink" title="七、写在最后"></a>七、写在最后</h2><h2 id="Skill的出现，让AI从”问什么答什么”进化到”教一次就记住”。你不需要成为编程高手，不需要懂复杂的AI原理。你只需要把你重复做的工作，写成一份清晰的操作手册，放进一个文件夹。这就是Skill。下次当你又准备复制粘贴同一段话给AI时，停下来想一想。这件事，值不值得写成Skill？答案大概率是：值得。"><a href="#Skill的出现，让AI从”问什么答什么”进化到”教一次就记住”。你不需要成为编程高手，不需要懂复杂的AI原理。你只需要把你重复做的工作，写成一份清晰的操作手册，放进一个文件夹。这就是Skill。下次当你又准备复制粘贴同一段话给AI时，停下来想一想。这件事，值不值得写成Skill？答案大概率是：值得。" class="headerlink" title="Skill的出现，让AI从”问什么答什么”进化到”教一次就记住”。你不需要成为编程高手，不需要懂复杂的AI原理。你只需要把你重复做的工作，写成一份清晰的操作手册，放进一个文件夹。这就是Skill。下次当你又准备复制粘贴同一段话给AI时，停下来想一想。这件事，值不值得写成Skill？答案大概率是：值得。"></a>Skill的出现，让AI从”问什么答什么”进化到”教一次就记住”。<br>你不需要成为编程高手，不需要懂复杂的AI原理。你只需要把你重复做的工作，写成一份清晰的操作手册，放进一个文件夹。<br>这就是Skill。<br>下次当你又准备复制粘贴同一段话给AI时，停下来想一想。<br><strong>这件事，值不值得写成Skill？</strong><br>答案大概率是：值得。</h2><p><em>如果你觉得这篇文章有用，欢迎分享给更多需要的人。</em><br><em>你的第一个Skill，就从今天开始。</em></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/skill/" class="print-no-link">#skill</a>
+      
+        <a href="/tags/AI/" class="print-no-link">#AI</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>skill是什么？如何编写？</div>
+      <div>http://example.com/2026/06/25/从0编写skill/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ethan Lee</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/12/rime%E8%BE%93%E5%85%A5%E6%B3%95/" title="rime(小狼毫)+雾凇+皮肤+万象大模型+个人词库补充">
+                        <span class="hidden-mobile">rime(小狼毫)+雾凇+皮肤+万象大模型+个人词库补充</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="" target="_blank" rel="nofollow noopener"><span>Ethan</span></a> <i class="iconfont icon-love"></i> <a href="" target="_blank" rel="nofollow noopener"><span>Esther</span></a> 
+    </div>
+  
+  
+  
+
+  <div class="runtime">
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      <script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("06/01/2023 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已运行了 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+      setInterval("createtime()",250);
+      </script>
+  </div>
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":9}});</script>
+    <div class="ancient-top-banner"></div>
+    <div class="ancient-bottom-banner"></div>
+    <script src="/js/ancient.js"></script>
+  </body>
+</html>
