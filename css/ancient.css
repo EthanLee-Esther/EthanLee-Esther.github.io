@@ -1,10 +1,11 @@
-/* ====== 声明本地字体 ====== */
+/* ====== 声明本地字体（子集化，woff2 优先） ====== */
 @font-face {
-  font-family: 'lishu';  /* 自定义字体名称，随便起，下面引用一致就行 */
-  src: url('/fonts/lishu.ttf') format('truetype'); /* 相对于网站根目录的路径 */
+  font-family: 'lishu';
+  src: url('/fonts/lishu.woff2') format('woff2'),
+       url('/fonts/lishu.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* 优化：先显示系统默认字体，加载完再替换，防止白屏 */
+  font-display: swap;
 }
 
 
@@ -252,4 +253,30 @@ hr { border: none !important; height: 2px !important; background: linear-gradien
 .index-img:hover img {
   transform: translateY(-3px) !important;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(184, 59, 59, 0.35) !important;
+}
+
+/* ====== 归档页封面缩略图 ====== */
+.archive-item {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+}
+.archive-thumb {
+  width: 56px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid rgba(210, 190, 150, 0.45);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+.archive-item .list-group-item-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 575px) {
+  .archive-thumb { width: 44px; height: 28px; }
 }
