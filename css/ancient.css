@@ -262,13 +262,15 @@ hr { border: none !important; height: 2px !important; background: linear-gradien
   gap: 12px;
 }
 .archive-thumb {
-  width: 56px;
-  height: 36px;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid rgba(210, 190, 150, 0.45);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
+  width: 56px !important;
+  height: 36px !important;
+  max-width: 56px !important;
+  max-height: 36px !important;
+  object-fit: cover !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(210, 190, 150, 0.45) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+  flex-shrink: 0 !important;
 }
 .archive-item .list-group-item-title {
   flex: 1;
@@ -278,5 +280,5 @@ hr { border: none !important; height: 2px !important; background: linear-gradien
   white-space: nowrap;
 }
 @media (max-width: 575px) {
-  .archive-thumb { width: 44px; height: 28px; }
+  .archive-thumb { width: 44px !important; height: 28px !important; max-width: 44px !important; max-height: 28px !important; }
 }
