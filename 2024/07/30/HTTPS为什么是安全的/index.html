@@ -22,19 +22,11 @@
     <meta name="description" content="今天来谈谈HTTPS为什么是安全的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTPS为什么是安全的">
-<meta property="og:url" content="http://example.com/2024/07/30/HTTPS%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%89%E5%85%A8%E7%9A%84/index.html">
+<meta property="og:url" content="https://yixin.xz.cn/2024/07/30/HTTPS%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%89%E5%85%A8%E7%9A%84/index.html">
 <meta property="og:site_name" content="Ethan">
 <meta property="og:description" content="今天来谈谈HTTPS为什么是安全的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMPaLcMq3QmHejrxXzACZzsSCn_wacAAk7KMRvYf7lVFNilpeGTDWIBAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMQaLcNET53fce1XOwOYwa-GGfOSGsAAk_KMRvYf7lVdys45QXkRU4BAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMRaLcNN0dhrf8cFBuMxdpvIcMp6nYAAlDKMRvYf7lV1ViIG0bleWgBAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMSaLcNSoYmY_7a29esbSuJiWHgfx8AAlHKMRvYf7lVuwABng_MAAEjxwEAAwIAA3kAAzYE.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMTaLcNYz-U5ao0c-XqLtonXyqqqBsAAlLKMRvYf7lVWrA7K8yH0OsBAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMUaLcNc22OYLUdPSC50nd9509O-nIAAlPKMRvYf7lVTR8iv4508LsBAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMVaLcNimtvuDuWZVNXeXFw_SvJBz0AAlTKMRvYf7lV9y5-UVwojAcBAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMWaLcNoVIZvTd5_l6_zA-8i8aMGmAAAlXKMRvYf7lVg24MJKEvkNUBAAMCAAN5AAM2BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAMXaLcNudLv3xqhXsDCILcukHCfi9kAAlbKMRvYf7lVTWPjEn1YrDkBAAMCAAN5AAM2BA.png">
 <meta property="article:published_time" content="2024-07-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-09-02T15:31:22.000Z">
 <meta property="article:author" content="Ethan Lee">
@@ -86,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"yixin.xz.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -402,7 +394,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>HTTPS为什么是安全的</div>
-      <div>http://example.com/2024/07/30/HTTPS为什么是安全的/</div>
+      <div>https://yixin.xz.cn/2024/07/30/HTTPS为什么是安全的/</div>
     </div>
     <div class="license-meta">
       

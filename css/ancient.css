@@ -241,3 +241,15 @@ hr { border: none !important; height: 2px !important; background: linear-gradien
     ) scale(1.2);
   }
 }
+
+/* ====== 首页文章卡片封面图：书卷边框（古风统一） ====== */
+.index-img img {
+  border: 1px solid rgba(210, 190, 150, 0.5) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(210, 190, 150, 0.25) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.index-img:hover img {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(184, 59, 59, 0.35) !important;
+}

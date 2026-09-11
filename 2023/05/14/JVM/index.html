@@ -22,27 +22,11 @@
     <meta name="description" content="JVM 是Java Virtual Machine （java 虚拟机）的缩写。一台执行java程序的机器……">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一篇文章读懂 JVM">
-<meta property="og:url" content="http://example.com/2023/05/14/JVM/index.html">
+<meta property="og:url" content="https://yixin.xz.cn/2023/05/14/JVM/index.html">
 <meta property="og:site_name" content="Ethan">
 <meta property="og:description" content="JVM 是Java Virtual Machine （java 虚拟机）的缩写。一台执行java程序的机器……">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPRaibqbQz1rDzMp-mRzHOYsCFmRY0AAvwQaxuHejlVfPC0kZx1M7ABAAMCAAN5AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPSaibqfAABSDxBdhUiZB_X4TOcyIxhAAL9EGsbh3o5VZnkNU4Z8Np2AQADAgADeAADOwQ.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPTaibqgKbVdq6ThKXdKF1L4mf2N3AAAv4QaxuHejlV2z8BjfhA4ZQBAAMCAAN4AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPUaibqjI8m8HlP9K32cSWbdqzkPXAAAv8QaxuHejlVMaylQC6sVzABAAMCAAN4AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPVaibqkEgcZy7yz6vC8zdjIZsG1_wAAxFrG4d6OVXddzrVK8htvQEAAwIAA3kAAzsE.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPWaibqmFrKO8yPfzJmvKHruHaIRxQAAgERaxuHejlVo_7emfJfbwQBAAMCAAN5AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPXaibqmzQ_4daPf9RMdX0afhmHEDQAAgIRaxuHejlV3RifwpD_sSoBAAMCAAN4AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPYaibqnQABdQ7GL2ajshLrdDRCTAxmAAIDEWsbh3o5VWng4gFXChjpAQADAgADeAADOwQ.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPZaibqoaQQHjTLzVGkTCsBAs10Um8AAgQRaxuHejlVHeP5o5euqCcBAAMCAAN5AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPaaibqo0uadB54a2p8S87STZec1LkAAgURaxuHejlVz8omk_IJGEgBAAMCAAN5AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPbaibqqsHaxY48XHmYDXllh7s_sh8AAgYRaxuHejlVxFKu9PRmHAgBAAMCAAN4AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPcaibqrKA06q94jgIRD7R2pikifA4AAgcRaxuHejlVqW7Ia0-S0loBAAMCAAN4AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPdaibqsH2vcORL3PXLbWA2TezSneQAAggRaxuHejlVbzEPd5U0htEBAAMCAAN5AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPeaibquxNP3us2m2yJZOVGBaNm16sAAgkRaxuHejlVUJUyfULk248BAAMCAAN4AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPfaibqv6dexMYR3qIIz4MN5dIG4m0AAgoRaxuHejlVyC-lRSqC-ScBAAMCAAN5AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPgaibq1TEVNrqpWh3kDk7JJPByFxUAAgsRaxuHejlVrD19bT76Q-ABAAMCAAN5AAM7BA.png">
-<meta property="og:image" content="https://telegraph-image-5ui.pages.dev/file/AgACAgUAAyEGAASnUzlSAAPhaibq2R7tX5n0opXZCOPblMzLW_gAAgwRaxuHejlVBaWHpeiflx0BAAMCAAN3AAM7BA.png">
 <meta property="article:published_time" content="2023-05-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2026-06-09T15:09:24.588Z">
 <meta property="article:author" content="Ethan Lee">
@@ -96,7 +80,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"yixin.xz.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -686,7 +670,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>一篇文章读懂 JVM</div>
-      <div>http://example.com/2023/05/14/JVM/</div>
+      <div>https://yixin.xz.cn/2023/05/14/JVM/</div>
     </div>
     <div class="license-meta">
       
